@@ -24,6 +24,7 @@ module.exports = {
   root: true,
   rules: {
     'react/react-in-jsx-scope': 'off',
+    'import/prefer-default-export': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',
