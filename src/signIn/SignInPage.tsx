@@ -12,9 +12,11 @@ export function SignInPage() {
         className="absolute -z-50 w-screen h-screen brightness-[0.6] bg-gradient-to-tr bg-blue-900 from-[#015A86] via-blue-900 to-[#03D27F] oto-[#0269AC]"
       />
       <div className="text-white w-screen h-screen flex flex-col items-center justify-center">
-        <div className="my-auto">
-          <h2 className="text-lg">Musikz</h2>
-          <h1 className="text-3xl uppercase">Vem curtir vibes</h1>
+        <div className="my-auto flex flex-col gap-2 items-center">
+          <div>
+            <h2 className="text-lg">Musikz</h2>
+            <h1 className="text-3xl uppercase">Vem curtir vibes</h1>
+          </div>
           <GoogleButton />
         </div>
         <div className="text-xs">
