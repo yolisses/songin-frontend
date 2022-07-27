@@ -16,7 +16,10 @@ export function SignInPage() {
       <div className="text-white w-screen h-screen flex flex-col items-center justify-center">
         <div className="my-auto flex flex-col gap-8 items-center">
           <div>
-            <h2 className="text-lg">Musikz</h2>
+            <div className="flex flex-row gap-1">
+              <img src="logo/white.svg" alt="logo" width={15} className="inline-block" />
+              <h2 className="text-lg">Musikz</h2>
+            </div>
             <h1 className="text-3xl uppercase">Vem curtir vibes</h1>
           </div>
           {loading ? (
