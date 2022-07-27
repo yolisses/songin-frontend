@@ -10,6 +10,7 @@
     "@types/node": "^16.11.45",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
+    "jest": "^28.1.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -39,5 +40,20 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "main": "index.tsx",
+  "repository": "https://github.com/yowlisses/musikz-frontend.git",
+  "author": "ulisses <iamurise@gmail.com>",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "eslint": "^8.20.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^26.6.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0"
   }
 }
