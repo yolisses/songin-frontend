@@ -1,11 +1,13 @@
 import { Spinner } from '../common/Spinner';
+import { useUser } from '../user/UserContext';
 import { GoogleButton } from './GoogleButton';
 
 export function SignInPage() {
   const loading = false;
+  const { user } = useUser();
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <div
         className="absolute -z-40 w-screen h-screen brightness-[0.6] bg-center bg-no-repeat bg-cover"
         style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1400)' }}

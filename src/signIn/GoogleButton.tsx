@@ -1,16 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef } from 'react';
+import { useSignIn } from './useSignIn';
 
 export function GoogleButton() {
   const divRef = useRef(null);
+  const { signIn } = useSignIn();
 
   useEffect(() => {
     if (divRef.current) {
       (window as any).google.accounts.id.initialize({
         client_id: '456371025061-44c24jcod62qnejc2kp6f8dmj3amlshn.apps.googleusercontent.com',
         callback: (res:any, error:any) => {
-          console.log(res.credential);
-          // teste
+          if (error) {
+            alert(error);
+          }
+          signIn(res.credential);
         },
       });
       (window as any).google.accounts.id.renderButton(divRef.current, {
@@ -21,7 +25,6 @@ export function GoogleButton() {
         shape: 'rectangular',
         logo_alignment: 'left',
       });
-      (window as any).google.accounts.id.prompt();
     }
   }, [divRef.current]);
 

@@ -1,5 +1,12 @@
 {
-    "sign-in": {
-        "name": "Ulisses"
+  "users": [
+    {
+      "id": 0,
+      "name": "ulisses"
+    },
+    {
+      "id": 1,
+      "name": "teste"
     }
+  ]
 }
