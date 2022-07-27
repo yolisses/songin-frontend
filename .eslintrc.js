@@ -37,6 +37,7 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'react/jsx-no-constructed-context-values':'off',
     'react/jsx-filename-extension': [
       1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
   },

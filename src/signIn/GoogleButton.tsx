@@ -1,20 +1,34 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useEffect, useRef } from 'react';
+
 export function GoogleButton() {
+  const divRef = useRef(null);
+
+  useEffect(() => {
+    if (divRef.current) {
+      (window as any).google.accounts.id.initialize({
+        client_id: '456371025061-44c24jcod62qnejc2kp6f8dmj3amlshn.apps.googleusercontent.com',
+        callback: (res:any, error:any) => {
+          console.log(res.credential);
+          // teste
+        },
+      });
+      (window as any).google.accounts.id.renderButton(divRef.current, {
+        size: 'large',
+        type: 'standard',
+        theme: 'outline',
+        text: 'sign_in_with',
+        shape: 'rectangular',
+        logo_alignment: 'left',
+      });
+      (window as any).google.accounts.id.prompt();
+    }
+  }, [divRef.current]);
+
   return (
-    <>
-      <div
-        id="g_id_onload"
-        data-auto_prompt="false"
-        data-client_id="456371025061-44c24jcod62qnejc2kp6f8dmj3amlshn.apps.googleusercontent.com"
-      />
-      <div
-        className="g_id_signin h-10"
-        data-type="standard"
-        data-size="large"
-        data-theme="outline"
-        data-text="sign_in_with"
-        data-shape="rectangular"
-        data-logo_alignment="left"
-      />
-    </>
+    <div
+      className="h-10"
+      ref={divRef}
+    />
   );
 }
