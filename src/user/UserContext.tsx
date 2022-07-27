@@ -12,7 +12,7 @@ interface UserContext{
 const userContext = createContext({} as UserContext);
 
 export function UserContextProvider({ children }:ChildrenProps) {
-  const [user, setUser] = useState({} as User);
+  const [user, setUser] = useState(null as any as User);
 
   return (
     <userContext.Provider value={{ user, setUser }}>

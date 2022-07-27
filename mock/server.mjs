@@ -6,7 +6,6 @@ const middlewares = jsonServer.defaults();
 
 server.use(middlewares);
 server.post('/sign-in', (req, res) => {
-  console.log('here');
   res.send({
     name: 'Ulisses',
     image: 'https://picsum.photos/id/338/96/96',

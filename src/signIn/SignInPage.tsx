@@ -1,10 +1,8 @@
 import { Spinner } from '../common/Spinner';
-import { useUser } from '../user/UserContext';
 import { GoogleButton } from './GoogleButton';
 
 export function SignInPage() {
   const loading = false;
-  const { user } = useUser();
 
   return (
     <div className="overflow-hidden">
@@ -28,7 +26,7 @@ export function SignInPage() {
           )
             : <GoogleButton />}
         </div>
-        <div className="text-xs text-center text-black">
+        <div className="text-xs text-center">
           Ao prosseguir você concorda com a
           {' '}
           <a href="/privacy-policy" className="underline">

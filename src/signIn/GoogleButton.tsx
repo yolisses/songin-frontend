@@ -13,7 +13,7 @@ export function GoogleButton() {
   const { signIn } = useSignIn();
 
   useEffect(() => {
-    if (divRef.current && window.google) {
+    if (window.google) {
       window.google.accounts.id.initialize({
         client_id: '456371025061-44c24jcod62qnejc2kp6f8dmj3amlshn.apps.googleusercontent.com',
         callback: (res:any, error:any) => {
@@ -23,6 +23,11 @@ export function GoogleButton() {
           signIn(res.credential);
         },
       });
+    }
+  }, [window.google]);
+
+  useEffect(() => {
+    if (divRef.current && window.google) {
       window.google.accounts.id.renderButton(divRef.current, {
         size: 'large',
         type: 'standard',
@@ -33,11 +38,13 @@ export function GoogleButton() {
       });
     }
   }, [divRef.current, window.google]);
-
   return (
-    <div
-      className="h-10"
-      ref={divRef}
-    />
+    <>
+      <div
+        className="h-10"
+        ref={divRef}
+      />
+      <script src="https://accounts.google.com/gsi/client" async />
+    </>
   );
 }

@@ -1,0 +1,18 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HomePage } from './home/HomePage';
+import { SignInPage } from './signIn/SignInPage';
+import { useUser } from './user/UserContext';
+
+export function AppRoutes() {
+  const { user } = useUser();
+
+  if (!user) return <SignInPage />;
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
