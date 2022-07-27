@@ -1,7 +1,18 @@
+import {
+  Route,
+  Routes,
+  BrowserRouter,
+} from 'react-router-dom';
+import { HomePage } from '../home/HomePage';
+import { SignInPage } from '../signIn/SignInPage';
+
 export function App() {
   return (
-    <div className="App text-4xl">
-      hello
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SignInPage />} />
+        <Route path="teste" element={<HomePage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
