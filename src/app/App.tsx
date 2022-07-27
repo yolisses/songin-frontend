@@ -10,7 +10,7 @@ export function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SignInPage />} />
+        <Route path="/sign-in" element={<SignInPage />} />
         <Route path="teste" element={<HomePage />} />
       </Routes>
     </BrowserRouter>
