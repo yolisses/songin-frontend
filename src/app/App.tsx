@@ -5,16 +5,21 @@ import {
 } from 'react-router-dom';
 import { HomePage } from '../home/HomePage';
 import { SignInPage } from '../signIn/SignInPage';
-import { UserContextProvider } from '../user/UserContext';
+import { UserContextProvider, useUser } from '../user/UserContext';
 
 export function App() {
+  const { user } = useUser();
+
   return (
     <UserContextProvider>
       <BrowserRouter>
-        <Routes>
-          <Route path="/sign-in" element={<SignInPage />} />
-          <Route path="teste" element={<HomePage />} />
-        </Routes>
+        {user
+          ? (
+            <Routes>
+              <Route path="teste" element={<HomePage />} />
+            </Routes>
+          )
+          : <SignInPage />}
       </BrowserRouter>
     </UserContextProvider>
   );

@@ -28,7 +28,7 @@ export function SignInPage() {
           )
             : <GoogleButton />}
         </div>
-        <div className="text-xs text-center">
+        <div className="text-xs text-center text-black">
           Ao prosseguir você concorda com a
           {' '}
           <a href="/privacy-policy" className="underline">

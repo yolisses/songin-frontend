@@ -2,13 +2,19 @@
 import { useEffect, useRef } from 'react';
 import { useSignIn } from './useSignIn';
 
+declare global{
+  interface Window{
+    google?:any
+  }
+}
+
 export function GoogleButton() {
   const divRef = useRef(null);
   const { signIn } = useSignIn();
 
   useEffect(() => {
-    if (divRef.current) {
-      (window as any).google.accounts.id.initialize({
+    if (divRef.current && window.google) {
+      window.google.accounts.id.initialize({
         client_id: '456371025061-44c24jcod62qnejc2kp6f8dmj3amlshn.apps.googleusercontent.com',
         callback: (res:any, error:any) => {
           if (error) {
@@ -17,7 +23,7 @@ export function GoogleButton() {
           signIn(res.credential);
         },
       });
-      (window as any).google.accounts.id.renderButton(divRef.current, {
+      window.google.accounts.id.renderButton(divRef.current, {
         size: 'large',
         type: 'standard',
         theme: 'outline',
@@ -26,7 +32,7 @@ export function GoogleButton() {
         logo_alignment: 'left',
       });
     }
-  }, [divRef.current]);
+  }, [divRef.current, window.google]);
 
   return (
     <div
