@@ -26,6 +26,7 @@ module.exports = {
     'no-unused-vars': 'warn',
     'react/react-in-jsx-scope': 'off',
     'import/prefer-default-export': 'off',
+    'react/require-default-props': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',

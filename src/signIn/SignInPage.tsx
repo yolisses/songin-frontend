@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Spinner } from '../common/Spinner';
 import { GoogleButton } from './GoogleButton';
 
 export function SignInPage() {
@@ -16,6 +17,9 @@ export function SignInPage() {
           <div>
             <h2 className="text-lg">Musikz</h2>
             <h1 className="text-3xl uppercase">Vem curtir vibes</h1>
+          </div>
+          <div className="brightness-0 invert">
+            <Spinner size={2.5} />
           </div>
           <GoogleButton />
         </div>
