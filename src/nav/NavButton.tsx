@@ -10,7 +10,7 @@ interface NavButtonProps{
 export function NavButton({ text, Icon, to }:NavButtonProps) {
   return (
     <Link to={to} className="flex flex-col items-center">
-      <Icon size={20} />
+      <Icon size={22} />
       <div className="text-xs">
         {text}
       </div>

@@ -5,16 +5,16 @@ import { useUser } from '../user/UserContext';
 
 export function MePage() {
   const { user } = useUser();
-
+  const iconsSize = 22;
   return (
     <>
       <div className="p-4">
         <div className="flex flex-row justify-end gap-4">
           <Link to="/notifications">
-            <FaBell size={20} />
+            <FaBell size={iconsSize} />
           </Link>
           <Link to="/config">
-            <FaCog size={20} />
+            <FaCog size={iconsSize} />
           </Link>
         </div>
         <div className="flex flex-row items-center gap-2">
@@ -36,7 +36,14 @@ export function MePage() {
             </button>
           </div>
         </div>
-
+        <div className="flex flex-row gap-4 mt-6">
+          <button type="button">
+            Favoritas
+          </button>
+          <button type="button">
+            Histórico
+          </button>
+        </div>
       </div>
       <Nav />
     </>
