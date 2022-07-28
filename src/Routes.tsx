@@ -1,6 +1,6 @@
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes as Router } from 'react-router-dom';
 import { api } from './api/api';
 import { ConfigPage } from './config/ConfigPage';
 import { HomePage } from './home/HomePage';
@@ -8,7 +8,7 @@ import { SignInPage } from './signIn/SignInPage';
 import { SplashScreen } from './splash/SplashScreen';
 import { useUser } from './user/UserContext';
 
-export function AppRoutes() {
+export function Routes() {
   const { user, setUser } = useUser();
 
   const [loading, setLoading] = useState(true);
@@ -38,10 +38,10 @@ export function AppRoutes() {
 
   return (
     <BrowserRouter>
-      <Routes>
+      <Router>
         <Route path="/" element={<HomePage />} />
         <Route path="/config" element={<ConfigPage />} />
-      </Routes>
+      </Router>
     </BrowserRouter>
   );
 }
