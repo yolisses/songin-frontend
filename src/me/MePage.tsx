@@ -1,22 +1,21 @@
-import { FaBell, FaChevronRight, FaCog } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { History } from '../history/History';
+import { FaBell, FaChevronRight, FaCog } from 'react-icons/fa';
 import { Nav } from '../nav/Nav';
+import { History } from '../history/History';
 import { useUser } from '../user/UserContext';
-import { MusicList } from './MusicList';
 
 export function MePage() {
   const { user } = useUser();
-  const iconsSize = 22;
+  const iconSize = 22;
   return (
     <>
       <div className="p-4">
         <div className="flex flex-row justify-end gap-4">
           <Link to="/notifications">
-            <FaBell size={iconsSize} />
+            <FaBell size={iconSize} />
           </Link>
           <Link to="/config">
-            <FaCog size={iconsSize} />
+            <FaCog size={iconSize} />
           </Link>
         </div>
         <div className="flex flex-row items-center gap-2">
