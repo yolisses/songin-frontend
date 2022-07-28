@@ -14,8 +14,8 @@
   "musics": [
     {
       "id": 0,
-      "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/32/200/200",
+      "name": "Offline",
+      "image": "/offline.webp",
       "artist": {
         "id": 0,
         "name": "Coldplay",
@@ -35,21 +35,21 @@
     {
       "id": 2,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/51/200/200",
+      "image": "https://picsum.photos/id/543/200/200",
       "artist": {
         "id": 0,
         "name": "Coldplay",
-        "image": "https://picsum.photos/id/32/200/200"
+        "image": "https://picsum.photos/id/52/200/200"
       }
     },
     {
       "id": 3,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/62/200/200",
+      "image": "https://picsum.photos/id/94/200/200",
       "artist": {
         "id": 0,
         "name": "Coldplay",
-        "image": "https://picsum.photos/id/32/200/200"
+        "image": "https://picsum.photos/id/84/200/200"
       }
     },
     {

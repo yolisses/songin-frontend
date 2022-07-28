@@ -1,5 +1,6 @@
 import { FaComment, FaHeart, FaShare } from 'react-icons/fa';
 import { Music } from '../music/Music';
+import { Nav } from '../nav/Nav';
 
 interface PlayerPageProps{
   music:Music
@@ -16,12 +17,12 @@ export function PlayerPage({ music }:PlayerPageProps) {
       <img
         src={music.image}
         alt={music.name}
-        className="mask fixed -z-40 w-screen aspect-square -translate-y-1/2 top-1/2 max-w-[100vh] "
+        className="mask fixed -z-40 w-screen aspect-square max-w-[100vh] -translate-y-1/2 top-1/2 translate-x-1/2 right-1/2 "
       />
       <div
         className="fixed h-screen -z-30 w-screen"
         style={{
-          background: 'linear-gradient(to bottom, #000a 0%, transparent 20%, transparent 80%, #000a 100%',
+          background: 'linear-gradient(to bottom, #0005 0%, transparent 20%, transparent 60%, #000a 100%',
         }}
       />
       <div className="fixed bottom-0 w-screen">
@@ -45,10 +46,11 @@ export function PlayerPage({ music }:PlayerPageProps) {
               <FaShare size={iconsSize} />
             </button>
           </div>
-
           <input type="range" className="w-full cursor-pointer" />
         </div>
+        <div className="h-16" />
       </div>
+      <Nav />
     </div>
   );
 }

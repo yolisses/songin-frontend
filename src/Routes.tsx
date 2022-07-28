@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes as Router } from 'react-router-dom';
 import { api } from './api/api';
 import { ConfigPage } from './config/ConfigPage';
 import { HomePage } from './home/HomePage';
+import { Nav } from './nav/Nav';
 import { usePlayer } from './player/PlayerContext';
 import { PlayerPage } from './player/PlayerPage';
 import { SignInPage } from './signIn/SignInPage';

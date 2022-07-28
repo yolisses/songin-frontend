@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { api } from '../api/api';
 import { Music } from '../music/Music';
+import { Nav } from '../nav/Nav';
 import { MusicCarrousel } from './MusicCarrousel';
 
 export function HomePage() {
@@ -18,12 +19,8 @@ export function HomePage() {
 
   return (
     <div>
-      <h1>Home page</h1>
-      <div className="flex flex-col">
-        <Link to="/config">go to config</Link>
-        <Link to="/player">go to player</Link>
-      </div>
       {musics && <MusicCarrousel musics={musics} title="Você vai gostar" />}
+      <Nav />
     </div>
   );
 }
