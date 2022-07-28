@@ -21,7 +21,6 @@ server.post('/sign-in', (req, res) => {
 });
 
 server.get('/users/me', (req, res) => {
-  console.log(req.cookies);
   const sessionId = req.cookies.session_id;
   if (!sessionId) {
     res.status(403);
