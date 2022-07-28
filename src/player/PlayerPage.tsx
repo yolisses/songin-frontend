@@ -16,7 +16,7 @@ export function PlayerPage({ music }:PlayerPageProps) {
       <img
         src={music.image}
         alt={music.name}
-        className="fixed -z-40 w-screen aspect-square -translate-y-1/2 top-1/2 max-w-[100vh] "
+        className="mask fixed -z-40 w-screen aspect-square -translate-y-1/2 top-1/2 max-w-[100vh] "
       />
       <div
         className="fixed h-screen -z-30 w-screen"
