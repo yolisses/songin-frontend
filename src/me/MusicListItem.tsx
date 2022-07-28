@@ -8,9 +8,16 @@ interface MusicListItemProps{
 export function MusicListItem({ music }:MusicListItemProps) {
   const { setMusic } = usePlayer();
 
+  function handleClick() {
+    setMusic(music);
+  }
   return (
     <li>
-      <button type="button" className="flex flex-row items-center p-1 gap-2 w-full text-start">
+      <button
+        type="button"
+        onClick={handleClick}
+        className="flex flex-row items-center p-1 gap-2 w-full text-start"
+      >
         <img
           className="w-12 aspect-square rounded"
           src={music.image}
