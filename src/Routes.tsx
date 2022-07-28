@@ -47,6 +47,7 @@ export function Routes() {
         <Route path="/" element={<HomePage />} />
         <Route path="/me" element={<MePage />} />
         <Route path="/config" element={<ConfigPage />} />
+        <Route path="/splash" element={<SplashScreen />} />
         {music && <Route path="/player" element={<PlayerPage music={music} />} />}
       </Router>
     </BrowserRouter>
