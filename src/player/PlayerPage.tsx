@@ -20,12 +20,8 @@ export function PlayerPage({ music }:PlayerPageProps) {
         className="mask fixed -z-40 w-screen aspect-square max-w-[100vh] -translate-y-1/2 top-1/2 translate-x-1/2 right-1/2 "
       />
       <div
-        className="fixed h-screen -z-30 w-screen"
-        style={{
-          background: 'linear-gradient(to bottom, #0005 0%, transparent 20%, transparent 60%, #000a 100%',
-        }}
-      />
-      <div className="fixed bottom-0 w-screen">
+        className="fixed bottom-0 w-screen bg-gradient-to-t from-[#000a] via-[#000a] to-transparent] pt-10"
+      >
         <div className="px-4 flex flex-col gap-6">
           <div className="flex flex-col gap-2">
             <div className="text-xl">
