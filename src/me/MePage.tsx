@@ -8,7 +8,7 @@ export function MePage() {
   const { user } = useUser();
   const iconSize = 22;
   return (
-    <>
+    <div className="">
       <div className="flex flex-row justify-end gap-4 p-2">
         <Link to="/notifications">
           <FaBell size={iconSize} />
@@ -36,25 +36,25 @@ export function MePage() {
           </button>
         </div>
       </div>
-      <div className="sticky top-0">
-        <div className="absolute flex flex-row gap-4 w-screen top-0 bg-white h-12 items-center px-2">
-          <a href="#favorites">Favoritas</a>
-          <a href="#history">Histórico</a>
-        </div>
+      <div className="sticky top-0 flex flex-row gap-4 bg-white h-12 items-center">
+        <a href="#favorites">Favoritas</a>
+        <a href="#history">Histórico</a>
       </div>
       <div
-        className="flex flex-row overflow-x-auto"
+        className="flex flex-row no-scrollbar overflow-x-auto"
         style={{ scrollBehavior: 'smooth' }}
       >
-        <div className="w-screen flex-shrink-0 pt-12 px-2" id="favorites">
+        <div className="w-full flex-shrink-0">
+          <div className="relative -top-12" id="favorites" />
           <History />
         </div>
-        <div className="w-screen flex-shrink-0 pt-12 px-2" id="history">
+        <div className="w-full flex-shrink-0">
+          <div className="relative -top-12" id="history" />
           <History />
         </div>
       </div>
       <Nav />
-    </>
+    </div>
 
   );
 }

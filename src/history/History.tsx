@@ -16,7 +16,7 @@ export function History() {
   }, []);
 
   return (
-    <div>
+    <div className="px-2">
       {musics && <MusicList musics={musics} />}
     </div>
   );

@@ -27,3 +27,8 @@ li {
 html {
     scroll-behavior: smooth;
 }
+
+/* change to * to debug */
+.debug {
+    outline: 1px solid #f00 !important;
+}
