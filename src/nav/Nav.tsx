@@ -1,5 +1,4 @@
 import { FaHome, FaPlay, FaUser } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 import { NavButton } from './NavButton';
 
 export function Nav() {

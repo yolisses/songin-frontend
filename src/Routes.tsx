@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes as Router } from 'react-router-dom';
 import { api } from './api/api';
 import { ConfigPage } from './config/ConfigPage';
 import { HomePage } from './home/HomePage';
+import { MePage } from './me/MePage';
 import { Nav } from './nav/Nav';
 import { usePlayer } from './player/PlayerContext';
 import { PlayerPage } from './player/PlayerPage';
@@ -44,6 +45,7 @@ export function Routes() {
     <BrowserRouter>
       <Router>
         <Route path="/" element={<HomePage />} />
+        <Route path="/me" element={<MePage />} />
         <Route path="/config" element={<ConfigPage />} />
         {music && <Route path="/player" element={<PlayerPage music={music} />} />}
       </Router>
