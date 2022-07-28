@@ -7,7 +7,7 @@ import { useUser } from './user/UserContext';
 export function AppRoutes() {
   const { user } = useUser();
 
-  if (!user) return <SplashScreen />;
+  if (!user) return <SignInPage />;
 
   return (
     <BrowserRouter>
