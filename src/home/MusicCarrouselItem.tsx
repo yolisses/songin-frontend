@@ -13,7 +13,9 @@ export function MusicCarrouselItem({ music }:MusicCarrouselItemProps) {
   }
 
   return (
-    <div className="flex-shrink-0 max-w-[46%] flex flex-col">
+    <div
+      className="flex-shrink-0 max-w-[46%] flex flex-col snap-start"
+    >
       <button type="button" className="rounded-lg" onClick={handleClick}>
         <img
           alt=""

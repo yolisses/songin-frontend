@@ -41,14 +41,14 @@ export function MePage() {
         <a href="#history">Histórico</a>
       </div>
       <div
-        className="flex flex-row no-scrollbar overflow-x-auto"
+        className="flex flex-row no-scrollbar overflow-x-auto snap-x snap-mandatory"
         style={{ scrollBehavior: 'smooth' }}
       >
-        <div className="w-full flex-shrink-0">
+        <div className="w-full flex-shrink-0 snap-start">
           <div className="relative -top-12" id="favorites" />
           <History />
         </div>
-        <div className="w-full flex-shrink-0">
+        <div className="w-full flex-shrink-0 snap-start">
           <div className="relative -top-12" id="history" />
           <History />
         </div>
