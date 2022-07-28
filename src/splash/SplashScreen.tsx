@@ -10,7 +10,11 @@ export function SplashScreen() {
       </div>
       <div className="flex flex-row justify-center items-center gap-1">
         <img src="logo/nano.svg" className="pb-1/2" alt="logo" width={20} />
-        <h3 className="text-2xl bg-gradient-to-tr font-mono from-blue-700 to-cyan-500 bg-clip-text text-transparent">Nano</h3>
+        <h3 className="text-2xl
+         bg-gradient-to-tr font-mono from-blue-700 to-cyan-500 bg-clip-text text-transparent"
+        >
+          Nano
+        </h3>
       </div>
     </div>
   );
