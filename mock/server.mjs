@@ -20,6 +20,11 @@ server.post('/sign-in', (req, res) => {
   });
 });
 
+server.post('/log-out', (req, res) => {
+  res.clearCookie('session_id');
+  res.end();// necessary
+});
+
 server.get('/users/me', (req, res) => {
   const sessionId = req.cookies.session_id;
   if (!sessionId) {
