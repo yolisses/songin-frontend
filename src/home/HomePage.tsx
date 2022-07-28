@@ -19,7 +19,10 @@ export function HomePage() {
   return (
     <div>
       <h1>Home page</h1>
-      <Link to="/config">go to config</Link>
+      <div className="flex flex-col">
+        <Link to="/config">go to config</Link>
+        <Link to="/player">go to player</Link>
+      </div>
       {musics && <MusicCarrousel musics={musics} title="Você vai gostar" />}
     </div>
   );

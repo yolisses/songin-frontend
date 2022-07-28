@@ -1,4 +1,6 @@
 import { Music } from '../music/Music';
+import { usePlayer } from '../player/PlayerContext';
+import { MusicCarrouselItem } from './MusicCarrouselItem';
 
 interface MusicCarrouselProps{
   title?:string
@@ -6,6 +8,12 @@ interface MusicCarrouselProps{
 }
 
 export function MusicCarrousel({ musics, title }:MusicCarrouselProps) {
+  const { setMusic } = usePlayer();
+
+  function handleClick(music:Music) {
+    setMusic(music);
+  }
+
   return (
     <div>
       {title && (
@@ -15,20 +23,7 @@ export function MusicCarrousel({ musics, title }:MusicCarrouselProps) {
       )}
       <div className="flex flex-row gap-2 px-4 overflow-x-auto no-scrollbar">
         {musics.map((music) => (
-          <div className="flex-shrink-0 max-w-[46%]">
-            <img
-              alt=""
-              className="bg-gray-300 aspect-square w-44 rounded-lg"
-              src={music.image}
-              key={music.id}
-            />
-            <div>
-              {music.name}
-            </div>
-            <div className="text-gray-700">
-              {music.artist.name}
-            </div>
-          </div>
+          <MusicCarrouselItem music={music} />
         ))}
       </div>
     </div>

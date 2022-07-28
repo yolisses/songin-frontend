@@ -4,12 +4,15 @@ import { BrowserRouter, Route, Routes as Router } from 'react-router-dom';
 import { api } from './api/api';
 import { ConfigPage } from './config/ConfigPage';
 import { HomePage } from './home/HomePage';
+import { usePlayer } from './player/PlayerContext';
+import { PlayerPage } from './player/PlayerPage';
 import { SignInPage } from './signIn/SignInPage';
 import { SplashScreen } from './splash/SplashScreen';
 import { useUser } from './user/UserContext';
 
 export function Routes() {
   const { user, setUser } = useUser();
+  const { music } = usePlayer();
 
   const [loading, setLoading] = useState(true);
 
@@ -41,6 +44,7 @@ export function Routes() {
       <Router>
         <Route path="/" element={<HomePage />} />
         <Route path="/config" element={<ConfigPage />} />
+        {music && <Route path="/player" element={<PlayerPage music={music} />} />}
       </Router>
     </BrowserRouter>
   );
