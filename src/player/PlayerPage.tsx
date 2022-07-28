@@ -49,7 +49,7 @@ export function PlayerPage({ music = {} as Music }:PlayerPageProps) {
         </div>
         <div className="h-16" />
       </div>
-      <Nav />
+      <Nav white={false} />
     </div>
   );
 }

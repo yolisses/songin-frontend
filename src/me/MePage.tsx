@@ -1,7 +1,9 @@
 import { FaBell, FaChevronRight, FaCog } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { History } from '../history/History';
 import { Nav } from '../nav/Nav';
 import { useUser } from '../user/UserContext';
+import { MusicList } from './MusicList';
 
 export function MePage() {
   const { user } = useUser();
@@ -36,7 +38,7 @@ export function MePage() {
             </button>
           </div>
         </div>
-        <div className="flex flex-row gap-4 mt-6">
+        <div className="flex flex-row gap-4 mt-6 sticky top-0 bg-white h-12">
           <button type="button">
             Favoritas
           </button>
@@ -44,6 +46,7 @@ export function MePage() {
             Histórico
           </button>
         </div>
+        <History />
       </div>
       <Nav />
     </>

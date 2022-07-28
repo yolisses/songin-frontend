@@ -1,5 +1,4 @@
 import { Music } from '../music/Music';
-import { usePlayer } from '../player/PlayerContext';
 import { MusicCarrouselItem } from './MusicCarrouselItem';
 
 interface MusicCarrouselProps{
@@ -8,12 +7,6 @@ interface MusicCarrouselProps{
 }
 
 export function MusicCarrousel({ musics, title }:MusicCarrouselProps) {
-  const { setMusic } = usePlayer();
-
-  function handleClick(music:Music) {
-    setMusic(music);
-  }
-
   return (
     <div>
       {title && (
