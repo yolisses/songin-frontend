@@ -2,6 +2,7 @@ import axios, { AxiosError } from 'axios';
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { api } from './api/api';
+import { ConfigPage } from './config/ConfigPage';
 import { HomePage } from './home/HomePage';
 import { SignInPage } from './signIn/SignInPage';
 import { SplashScreen } from './splash/SplashScreen';
@@ -39,6 +40,7 @@ export function AppRoutes() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/config" element={<ConfigPage />} />
       </Routes>
     </BrowserRouter>
   );
