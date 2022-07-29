@@ -3,9 +3,10 @@ import { FaComment, FaHeart, FaShare } from 'react-icons/fa';
 import { Nav } from '../nav/Nav';
 import { usePlayer } from './PlayerContext';
 import { useMusic } from '../music/MusicContext';
+import { LikeButton } from '../like/LikeButton';
 
 export function PlayerPage() {
-  const iconsSize = 22;
+  const iconsSize = 24;
   const music = useMusic().music || {};
   const [handling, setHandling] = useState(false);
   const { elapsed, duration, changeElapsed } = usePlayer();
@@ -52,9 +53,7 @@ export function PlayerPage() {
             </div>
           </div>
           <div className="flex flex-row gap-6">
-            <button type="button">
-              <FaHeart size={iconsSize} />
-            </button>
+            <LikeButton />
             <button type="button">
               <FaComment size={iconsSize} />
             </button>

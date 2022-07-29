@@ -37,10 +37,21 @@ html {
     from {
         transform: scaleY(50%);
     }
-
-    to {}
 }
 
 .animate-spring {
     animation: alternate infinite spring;
+}
+
+
+@keyframes explode {
+    to {
+        opacity: 0;
+        transform: scale(300%);
+    }
+}
+
+
+.animate-explode {
+    animation: explode 1s;
 }
