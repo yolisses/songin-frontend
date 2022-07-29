@@ -1,5 +1,6 @@
 import {
-  createContext, Dispatch, SetStateAction, SyntheticEvent, useContext, useRef, useState,
+  createContext, Dispatch, KeyboardEvent, SetStateAction,
+  SyntheticEvent, useContext, useEffect, useRef, useState,
 } from 'react';
 import { ChildrenProps } from '../common/ChildrenProps';
 
@@ -9,7 +10,7 @@ interface PlayerContext{
     play:()=>void
     pause:()=>void
     isPlaying:boolean
-    setElapsed:Dispatch<SetStateAction<number>>
+    changeElapsed:(value:number)=>void
     setDuration:Dispatch<SetStateAction<number>>
 }
 
@@ -42,6 +43,13 @@ export function PlayerContextProvider({ children }:ChildrenProps) {
     setIsPlaying(false);
   }
 
+  function changeElapsed(value:number) {
+    if (audio.current) {
+      audio.current.currentTime = value;
+    }
+    setElapsed(value);
+  }
+
   return (
     <playerContext.Provider value={{
       play,
@@ -49,8 +57,8 @@ export function PlayerContextProvider({ children }:ChildrenProps) {
       elapsed,
       duration,
       isPlaying,
-      setElapsed,
       setDuration,
+      changeElapsed,
     }}
     >
       <>

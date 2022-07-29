@@ -1,14 +1,28 @@
+import { ChangeEvent, useState } from 'react';
 import { FaComment, FaHeart, FaShare } from 'react-icons/fa';
-import { useMusic } from '../music/MusicContext';
 import { Nav } from '../nav/Nav';
 import { usePlayer } from './PlayerContext';
+import { useMusic } from '../music/MusicContext';
 
 export function PlayerPage() {
   const iconsSize = 22;
   const music = useMusic().music || {};
-  const {
-    elapsed, duration, play, pause,
-  } = usePlayer();
+  const [handling, setHandling] = useState(false);
+  const { elapsed, duration, changeElapsed } = usePlayer();
+  const [playerElapsed, setPlayerElapsed] = useState(0);
+
+  function handleChange(e:ChangeEvent<HTMLInputElement>) {
+    const value = Number.parseFloat(e.target.value);
+    setPlayerElapsed(value);
+    if (!handling) { setHandling(true); }
+  }
+
+  function handleChangeEnd(e:any) {
+    let { value } = e.currentTarget;
+    value = Number.parseFloat(value);
+    setHandling(false);
+    changeElapsed(value);
+  }
 
   return (
     <div className="text-white h-0">
@@ -48,7 +62,15 @@ export function PlayerPage() {
               <FaShare size={iconsSize} />
             </button>
           </div>
-          <input type="range" className="w-full cursor-pointer" value={elapsed} max={duration} />
+          <input
+            type="range"
+            max={duration}
+            onInput={handleChange}
+            onMouseUp={handleChangeEnd}
+            onTouchEnd={handleChangeEnd}
+            className="w-full cursor-pointer"
+            value={handling ? playerElapsed : elapsed}
+          />
         </div>
         <div className="h-16" />
       </div>
