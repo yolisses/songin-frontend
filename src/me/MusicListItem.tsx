@@ -1,12 +1,12 @@
 import { Music } from '../music/Music';
-import { usePlayer } from '../player/PlayerContext';
+import { useMusic } from '../music/MusicContext';
 
 interface MusicListItemProps{
     music:Music
 }
 
 export function MusicListItem({ music }:MusicListItemProps) {
-  const { setMusic } = usePlayer();
+  const { setMusic } = useMusic();
 
   function handleClick() {
     setMusic(music);

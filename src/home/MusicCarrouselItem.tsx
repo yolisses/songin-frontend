@@ -1,12 +1,12 @@
 import { Music } from '../music/Music';
-import { usePlayer } from '../player/PlayerContext';
+import { useMusic } from '../music/MusicContext';
 
 interface MusicCarrouselItemProps{
     music:Music
 }
 
 export function MusicCarrouselItem({ music }:MusicCarrouselItemProps) {
-  const { setMusic } = usePlayer();
+  const { setMusic } = useMusic();
 
   function handleClick() {
     setMusic(music);

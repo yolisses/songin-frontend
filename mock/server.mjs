@@ -11,7 +11,7 @@ server.post('/sign-in', (req, res) => {
   res.cookie('session_id', 'mock_secret_session_id', {
     secure: true,
     httpOnly: true,
-    maxAge: 7 * 24 * 60 * 60, // one week,
+    maxAge: 10000000000,
   });
   res.send({
     name: 'Ulisses',

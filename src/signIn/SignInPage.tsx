@@ -7,11 +7,11 @@ export function SignInPage() {
   return (
     <div className="overflow-hidden">
       <div
-        className="absolute -z-40 w-screen h-screen brightness-[0.6] bg-center bg-no-repeat bg-cover"
+        className="fixed top-0 -z-40 w-screen h-screen brightness-[0.6] bg-center bg-no-repeat bg-cover"
         style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1400)' }}
       />
       <div
-        className="absolute -z-50 w-screen h-screen brightness-[0.6] bg-gradient-to-tr bg-blue-900 from-[#015A86] via-blue-900 to-[#03D27F]"
+        className="fixed top-0 -z-50 w-screen h-screen brightness-[0.6] bg-gradient-to-tr bg-blue-900 from-[#015A86] via-blue-900 to-[#03D27F]"
       />
       <div className="text-white w-screen h-screen flex flex-col items-center justify-center">
         <div className="my-auto flex flex-col gap-8 items-center">

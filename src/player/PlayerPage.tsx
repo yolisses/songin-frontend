@@ -1,12 +1,15 @@
 import { FaComment, FaHeart, FaShare } from 'react-icons/fa';
-import { Music } from '../music/Music';
+import { useMusic } from '../music/MusicContext';
 import { Nav } from '../nav/Nav';
+import { usePlayer } from './PlayerContext';
 
-interface PlayerPageProps{
-  music:Music
-}
-export function PlayerPage({ music = {} as Music }:PlayerPageProps) {
+export function PlayerPage() {
   const iconsSize = 22;
+  const music = useMusic().music || {};
+  const {
+    elapsed, duration, play, pause,
+  } = usePlayer();
+
   return (
     <div className="text-white h-0">
       <div
@@ -33,6 +36,8 @@ export function PlayerPage({ music = {} as Music }:PlayerPageProps) {
             <div className="">
               {music.artist?.name}
             </div>
+            <button type="button" onClick={play}>play</button>
+            <button type="button" onClick={pause}>pause</button>
           </div>
           <div className="flex flex-row gap-6">
             <button type="button">
@@ -45,7 +50,7 @@ export function PlayerPage({ music = {} as Music }:PlayerPageProps) {
               <FaShare size={iconsSize} />
             </button>
           </div>
-          <input type="range" className="w-full cursor-pointer" />
+          <input type="range" className="w-full cursor-pointer" value={elapsed} max={duration} />
         </div>
         <div className="h-16" />
       </div>
