@@ -1,11 +1,11 @@
 import { IconType } from 'react-icons';
-import { FaBars, FaPause, FaPlay } from 'react-icons/fa';
 import { useLocation } from 'react-router';
-import { usePlayer } from '../player/PlayerContext';
+import { FaBars, FaPause, FaPlay } from 'react-icons/fa';
 import { NavButton } from './NavButton';
+import { usePlayer } from '../player/PlayerContext';
 
 export function PlayButton() {
-  const { isPlaying, pause, play } = usePlayer();
+  const { isPlaying, setIsPlaying } = usePlayer();
   const { pathname } = useLocation();
   const playerPage = pathname === '/player';
 
@@ -17,13 +17,7 @@ export function PlayButton() {
   }
 
   function handleOnClick() {
-    if (playerPage) {
-      if (isPlaying) {
-        pause();
-      } else {
-        play();
-      }
-    }
+    if (playerPage) { setIsPlaying((old) => !old); }
   }
 
   return (

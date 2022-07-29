@@ -1,5 +1,5 @@
 import {
-  createContext, Dispatch, KeyboardEvent, SetStateAction,
+  createContext, Dispatch, SetStateAction,
   SyntheticEvent, useContext, useEffect, useRef, useState,
 } from 'react';
 import { ChildrenProps } from '../common/ChildrenProps';
@@ -7,11 +7,10 @@ import { ChildrenProps } from '../common/ChildrenProps';
 interface PlayerContext{
     elapsed :number
     duration:number
-    play:()=>void
-    pause:()=>void
     isPlaying:boolean
     changeElapsed:(value:number)=>void
     setDuration:Dispatch<SetStateAction<number>>
+    setIsPlaying:Dispatch<SetStateAction<boolean>>
 }
 
 const playerContext = createContext({} as PlayerContext);
@@ -26,22 +25,9 @@ export function PlayerContextProvider({ children }:ChildrenProps) {
     setElapsed(e.currentTarget.currentTime);
     setDuration(e.currentTarget.duration);
   }
+  function handlePlay() { setIsPlaying(true); }
 
-  function pause() {
-    if (audio.current) { audio.current.pause(); }
-  }
-
-  function play() {
-    if (audio.current) { audio.current.play(); }
-  }
-
-  function handlePlay() {
-    setIsPlaying(true);
-  }
-
-  function handlePause() {
-    setIsPlaying(false);
-  }
+  function handlePause() { setIsPlaying(false); }
 
   function changeElapsed(value:number) {
     if (audio.current) {
@@ -50,14 +36,37 @@ export function PlayerContextProvider({ children }:ChildrenProps) {
     setElapsed(value);
   }
 
+  function handleKeyDown(this:any, e: globalThis.KeyboardEvent) {
+    const isSpace = e.key === ' ' || e.code === 'Space';
+    if (isSpace && e.target === this) {
+      setIsPlaying((old) => !old);
+    }
+  }
+
+  useEffect(() => {
+    document.body.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  useEffect(
+    () => {
+      if (audio.current) {
+        if (isPlaying) audio.current.play();
+        else audio.current.pause();
+      }
+    },
+    [audio, isPlaying],
+  );
+
   return (
     <playerContext.Provider value={{
-      play,
-      pause,
       elapsed,
       duration,
       isPlaying,
       setDuration,
+      setIsPlaying,
       changeElapsed,
     }}
     >

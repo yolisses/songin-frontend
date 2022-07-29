@@ -8,7 +8,12 @@ interface MusicListProps{
 export function MusicList({ musics }:MusicListProps) {
   return (
     <div className="flex flex-col">
-      {musics.map((music) => <MusicListItem music={music} />)}
+      {musics.map((music) => (
+        <MusicListItem
+          key={music.id}
+          music={music}
+        />
+      ))}
     </div>
   );
 }
