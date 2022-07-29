@@ -32,3 +32,15 @@ html {
 .debug {
     outline: 1px solid #f00 !important;
 }
+
+@keyframes spring {
+    from {
+        transform: scaleY(50%);
+    }
+
+    to {}
+}
+
+.animate-spring {
+    animation: alternate infinite spring;
+}
