@@ -8,6 +8,7 @@ interface PlayerContext{
     duration:number
     play:()=>void
     pause:()=>void
+    isPlaying:boolean
     setElapsed:Dispatch<SetStateAction<number>>
     setDuration:Dispatch<SetStateAction<number>>
 }
@@ -17,6 +18,7 @@ const playerContext = createContext({} as PlayerContext);
 export function PlayerContextProvider({ children }:ChildrenProps) {
   const [elapsed, setElapsed] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
   const audio = useRef<HTMLAudioElement>();
 
   function updateTime(e:SyntheticEvent<HTMLAudioElement, Event>) {
@@ -32,12 +34,21 @@ export function PlayerContextProvider({ children }:ChildrenProps) {
     if (audio.current) { audio.current.play(); }
   }
 
+  function handlePlay() {
+    setIsPlaying(true);
+  }
+
+  function handlePause() {
+    setIsPlaying(false);
+  }
+
   return (
     <playerContext.Provider value={{
       play,
       pause,
       elapsed,
       duration,
+      isPlaying,
       setElapsed,
       setDuration,
     }}
@@ -45,8 +56,10 @@ export function PlayerContextProvider({ children }:ChildrenProps) {
       <>
         {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
         <audio
-          controls
+          controls={false}
           ref={audio as any}
+          onPlay={handlePlay}
+          onPause={handlePause}
           onTimeUpdate={updateTime}
         >
           <source src="offline.mp3" />

@@ -36,8 +36,6 @@ export function PlayerPage() {
             <div className="">
               {music.artist?.name}
             </div>
-            <button type="button" onClick={play}>play</button>
-            <button type="button" onClick={pause}>pause</button>
           </div>
           <div className="flex flex-row gap-6">
             <button type="button">

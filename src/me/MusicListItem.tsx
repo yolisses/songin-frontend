@@ -19,7 +19,7 @@ export function MusicListItem({ music }:MusicListItemProps) {
         className="flex flex-row items-center p-1 gap-2 w-full text-start"
       >
         <img
-          className="w-12 aspect-square rounded"
+          className="w-12 aspect-square rounded bg-gray-300"
           src={music.image}
           alt=""
         />
