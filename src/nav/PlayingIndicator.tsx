@@ -25,7 +25,7 @@ export function PlayingIndicator({ playing }:PlayingIndicatorProps) {
       <div
         className="w-1 h-5 bg-black animate-spring"
         style={{
-          animationDelay: '0.2s',
+          animationDelay: '0s',
           animationDuration: '0.7s',
           animationPlayState: playState,
         }}
