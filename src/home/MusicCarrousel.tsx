@@ -10,7 +10,7 @@ export function MusicCarrousel({ musics, title }:MusicCarrouselProps) {
   return (
     <div>
       {title && (
-      <h3 className="text-2xl pb-2 pl-2">
+      <h3 className="text-xl pb-2 pl-2">
         {title}
       </h3>
       )}

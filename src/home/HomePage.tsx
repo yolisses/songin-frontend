@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { api } from '../api/api';
+import { range } from '../dev/utils/range';
 import { Music } from '../music/Music';
 import { Nav } from '../nav/Nav';
 import { MusicCarrousel } from './MusicCarrousel';
@@ -17,9 +18,12 @@ export function HomePage() {
     getMusics();
   }, []);
 
+  const repeat = range(10);
+
   return (
-    <div>
-      {musics && <MusicCarrousel musics={musics} title="Você vai gostar" />}
+    <div className="flex flex-col gap-10">
+      {musics
+      && repeat.map((value) => <MusicCarrousel musics={musics} title="Você vai gostar" />)}
       <Nav />
     </div>
   );
