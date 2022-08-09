@@ -25,7 +25,7 @@ export function PlayerPage() {
   return (
     <>
       <GradientBackground />
-      <div className="flex flex-col h-screen overflow-y-scroll no-scrollbar snap-y snap-mandatory text-white">
+      <div className="flex flex-col h-screen py-20 overflow-y-scroll no-scrollbar snap-y snap-mandatory text-white">
         {musics && musics.map((music) => (
 
           <div
