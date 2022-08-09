@@ -30,8 +30,19 @@ export function PlayerPage() {
             key={music.id}
             className="h-screen snap-start flex-shrink-0 relative"
           >
+
             <div
-              className="bottom-0 absolute w-screen"
+              className="absolute -z-40 w-screen h-screen bg-cover bg-center bg-no-repeat blur-lg scale-110"
+              style={{ backgroundImage: `url("${music.image}")` }}
+            />
+            <img
+              src={music.image}
+              alt={music.name}
+              className="mask absolute -z-30 w-screen aspect-square max-w-[100vh]
+        -translate-y-1/2 top-1/2 translate-x-1/2 right-1/2 "
+            />
+            <div
+              className="bottom-0 absolute w-screen bg-gradient-to-t from-[#000a] via-[#000a] to-transparent pt-28"
             >
               <div className="px-4 flex flex-col gap-6">
                 <div className="flex flex-col gap-2">
