@@ -56,9 +56,7 @@ export function PlayerPage() {
                   </div>
                 </div>
                 <div className="flex flex-row gap-8">
-                  <FloatingCounter count={13}>
-                    <LikeButton />
-                  </FloatingCounter>
+                  <LikeButton music={music} />
                   <FloatingCounter count={130}>
                     <button type="button">
                       <FaComment size={iconsSize} />

@@ -1,8 +1,13 @@
 import { useState } from 'react';
 import { FaHeart } from 'react-icons/fa';
+import { Music } from '../music/Music';
 import { FloatingCounter } from '../player/FloatingCounter';
 
-export function LikeButton() {
+interface LikeButtonProps{
+  music:Music
+}
+
+export function LikeButton({ music }:LikeButtonProps) {
   const [active, setActive] = useState(false);
 
   function handleClick() {
@@ -11,7 +16,7 @@ export function LikeButton() {
 
   const iconsSize = 24;
   return (
-    <div className="relative">
+    <FloatingCounter count={music?.likesCount}>
       <button
         type="button"
         onClick={handleClick}
@@ -32,7 +37,6 @@ export function LikeButton() {
           style={{ color: active ? 'red' : undefined }}
         />
       </button>
-    </div>
-
+    </FloatingCounter>
   );
 }

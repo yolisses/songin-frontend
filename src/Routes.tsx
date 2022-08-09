@@ -2,7 +2,9 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes as Router } from 'react-router-dom';
 import { api } from './api/api';
+import { CommentsPage } from './comments/CommentsPage';
 import { ConfigPage } from './config/ConfigPage';
+import { DevPage } from './dev/DevPage';
 import { HomePage } from './home/HomePage';
 import { MePage } from './me/MePage';
 import { PlayerPage } from './player/PlayerPage';
@@ -43,9 +45,11 @@ export function Routes() {
       <Router>
         <Route path="/" element={<HomePage />} />
         <Route path="/me" element={<MePage />} />
+        <Route path="/dev" element={<DevPage />} />
         <Route path="/player" element={<PlayerPage />} />
         <Route path="/config" element={<ConfigPage />} />
         <Route path="/splash" element={<SplashScreen />} />
+        <Route path="/comments" element={<CommentsPage />} />
       </Router>
     </BrowserRouter>
   );

@@ -5,4 +5,5 @@ export interface Music{
     name:string
     image:string
     artist:Artist
+    likesCount:number
 }
