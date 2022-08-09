@@ -1,35 +1,14 @@
-import { ChangeEvent, useState } from 'react';
 import { FaComment, FaShare } from 'react-icons/fa';
-import { Nav } from '../nav/Nav';
-import { usePlayer } from './PlayerContext';
 import { useMusic } from '../music/MusicContext';
 import { LikeButton } from '../like/LikeButton';
+import { PlayerRange } from './PlayerRange';
 
 export function PlayerCard() {
   const iconsSize = 24;
   const music = useMusic().music || {};
-  const [handling, setHandling] = useState(false);
-  const { elapsed, duration, changeElapsed } = usePlayer();
-  const [playerElapsed, setPlayerElapsed] = useState(0);
-
-  function handleChange(e:ChangeEvent<HTMLInputElement>) {
-    const value = Number.parseFloat(e.target.value);
-    setPlayerElapsed(value);
-    if (!handling) { setHandling(true); }
-  }
-
-  function handleChangeEnd(e:any) {
-    let { value } = e.currentTarget;
-    value = Number.parseFloat(value);
-    setHandling(false);
-    changeElapsed(value);
-  }
 
   return (
     <div className="text-white h-0">
-      <div
-        className="fixed -z-50 bg-gradient-to-tr bg-[#090542] from-[#0f5477] via-[#06032c] to-[#0d5a3b] w-screen h-screen"
-      />
       <div
         className="fixed -z-40 w-screen h-screen bg-cover bg-center bg-no-repeat blur-lg scale-110"
         style={{ backgroundImage: `url("${music.image}")` }}
@@ -61,15 +40,7 @@ export function PlayerCard() {
               <FaShare size={iconsSize} />
             </button>
           </div>
-          <input
-            type="range"
-            max={duration}
-            onInput={handleChange}
-            onMouseUp={handleChangeEnd}
-            onTouchEnd={handleChangeEnd}
-            className="w-full cursor-pointer"
-            value={handling ? playerElapsed : elapsed}
-          />
+          <PlayerRange />
         </div>
         <div className="h-16" />
       </div>
