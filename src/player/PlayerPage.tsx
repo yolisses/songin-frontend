@@ -75,7 +75,7 @@ export function PlayerPage() {
           </div>
         ))}
       </div>
-      <div className="absolute bottom-0 -z-10 w-screen h-64 bg-gradient-to-t from-[#000d] via-[#0008] to-transparent" />
+      <div className="absolute bottom-0 -z-10 w-screen h-60 bg-gradient-to-t from-[#000d] via-[#000a] to-transparent" />
       <div className="absolute bottom-0 text-white ">
         <Nav white={false} />
       </div>
