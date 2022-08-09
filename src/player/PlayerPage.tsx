@@ -4,6 +4,7 @@ import { api } from '../api/api';
 import { LikeButton } from '../like/LikeButton';
 import { Music } from '../music/Music';
 import { Nav } from '../nav/Nav';
+import { ShareButtons } from '../share/ShareButtons';
 import { FloatingCounter } from './FloatingCounter';
 import { GradientBackground } from './GradientBackground';
 import { PlayerRange } from './PlayerRange';
@@ -54,6 +55,21 @@ export function PlayerPage() {
                   <div className="">
                     {music.artist?.name}
                   </div>
+                </div>
+                <div className="flex flex-col items-start">
+                  <div className="bg-gray-500 bg-opacity-80 rounded-full flex flex-row gap-1 items-center p-1">
+                    <ShareButtons
+                      size={40}
+                      url={`https://musiks.com/music/${music.id}`}
+                    />
+                  </div>
+                  <div
+                    className="w-0 h-0 border-solid ml-[7.25rem]"
+                    style={{
+                      borderWidth: '0.5rem 0.5rem 0 0.5rem',
+                      borderColor: 'rgba(107,114,128,0.8) transparent transparent transparent',
+                    }}
+                  />
                 </div>
                 <div className="flex flex-row gap-8">
                   <LikeButton music={music} />
