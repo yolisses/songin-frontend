@@ -9,6 +9,7 @@ interface LikeButtonProps{
 
 export function LikeButton({ music }:LikeButtonProps) {
   const [active, setActive] = useState(false);
+  const add = active ? 1 : 0;
 
   function handleClick() {
     setActive((old) => !old);
@@ -16,7 +17,7 @@ export function LikeButton({ music }:LikeButtonProps) {
 
   const iconsSize = 24;
   return (
-    <FloatingCounter count={music?.likesCount}>
+    <FloatingCounter count={music.likesCount + add}>
       <button
         type="button"
         onClick={handleClick}
@@ -24,7 +25,7 @@ export function LikeButton({ music }:LikeButtonProps) {
       >
         <FaHeart
           size={iconsSize}
-          className="group-active:scale-50 transition absolute outline-none animate-explode select-none pointer-events-none"
+          className="group-active:scale-50 transition absolute focus:outline-none animate-explode select-none pointer-events-none"
           style={{
             color: 'red',
             animationName: active ? undefined : 'animate-explode',
