@@ -28,8 +28,8 @@ export function LikeButton({ music }:LikeButtonProps) {
           className="group-active:scale-50 transition absolute focus:outline-none animate-explode select-none pointer-events-none"
           style={{
             color: 'red',
-            animationName: active ? undefined : 'animate-explode',
             opacity: active ? '100%' : '0',
+            animationName: active ? undefined : 'animate-explode',
           }}
         />
         <FaHeart

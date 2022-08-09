@@ -11,6 +11,7 @@ import { PlayerRange } from './PlayerRange';
 
 export function PlayerPage() {
   const [musics, setMusics] = useState<Music[]>();
+  const [share, setShare] = useState(false);
   const iconsSize = 24;
 
   async function getMusics() {
@@ -22,18 +23,15 @@ export function PlayerPage() {
     getMusics();
   }, []);
 
-  // const musics:Music[] = [];
   return (
     <>
       <GradientBackground />
       <div className="flex flex-col h-screen py-20 overflow-y-scroll no-scrollbar snap-y snap-mandatory text-white">
         {musics && musics.map((music) => (
-
           <div
             key={music.id}
             className="h-screen w-screen overflow-hidden snap-start flex-shrink-0 relative"
           >
-
             <div
               className="absolute -z-40 w-screen h-screen bg-cover bg-center bg-no-repeat blur-lg scale-110"
               style={{ backgroundImage: `url("${music.image}")` }}
@@ -56,20 +54,25 @@ export function PlayerPage() {
                     {music.artist?.name}
                   </div>
                 </div>
-                <div className="flex flex-col items-start">
-                  <div className="bg-gray-500 bg-opacity-80 rounded-full flex flex-row gap-1 items-center p-1">
-                    <ShareButtons
-                      size={40}
-                      url={`https://musiks.com/music/${music.id}`}
+                <div className="overflow-hidden">
+                  {share
+                  && (
+                  <div className="flex flex-col items-start animate-slide-up">
+                    <div className="bg-gray-500 bg-opacity-80 rounded-full flex flex-row gap-1 items-center p-1">
+                      <ShareButtons
+                        size={40}
+                        url={`https://musiks.com/music/${music.id}`}
+                      />
+                    </div>
+                    <div
+                      className="w-0 h-0 border-solid ml-[7.25rem]"
+                      style={{
+                        borderWidth: '0.5rem 0.5rem 0 0.5rem',
+                        borderColor: 'rgba(107,114,128,0.8) transparent transparent transparent',
+                      }}
                     />
                   </div>
-                  <div
-                    className="w-0 h-0 border-solid ml-[7.25rem]"
-                    style={{
-                      borderWidth: '0.5rem 0.5rem 0 0.5rem',
-                      borderColor: 'rgba(107,114,128,0.8) transparent transparent transparent',
-                    }}
-                  />
+                  )}
                 </div>
                 <div className="flex flex-row gap-8">
                   <LikeButton music={music} />
@@ -79,7 +82,7 @@ export function PlayerPage() {
                     </button>
                   </FloatingCounter>
                   <FloatingCounter count={130}>
-                    <button type="button">
+                    <button type="button" onClick={() => setShare((value) => !value)}>
                       <FaShare size={iconsSize} />
                     </button>
                   </FloatingCounter>

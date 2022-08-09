@@ -51,7 +51,22 @@ html {
     }
 }
 
-
 .animate-explode {
     animation: explode 1s;
+}
+
+@keyframes slide-up {
+    from {
+        height: 0;
+        opacity: 0;
+    }
+
+    to {
+        height: 3.5rem;
+        opacity: 1;
+    }
+}
+
+.animate-slide-up {
+    animation: slide-up 0.15s;
 }
