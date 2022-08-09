@@ -4,6 +4,7 @@ import { api } from '../api/api';
 import { LikeButton } from '../like/LikeButton';
 import { Music } from '../music/Music';
 import { Nav } from '../nav/Nav';
+import { FloatingCounter } from './FloatingCounter';
 import { GradientBackground } from './GradientBackground';
 import { PlayerRange } from './PlayerRange';
 
@@ -46,7 +47,7 @@ export function PlayerPage() {
               className="bottom-0 absolute w-screen"
             >
               <div className="px-4 flex flex-col gap-4">
-                <div className="flex flex-col">
+                <div className="flex flex-col pb-2">
                   <div className="text-xl">
                     {music.name}
                   </div>
@@ -54,14 +55,20 @@ export function PlayerPage() {
                     {music.artist?.name}
                   </div>
                 </div>
-                <div className="flex flex-row gap-6">
-                  <LikeButton />
-                  <button type="button">
-                    <FaComment size={iconsSize} />
-                  </button>
-                  <button type="button">
-                    <FaShare size={iconsSize} />
-                  </button>
+                <div className="flex flex-row gap-8">
+                  <FloatingCounter count={13}>
+                    <LikeButton />
+                  </FloatingCounter>
+                  <FloatingCounter count={130}>
+                    <button type="button">
+                      <FaComment size={iconsSize} />
+                    </button>
+                  </FloatingCounter>
+                  <FloatingCounter count={130}>
+                    <button type="button">
+                      <FaShare size={iconsSize} />
+                    </button>
+                  </FloatingCounter>
                 </div>
                 <PlayerRange />
               </div>
