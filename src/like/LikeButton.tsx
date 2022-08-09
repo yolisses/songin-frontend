@@ -5,7 +5,6 @@ export function LikeButton() {
   const [active, setActive] = useState(false);
 
   function handleClick() {
-    console.log('here', active);
     setActive((old) => !old);
   }
 
@@ -14,11 +13,11 @@ export function LikeButton() {
     <button
       type="button"
       onClick={handleClick}
-      className="group"
+      className="group relative"
     >
       <FaHeart
         size={iconsSize}
-        className="group-active:scale-50 transition absolute animate-explode select-none pointer-events-none"
+        className="group-active:scale-50 transition absolute outline-none animate-explode select-none pointer-events-none"
         style={{
           color: 'red',
           animationName: active ? undefined : 'animate-explode',
