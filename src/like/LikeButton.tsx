@@ -25,8 +25,8 @@ export function LikeButton() {
         }}
       />
       <FaHeart
-        className="group-active:scale-50 transition"
         size={iconsSize}
+        className="group-active:scale-50 transition"
         style={{ color: active ? 'red' : undefined }}
       />
     </button>

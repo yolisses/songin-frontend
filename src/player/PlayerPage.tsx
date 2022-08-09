@@ -20,6 +20,7 @@ export function PlayerPage() {
     getMusics();
   }, []);
 
+  // const musics:Music[] = [];
   return (
     <>
       <GradientBackground />
@@ -28,7 +29,7 @@ export function PlayerPage() {
 
           <div
             key={music.id}
-            className="h-screen snap-start flex-shrink-0 relative"
+            className="h-screen w-screen overflow-hidden snap-start flex-shrink-0 relative"
           >
 
             <div
@@ -42,10 +43,10 @@ export function PlayerPage() {
         -translate-y-1/2 top-1/2 translate-x-1/2 right-1/2 "
             />
             <div
-              className="bottom-0 absolute w-screen bg-gradient-to-t from-[#000a] via-[#000a] to-transparent pt-28"
+              className="bottom-0 absolute w-screen"
             >
-              <div className="px-4 flex flex-col gap-6">
-                <div className="flex flex-col gap-2">
+              <div className="px-4 flex flex-col gap-4">
+                <div className="flex flex-col">
                   <div className="text-xl">
                     {music.name}
                   </div>
@@ -69,7 +70,8 @@ export function PlayerPage() {
           </div>
         ))}
       </div>
-      <div className="text-white absolute bottom-0">
+      <div className="absolute bottom-0 -z-10 w-screen h-72 bg-gradient-to-t from-[#000d] to-transparent" />
+      <div className="absolute bottom-0 text-white ">
         <Nav white={false} />
       </div>
     </>
