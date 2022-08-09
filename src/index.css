@@ -40,14 +40,14 @@ html {
 }
 
 .animate-spring {
-    animation: alternate infinite spring;
+    animation: alternate infinite spring linear;
 }
 
 
 @keyframes explode {
     to {
         opacity: 0;
-        transform: scale(300%);
+        transform: scale(250%);
     }
 }
 
