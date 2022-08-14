@@ -41,7 +41,6 @@ export function CommentsPage() {
             <div>
               {comment.text}
             </div>
-
             {!!comment.repliesCount
             && (
             <button type="button" className="text-sm opacity-50 flex flex-row gap-1 items-center pt-1">

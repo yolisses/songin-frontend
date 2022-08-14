@@ -1,14 +1,19 @@
 import { Link } from 'react-router-dom';
 import { FaBell, FaChevronRight, FaCog } from 'react-icons/fa';
+import { useState } from 'react';
 import { Nav } from '../nav/Nav';
 import { History } from '../history/History';
 import { useUser } from '../user/UserContext';
+import { TabsContainer } from '../common/TabsContainer';
+import { useTab } from '../common/useTab';
 
 export function MePage() {
   const { user } = useUser();
+  const { tab, tabClick } = useTab();
+
   const iconSize = 22;
   return (
-    <div className="">
+    <div className="flex flex-col w-full">
       <div className="flex flex-row items-center gap-2 p-2">
         <img
           src={user.image}
@@ -39,22 +44,16 @@ export function MePage() {
         </div>
       </div>
       <div className="sticky top-0 flex flex-row gap-4 bg-white h-12 items-center">
-        <a href="#favorites">Favoritas</a>
-        <a href="#history">Histórico</a>
+        <button onClick={tabClick(0)} type="button">Favoritas</button>
+        <button onClick={tabClick(1)} type="button">Histórico</button>
       </div>
-      <div
-        className="flex flex-row no-scrollbar overflow-x-auto snap-x snap-mandatory"
-        style={{ scrollBehavior: 'smooth' }}
-      >
-        <div className="w-full flex-shrink-0 snap-start">
-          <div className="relative -top-12" id="favorites" />
+      <div className="w-full flex flex-col">
+        <TabsContainer selected={tab}>
           <History />
-        </div>
-        <div className="w-full flex-shrink-0 snap-start">
-          <div className="relative -top-12" id="history" />
-          <History />
-        </div>
+          <div>teste</div>
+        </TabsContainer>
       </div>
+
       <Nav />
     </div>
 
