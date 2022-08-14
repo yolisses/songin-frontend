@@ -1,21 +1,10 @@
-import { useEffect, useState } from 'react';
 import { Nav } from '../nav/Nav';
-import { api } from '../api/api';
-import { Music } from '../music/Music';
 import { PlayerCard } from './PlayerCard';
+import { useMusics } from '../music/MusicsContext';
 import { GradientBackground } from './GradientBackground';
 
 export function PlayerPage() {
-  const [musics, setMusics] = useState<Music[]>();
-
-  async function getMusics() {
-    const res = await api.get('/musics');
-    setMusics(res.data);
-  }
-
-  useEffect(() => {
-    getMusics();
-  }, []);
+  const { musics } = useMusics();
 
   return (
     <>

@@ -5,6 +5,7 @@ import {
 import { LikeButton } from '../like/LikeButton';
 import { useMusic } from '../music/MusicContext';
 import { useMd } from '../responsive/useMd';
+import { PlayerModal } from './PlayerModal';
 import { PlayerRange } from './PlayerRange';
 
 export function PlayerBar() {
@@ -14,7 +15,7 @@ export function PlayerBar() {
 
   return (
     <div className="h-16 mt-2">
-      <div className="fixed w-full bottom-0 pt-1 z-10 h-16 bg-red-500 flex flex-row justify-between items-center">
+      <div className="fixed w-full bottom-0 pt-1 z-10 h-16 bg-white flex flex-row justify-between items-center">
         <div className="absolute -top-2.5 w-full">
           <PlayerRange />
         </div>
@@ -29,7 +30,7 @@ export function PlayerBar() {
             <FaStepForward />
           </button>
         </div>
-        <div className="flex flex-row gap-2 max-w-md w-full bg-blue-500 mr-28 ">
+        <div className="flex flex-row gap-2 max-w-md w-full mr-28 ">
           <img
             alt={music.name}
             src={music.image}
@@ -43,7 +44,7 @@ export function PlayerBar() {
               {music.artist.name}
             </div>
           </div>
-          <div className="flex flex-row items-center">
+          <div className="flex flex-row items-center ml-auto">
             <LikeButton music={music} />
           </div>
         </div>
@@ -52,6 +53,7 @@ export function PlayerBar() {
             <FaRedo />
           </button>
         </div>
+        <PlayerModal music={music} />
       </div>
     </div>
   );
