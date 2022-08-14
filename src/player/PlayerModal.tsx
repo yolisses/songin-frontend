@@ -8,14 +8,22 @@ export function PlayerModal() {
   if (!music) return null;
 
   return (
-    <div className="flex flex-row overflow-y-hidden h-screen">
+    <div className="flex flex-row overflow-y-hidden h-screen text-white">
       <GradientBackground />
-      <img
-        alt={music.name}
-        src={music.image}
-        className="h-full aspect-square p-32"
-      />
-      <div className="mb-16 overflow-auto flex-1">
+      <div className="absolute -z-10 w-screen h-screen overflow-hidden">
+        <div
+          className="w-screen h-screen brightness-50 bg-center bg-no-repeat bg-cover blur-[100px] scale-[2] overflow-hidden"
+          style={{ backgroundImage: `url("${music.image}")` }}
+        />
+      </div>
+      <div className="flex-1 flex items-center justify-center p-10">
+        <img
+          alt={music.name}
+          src={music.image}
+          className="aspect-square w-full max-w-[400px]"
+        />
+      </div>
+      <div className="mb-20 overflow-auto flex-1 max-w-md">
         <NextMusics />
       </div>
     </div>

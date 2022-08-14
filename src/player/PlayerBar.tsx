@@ -22,7 +22,7 @@ export function PlayerBar() {
   return (
     <div className="h-16 mt-2">
       {modalActive && (
-      <div className="fixed bottom-0 w-screen h-screen bg-white animate-appear">
+      <div className="fixed bottom-0 w-screen h-screen animate-appear">
         <PlayerModal />
       </div>
       )}
@@ -32,7 +32,11 @@ export function PlayerBar() {
       <button
         type="button"
         onClick={handleClick}
-        className="fixed w-full z-10 bottom-0 h-16 bg-white flex flex-row justify-between items-center"
+        style={{
+          color: modalActive ? 'white' : undefined,
+          backgroundColor: modalActive ? undefined : 'white',
+        }}
+        className="fixed w-full z-10 bottom-0 h-16 duration-100 transition-colors flex flex-row justify-between items-center"
       >
         <div className="flex flex-row items-center text-lg p-1 gap-4 ">
           <button type="button" className="p-2 rounded-full ">
@@ -45,11 +49,15 @@ export function PlayerBar() {
             <FaStepForward />
           </button>
         </div>
-        <div className="flex flex-row gap-2 max-w-md w-full mr-28 ">
+        <div className="flex flex-row gap-2 max-w-md w-full mr-28 items-center">
           <img
             alt={music.name}
             src={music.image}
-            className="aspect-square h-14 rounded"
+            className="aspect-square h-14 rounded transition-all duration-[0.4s]"
+            style={{
+              height: modalActive ? 0 : undefined,
+              opacity: modalActive ? 0 : undefined,
+            }}
           />
           <div>
             <div className="font-semibold">

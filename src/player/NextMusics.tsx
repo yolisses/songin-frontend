@@ -1,4 +1,3 @@
-import { MusicList } from '../me/MusicList';
 import { MusicListItem } from '../me/MusicListItem';
 import { useMusics } from '../music/MusicsContext';
 
@@ -9,7 +8,7 @@ export function NextMusics() {
 
   return (
     <>
-      { musics.concat(musics).map((music) => (
+      { musics.map((music) => (
         <MusicListItem
           key={music.id}
           music={music}

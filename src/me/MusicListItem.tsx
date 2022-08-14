@@ -24,7 +24,7 @@ export function MusicListItem({ music }:MusicListItemProps) {
       />
       <div>
         <div>{music.name}</div>
-        <div className="text-sm text-gray-500">{music.artist?.name}</div>
+        <div className="text-sm text-white text-opacity-70">{music.artist?.name}</div>
       </div>
     </button>
   );

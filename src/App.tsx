@@ -10,7 +10,7 @@ export function App() {
       <MusicsContextProvider>
         <PlayerContextProvider>
           <Routes />
-          {/* <PlayerBar /> */}
+          <PlayerBar />
         </PlayerContextProvider>
       </MusicsContextProvider>
     </UserContextProvider>
