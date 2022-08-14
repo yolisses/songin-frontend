@@ -4,12 +4,12 @@ import { useState } from 'react';
 import { Nav } from '../nav/Nav';
 import { History } from '../history/History';
 import { useUser } from '../user/UserContext';
-import { TabsContainer } from '../common/TabsContainer';
-import { useTab } from '../common/useTab';
+import { TabsContainer } from '../tab/TabsContainer';
+import { TabButtons } from '../tab/TabButtons';
 
 export function MePage() {
   const { user } = useUser();
-  const { tab, tabClick } = useTab();
+  const [tab, setTab] = useState(0);
 
   const iconSize = 22;
   return (
@@ -43,9 +43,13 @@ export function MePage() {
           </Link>
         </div>
       </div>
-      <div className="sticky top-0 flex flex-row gap-4 bg-white h-12 items-center">
-        <button onClick={tabClick(0)} type="button">Favoritas</button>
-        <button onClick={tabClick(1)} type="button">Histórico</button>
+      <div className="sticky top-0 flex flex-row bg-white h-12 items-center">
+        <TabButtons
+          tab={tab}
+          setTab={setTab}
+          labels={['Favoritas', 'Histórico']}
+        />
+
       </div>
       <div className="w-full flex flex-col">
         <TabsContainer selected={tab}>
