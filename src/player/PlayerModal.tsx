@@ -1,5 +1,4 @@
 import { useMusics } from '../music/MusicsContext';
-import { GradientBackground } from './GradientBackground';
 import { NextMusics } from './NextMusics';
 
 export function PlayerModal() {

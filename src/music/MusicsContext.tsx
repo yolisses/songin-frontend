@@ -19,7 +19,7 @@ export function MusicsContextProvider({ children }:ChildrenProps) {
   const [music, setMusic] = useState<Music>();
 
   async function getMusics() {
-    const res = await api.get('/musics');
+    const res = await api.get('/musics?_embed=artists');
     setMusics(res.data);
   }
 

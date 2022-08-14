@@ -12,6 +12,8 @@ export function MusicCarrouselItem({ music }:MusicCarrouselItemProps) {
     setMusic(music);
   }
 
+  console.log(music);
+
   return (
     <div
       className="flex-shrink-0 max-w-[46%] flex flex-col relative"
@@ -29,7 +31,7 @@ export function MusicCarrouselItem({ music }:MusicCarrouselItemProps) {
         {music.name}
       </button>
       <button type="button" className="text-gray-700 hover:underline">
-        {music.artist.name}
+        {music.artist?.name}
       </button>
     </div>
   );

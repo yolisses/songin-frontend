@@ -11,270 +11,185 @@
       "image": "https://picsum.photos/id/321/96/96"
     }
   ],
+  "comments": [],
+  "artists": [
+    {
+      "id": 0,
+      "name": "Coldplay",
+      "image": "https://picsum.photos/id/32/200/200"
+    }
+  ],
   "musics": [
     {
       "id": 0,
       "name": "Offline",
       "image": "/offline.webp",
       "likesCount": 100,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/32/200/200"
-      }
+      "artistId": 0
     },
     {
       "id": 1,
       "name": "Sky full of stars",
       "image": "https://picsum.photos/id/82/200/200",
       "likesCount": 43,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/32/200/200"
-      }
+      "artistId": 0
     },
     {
       "id": 2,
       "name": "Sky full of stars",
       "image": "https://picsum.photos/id/543/200/200",
       "likesCount": 100,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/52/200/200"
-      }
+      "artistId": 0
     },
     {
       "id": 3,
       "name": "Sky full of stars",
       "image": "https://picsum.photos/id/94/200/200",
       "likesCount": 543,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/84/200/200"
-      }
+      "artistId": 0
     },
     {
       "id": 4,
       "name": "Sky full of stars",
       "image": "https://picsum.photos/id/84/200/200",
       "likesCount": 100,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/32/200/200"
-      }
+      "artistId": 0
     },
     {
       "id": 5,
       "name": "Sky full of stars",
       "image": "https://picsum.photos/id/423/200/200",
       "likesCount": 4320043,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/32/200/200"
-      }
+      "artistId": 0
     },
     {
       "id": 6,
       "name": "Sky full of stars",
       "image": "https://picsum.photos/id/675/200/200",
       "likesCount": 2034032,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/32/200/200"
-      }
+      "artistId": 0
     },
     {
       "id": 7,
       "name": "Sky full of stars",
       "image": "https://picsum.photos/id/726/200/200",
       "likesCount": 100,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/32/200/200"
-      }
+      "artistId": 0
     },
     {
       "id": 8,
       "name": "Sky full of stars",
       "image": "https://picsum.photos/id/662/200/200",
       "likesCount": 4302034,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/32/200/200"
-      }
+      "artistId": 0
     },
     {
       "id": 9,
       "name": "Sky full of stars",
       "image": "https://picsum.photos/id/842/200/200",
       "likesCount": 321,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/32/200/200"
-      }
+      "artistId": 0,
+      "artists": [
+        0
+      ]
     },
     {
       "id": 10,
       "name": "Sky full of stars",
       "image": "https://picsum.photos/id/421/200/200",
       "likesCount": 100,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/32/200/200"
-      }
+      "artistId": 0
     },
     {
       "id": 11,
       "name": "Sky full of stars",
       "image": "https://picsum.photos/id/665/200/200",
       "likesCount": 100,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/32/200/200"
-      }
+      "artistId": 0
     },
     {
       "id": 12,
       "name": "Offline",
       "image": "/offline.webp",
       "likesCount": 100,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/32/200/200"
-      }
+      "artistId": 0
     },
     {
       "id": 13,
       "name": "Sky full of stars",
       "image": "https://picsum.photos/id/82/200/200",
       "likesCount": 43,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/32/200/200"
-      }
+      "artistId": 0
     },
     {
       "id": 14,
       "name": "Sky full of stars",
       "image": "https://picsum.photos/id/83/200/200",
       "likesCount": 100,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/52/200/200"
-      }
+      "artistId": 0
     },
     {
       "id": 15,
       "name": "Sky full of stars",
       "image": "https://picsum.photos/id/85/200/200",
       "likesCount": 543,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/84/200/200"
-      }
+      "artistId": 0
     },
     {
       "id": 16,
       "name": "Sky full of stars",
       "image": "https://picsum.photos/id/95/200/200",
       "likesCount": 100,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/32/200/200"
-      }
+      "artistId": 0
     },
     {
       "id": 17,
       "name": "Sky full of stars",
       "image": "https://picsum.photos/id/87/200/200",
       "likesCount": 4320043,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/32/200/200"
-      }
+      "artistId": 0
     },
     {
       "id": 18,
       "name": "Sky full of stars",
       "image": "https://picsum.photos/id/88/200/200",
       "likesCount": 2034032,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/32/200/200"
-      }
+      "artistId": 0
     },
     {
       "id": 19,
       "name": "Sky full of stars",
       "image": "https://picsum.photos/id/89/200/200",
       "likesCount": 100,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/32/200/200"
-      }
+      "artistId": 0
     },
     {
       "id": 20,
       "name": "Sky full of stars",
       "image": "https://picsum.photos/id/90/200/200",
       "likesCount": 4302034,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/32/200/200"
-      }
+      "artistId": 0
     },
     {
       "id": 21,
       "name": "Sky full of stars",
       "image": "https://picsum.photos/id/91/200/200",
       "likesCount": 321,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/32/200/200"
-      }
+      "artistId": 0
     },
     {
       "id": 22,
       "name": "Sky full of stars",
       "image": "https://picsum.photos/id/92/200/200",
       "likesCount": 100,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/32/200/200"
-      }
+      "artistId": 0
     },
     {
       "id": 23,
       "name": "Sky full of stars",
       "image": "https://picsum.photos/id/93/200/200",
       "likesCount": 100,
-      "artist": {
-        "id": 0,
-        "name": "Coldplay",
-        "image": "https://picsum.photos/id/32/200/200"
-      }
+      "artistId": 0
     }
   ]
 }

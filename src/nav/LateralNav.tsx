@@ -1,6 +1,7 @@
 import {
   FaHeart, FaHistory, FaHome, FaSearch, FaUser,
 } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import { useMd } from '../responsive/useMd';
 
 export function LateralNav() {
@@ -15,10 +16,10 @@ export function LateralNav() {
           <img alt="logo" src="logo/gradient.svg" className="aspect-square w-5" />
           Musikz
         </div>
-        <button type="button" className="flex flex-row items-center gap-2 p-2 hover:bg-gray-100 rounded-lg">
+        <Link to="/" className="flex flex-row items-center gap-2 p-2 hover:bg-gray-100 rounded-lg">
           <FaHome />
           Início
-        </button>
+        </Link>
         <button type="button" className="flex flex-row items-center gap-2 p-2 hover:bg-gray-100 rounded-lg">
           <FaSearch />
           Pesquisar
@@ -31,10 +32,10 @@ export function LateralNav() {
           <FaHistory />
           Histórico
         </button>
-        <button type="button" className="flex flex-row items-center gap-2 p-2 hover:bg-gray-100 rounded-lg">
+        <Link to="/me" className="flex flex-row items-center gap-2 p-2 hover:bg-gray-100 rounded-lg">
           <FaUser />
           Perfil
-        </button>
+        </Link>
       </div>
     </>
   );

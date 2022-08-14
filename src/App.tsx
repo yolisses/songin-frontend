@@ -10,10 +10,7 @@ export function App() {
     <UserContextProvider>
       <MusicsContextProvider>
         <PlayerContextProvider>
-          <div className="flex flex-row overflow-x-hidden">
-            <LateralNav />
-            <Routes />
-          </div>
+          <Routes />
           <PlayerBar />
         </PlayerContextProvider>
       </MusicsContextProvider>

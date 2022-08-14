@@ -7,6 +7,7 @@ import { ConfigPage } from './config/ConfigPage';
 import { DevPage } from './dev/DevPage';
 import { HomePage } from './home/HomePage';
 import { MePage } from './me/MePage';
+import { LateralNav } from './nav/LateralNav';
 import { PlayerPage } from './player/PlayerPage';
 import { SignInPage } from './signIn/SignInPage';
 import { SplashScreen } from './splash/SplashScreen';
@@ -42,15 +43,18 @@ export function Routes() {
 
   return (
     <BrowserRouter>
-      <Router>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/me" element={<MePage />} />
-        <Route path="/dev" element={<DevPage />} />
-        <Route path="/player" element={<PlayerPage />} />
-        <Route path="/config" element={<ConfigPage />} />
-        <Route path="/splash" element={<SplashScreen />} />
-        <Route path="/comments" element={<CommentsPage />} />
-      </Router>
+      <div className="flex flex-row overflow-x-hidden">
+        <LateralNav />
+        <Router>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/me" element={<MePage />} />
+          <Route path="/dev" element={<DevPage />} />
+          <Route path="/player" element={<PlayerPage />} />
+          <Route path="/config" element={<ConfigPage />} />
+          <Route path="/splash" element={<SplashScreen />} />
+          <Route path="/comments" element={<CommentsPage />} />
+        </Router>
+      </div>
     </BrowserRouter>
   );
 }

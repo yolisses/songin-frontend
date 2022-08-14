@@ -47,7 +47,7 @@ server.use(
 );
 
 server.use(
-  jsonServer.router('mock/db.json'),
+  jsonServer.router('mock/db.json', { foreignKeySuffix: 'Id' }),
 );
 
 const port = 3004;

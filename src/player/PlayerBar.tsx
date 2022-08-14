@@ -64,7 +64,7 @@ export function PlayerBar() {
               {music.name}
             </div>
             <div>
-              {music.artist.name}
+              {music.artist?.name}
             </div>
           </div>
           <div className="flex flex-row items-center ml-auto">

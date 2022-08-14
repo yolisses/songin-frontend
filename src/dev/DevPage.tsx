@@ -1,9 +1,7 @@
-import { PlayerModal } from '../player/PlayerModal';
-import { displayNumber } from '../utils/displayNumber';
-import { range } from './utils/range';
+import { CommentsPage } from '../comments/CommentsPage';
 
 export function DevPage() {
   return (
-    <PlayerModal />
+    <CommentsPage />
   );
 }
