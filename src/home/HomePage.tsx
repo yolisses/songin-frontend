@@ -10,7 +10,11 @@ export function HomePage() {
   const [musics, setMusics] = useState<Music[]>();
 
   async function getMusics() {
-    const res = await api.get('/musics');
+    const res = await api.get('/musics', {
+      params: {
+        _expand: 'artist',
+      },
+    });
     setMusics(res.data);
   }
 
