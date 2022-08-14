@@ -43,6 +43,7 @@ server.use(
   jsonServer.rewriter({
     '/users/me': '/users/0',
     '/musics/history': '/musics?_expand=artist',
+    '/musics/favorites': '/musics?_expand=artist&liked=true',
   }),
 );
 

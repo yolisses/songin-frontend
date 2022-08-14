@@ -7,6 +7,7 @@ import { ConfigPage } from './config/ConfigPage';
 import { DevPage } from './dev/DevPage';
 import { History } from './history/History';
 import { HomePage } from './home/HomePage';
+import { Favorites } from './like/Favorites';
 import { MePage } from './me/MePage';
 import { LateralNav } from './nav/LateralNav';
 import { PlayerPage } from './player/PlayerPage';
@@ -54,6 +55,7 @@ export function Routes() {
           <Route path="/player" element={<PlayerPage />} />
           <Route path="/config" element={<ConfigPage />} />
           <Route path="/splash" element={<SplashScreen />} />
+          <Route path="/favorites" element={<Favorites />} />
           <Route path="/comments" element={<CommentsPage />} />
         </Router>
       </div>

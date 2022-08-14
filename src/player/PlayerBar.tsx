@@ -30,7 +30,6 @@ export function PlayerBar() {
         <PlayerRange />
       </div>
       <button
-
         onClick={handleClick}
         style={{
           color: modalActive ? 'white' : undefined,
@@ -68,7 +67,7 @@ export function PlayerBar() {
             </div>
           </div>
           <div className="flex flex-row items-center ml-auto">
-            <LikeButton music={music} />
+            <LikeButton music={music} alreadyLiked={music.liked} />
           </div>
         </div>
         <div className="text-lg">

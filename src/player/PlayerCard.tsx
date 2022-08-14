@@ -57,7 +57,7 @@ export function PlayerCard({ music }:PlayerCardProps) {
             )}
           </div>
           <div className="flex flex-row gap-8">
-            <LikeButton music={music} />
+            <LikeButton music={music} alreadyLiked={music.liked} />
             <FloatingCounter count={130}>
               <button>
                 <FaComment size={iconsSize} />
@@ -65,7 +65,6 @@ export function PlayerCard({ music }:PlayerCardProps) {
             </FloatingCounter>
             <FloatingCounter count={130}>
               <button
-
                 onClick={handleShareClick}
                 className="active:scale-50 transition"
               >

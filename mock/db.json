@@ -76,6 +76,7 @@
   "musics": [
     {
       "id": 0,
+      "liked": true,
       "name": "Offline",
       "artistId": 0,
       "duration": 216,
@@ -84,6 +85,7 @@
     },
     {
       "id": 1,
+      "liked": true,
       "name": "Sky full of stars",
       "artistId": 0,
       "duration": 216,
@@ -92,6 +94,7 @@
     },
     {
       "id": 2,
+      "liked": false,
       "name": "Sky full of stars",
       "artistId": 0,
       "duration": 216,
@@ -100,6 +103,7 @@
     },
     {
       "id": 3,
+      "liked": true,
       "name": "Sky full of stars",
       "artistId": 0,
       "duration": 216,
@@ -108,6 +112,7 @@
     },
     {
       "id": 4,
+      "liked": true,
       "name": "Sky full of stars",
       "artistId": 0,
       "duration": 216,
@@ -116,6 +121,7 @@
     },
     {
       "id": 5,
+      "liked": false,
       "name": "Sky full of stars",
       "artistId": 0,
       "duration": 216,
@@ -124,6 +130,7 @@
     },
     {
       "id": 6,
+      "liked": true,
       "name": "Sky full of stars",
       "artistId": 0,
       "duration": 216,
@@ -132,6 +139,7 @@
     },
     {
       "id": 7,
+      "liked": true,
       "name": "Sky full of stars",
       "artistId": 0,
       "duration": 216,
@@ -140,6 +148,7 @@
     },
     {
       "id": 8,
+      "liked": false,
       "name": "Sky full of stars",
       "artistId": 0,
       "duration": 216,
@@ -148,6 +157,7 @@
     },
     {
       "id": 9,
+      "liked": true,
       "name": "Sky full of stars",
       "artistId": 0,
       "duration": 216,
@@ -156,6 +166,7 @@
     },
     {
       "id": 10,
+      "liked": true,
       "name": "Sky full of stars",
       "artistId": 0,
       "duration": 216,
@@ -164,6 +175,7 @@
     },
     {
       "id": 11,
+      "liked": false,
       "name": "Sky full of stars",
       "artistId": 0,
       "duration": 216,
@@ -172,6 +184,7 @@
     },
     {
       "id": 12,
+      "liked": false,
       "name": "Offline",
       "artistId": 0,
       "duration": 216,
@@ -180,6 +193,7 @@
     },
     {
       "id": 13,
+      "liked": false,
       "name": "Sky full of stars",
       "artistId": 0,
       "duration": 216,
@@ -188,6 +202,7 @@
     },
     {
       "id": 14,
+      "liked": true,
       "name": "Sky full of stars",
       "artistId": 0,
       "duration": 216,
@@ -196,6 +211,7 @@
     },
     {
       "id": 15,
+      "liked": true,
       "name": "Sky full of stars",
       "artistId": 0,
       "duration": 216,
@@ -204,6 +220,7 @@
     },
     {
       "id": 16,
+      "liked": true,
       "name": "Sky full of stars",
       "artistId": 0,
       "duration": 216,
@@ -212,6 +229,7 @@
     },
     {
       "id": 17,
+      "liked": true,
       "name": "Sky full of stars",
       "artistId": 0,
       "duration": 216,
@@ -220,6 +238,7 @@
     },
     {
       "id": 18,
+      "liked": true,
       "name": "Sky full of stars",
       "artistId": 0,
       "duration": 216,
@@ -228,6 +247,7 @@
     },
     {
       "id": 19,
+      "liked": false,
       "name": "Sky full of stars",
       "artistId": 0,
       "duration": 216,
@@ -236,6 +256,7 @@
     },
     {
       "id": 20,
+      "liked": true,
       "name": "Sky full of stars",
       "artistId": 0,
       "duration": 216,
@@ -244,6 +265,7 @@
     },
     {
       "id": 21,
+      "liked": true,
       "name": "Sky full of stars",
       "artistId": 0,
       "duration": 216,
@@ -252,6 +274,7 @@
     },
     {
       "id": 22,
+      "liked": true,
       "name": "Sky full of stars",
       "artistId": 0,
       "duration": 216,
@@ -260,6 +283,7 @@
     },
     {
       "id": 23,
+      "liked": false,
       "name": "Sky full of stars",
       "artistId": 0,
       "duration": 216,

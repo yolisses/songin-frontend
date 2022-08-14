@@ -1,19 +1,28 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaHeart } from 'react-icons/fa';
 import { Music } from '../music/Music';
 import { FloatingCounter } from '../player/FloatingCounter';
 
 interface LikeButtonProps{
   music:Music
+  alreadyLiked:boolean
 }
 
-export function LikeButton({ music }:LikeButtonProps) {
-  const [active, setActive] = useState(false);
+export function LikeButton({ music, alreadyLiked }:LikeButtonProps) {
+  const [active, setActive] = useState(alreadyLiked);
+  const [animate, setAnimate] = useState(false);
   const add = active ? 1 : 0;
 
   function handleClick() {
-    setActive((old) => !old);
+    setActive((old) => {
+      setAnimate(!old);
+      return !old;
+    });
   }
+
+  useEffect(() => {
+    setActive(alreadyLiked);
+  }, [alreadyLiked]);
 
   const iconsSize = 24;
   return (
@@ -27,8 +36,8 @@ export function LikeButton({ music }:LikeButtonProps) {
           className="group-active:scale-50 transition absolute focus:outline-none animate-explode select-none pointer-events-none"
           style={{
             color: 'red',
-            opacity: active ? '100%' : '0',
-            animationName: active ? undefined : 'animate-explode',
+            opacity: animate ? '100%' : '0',
+            animationName: animate ? undefined : 'animate-explode',
           }}
         />
         <FaHeart

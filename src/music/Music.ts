@@ -4,6 +4,7 @@ export interface Music{
     id:number
     name:string
     image:string
+    liked:boolean
     artist:Artist
     duration:number // seconds
     likesCount:number

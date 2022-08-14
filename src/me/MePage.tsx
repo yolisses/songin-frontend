@@ -6,6 +6,7 @@ import { History } from '../history/History';
 import { useUser } from '../user/UserContext';
 import { TabsContainer } from '../tab/TabsContainer';
 import { TabButtons } from '../tab/TabButtons';
+import { Favorites } from '../like/Favorites';
 
 export function MePage() {
   const { user } = useUser();
@@ -51,7 +52,7 @@ export function MePage() {
       </div>
       <div className="w-full flex flex-col">
         <TabsContainer selected={tab}>
-          <div>teste</div>
+          <Favorites />
           <History />
         </TabsContainer>
       </div>
