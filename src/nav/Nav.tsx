@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import { FaHome, FaUser } from 'react-icons/fa';
-import { useMediaQuery } from 'react-responsive';
+import { useMd } from '../responsive/useMd';
 import { NavButton } from './NavButton';
 import { PlayButton } from './PlayButton';
 
@@ -10,7 +10,7 @@ interface NavProps{
 }
 
 export function Nav({ white = true, spacer = true }:NavProps) {
-  const md = useMediaQuery({ query: '(min-width: 768px)' });
+  const md = useMd();
   if (md) {
     return <></>;
   }
