@@ -6,6 +6,8 @@ import { PlayerRange } from './PlayerRange';
 import { LikeButton } from '../like/LikeButton';
 import { FloatingCounter } from './FloatingCounter';
 import { ShareButtons } from '../share/ShareButtons';
+import { ShareButton } from '../share/ShareButton';
+import { ShareBallon } from '../share/ShareBallon';
 
 interface PlayerCardProps{
     music:Music
@@ -14,10 +16,6 @@ interface PlayerCardProps{
 export function PlayerCard({ music }:PlayerCardProps) {
   const [share, setShare] = useState(false);
   const iconsSize = 24;
-
-  function handleShareClick() {
-    setShare((value) => !value);
-  }
 
   return (
     <div
@@ -47,14 +45,7 @@ export function PlayerCard({ music }:PlayerCardProps) {
             </div>
           </div>
           <div className="overflow-hidden">
-            {share && (
-            <Ballon>
-              <ShareButtons
-                size={40}
-                url={`https://musiks.com/music/${music.id}`}
-              />
-            </Ballon>
-            )}
+            {share && (<ShareBallon music={music} />)}
           </div>
           <div className="flex flex-row gap-8">
             <LikeButton music={music} alreadyLiked={music.liked} />
@@ -63,14 +54,7 @@ export function PlayerCard({ music }:PlayerCardProps) {
                 <FaComment size={iconsSize} />
               </button>
             </FloatingCounter>
-            <FloatingCounter count={130}>
-              <button
-                onClick={handleShareClick}
-                className="active:scale-50 transition"
-              >
-                <FaShare size={iconsSize} />
-              </button>
-            </FloatingCounter>
+            <ShareButton setShare={setShare} />
           </div>
           <PlayerRange />
         </div>

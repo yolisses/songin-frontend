@@ -9,6 +9,8 @@ import { ChildrenProps } from '../common/ChildrenProps';
 import { LikeButton } from '../like/LikeButton';
 import { useMusics } from '../music/MusicsContext';
 import { useMd } from '../responsive/useMd';
+import { ShareBallon } from '../share/ShareBallon';
+import { ShareButton } from '../share/ShareButton';
 import { PlayerModal } from './PlayerModal';
 import { PlayerRange } from './PlayerRange';
 
@@ -24,6 +26,8 @@ export function PlayerBar() {
   const md = useMd();
   const { music } = useMusics();
   const [modalActive, setModalActive] = useState(false);
+  const [share, setShare] = useState(false);
+
   if (!md || !music) return null;
 
   function handleClick() {
@@ -83,7 +87,17 @@ export function PlayerBar() {
           </div>
           <div className="flex flex-row items-center ml-auto">
             <StopPropagation>
-              <LikeButton music={music} alreadyLiked={music.liked} />
+              <div className="flex flex-row gap-6">
+                <LikeButton music={music} alreadyLiked={music.liked} />
+                <div className="relative">
+                  {share && (
+                  <div className="absolute overflow-hidden bottom-[4rem] -right-[5.5rem]">
+                    <ShareBallon music={music} />
+                  </div>
+                  )}
+                  <ShareButton setShare={setShare} />
+                </div>
+              </div>
             </StopPropagation>
           </div>
         </div>
