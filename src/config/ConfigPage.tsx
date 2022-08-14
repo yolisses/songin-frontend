@@ -8,7 +8,7 @@ export function ConfigPage() {
       <h1>Config page</h1>
       <Link to="/">go to home</Link>
       <div>
-        <button type="button" onClick={logout}>Log out</button>
+        <button onClick={logout}>Log out</button>
       </div>
     </div>
   );

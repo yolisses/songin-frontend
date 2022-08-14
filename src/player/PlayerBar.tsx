@@ -30,7 +30,7 @@ export function PlayerBar() {
         <PlayerRange />
       </div>
       <button
-        type="button"
+
         onClick={handleClick}
         style={{
           color: modalActive ? 'white' : undefined,
@@ -39,13 +39,13 @@ export function PlayerBar() {
         className="fixed w-full z-10 bottom-0 h-16 duration-[0.4s] transition-colors flex flex-row justify-between items-center"
       >
         <div className="flex flex-row items-center text-lg p-1 gap-4 ">
-          <button type="button" className="p-2 rounded-full ">
+          <button className="p-2 rounded-full ">
             <FaStepBackward />
           </button>
-          <button type="button" className="p-2 rounded-full text-2xl">
+          <button className="p-2 rounded-full text-2xl">
             <FaPlay />
           </button>
-          <button type="button" className="p-2 rounded-full ">
+          <button className="p-2 rounded-full ">
             <FaStepForward />
           </button>
         </div>
@@ -72,7 +72,7 @@ export function PlayerBar() {
           </div>
         </div>
         <div className="text-lg">
-          <button type="button" className="p-2 rounded-full">
+          <button className="p-2 rounded-full">
             <FaRedo />
           </button>
         </div>

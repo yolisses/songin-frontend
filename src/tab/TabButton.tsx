@@ -15,9 +15,9 @@ export function TabButton({
   }
   return (
     <button
-      type="button"
+
       onClick={handleClick}
-      className="border-b-2 px-2 transition-colors"
+      className="border-b-2 p-2 px-4 transition-colors"
       style={{
         borderColor: selected ? 'rgb(59,130,246)' : undefined,
       }}

@@ -59,13 +59,13 @@ export function PlayerCard({ music }:PlayerCardProps) {
           <div className="flex flex-row gap-8">
             <LikeButton music={music} />
             <FloatingCounter count={130}>
-              <button type="button">
+              <button>
                 <FaComment size={iconsSize} />
               </button>
             </FloatingCounter>
             <FloatingCounter count={130}>
               <button
-                type="button"
+
                 onClick={handleShareClick}
                 className="active:scale-50 transition"
               >

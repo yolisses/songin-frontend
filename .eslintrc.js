@@ -24,9 +24,13 @@ module.exports = {
   root: true,
   rules: {
     'no-unused-vars': 'warn',
+    'react/button-has-type': 'off',
     'react/react-in-jsx-scope': 'off',
-    'import/prefer-default-export': 'off',
     'react/require-default-props': 'off',
+    'import/prefer-default-export': 'off',
+    'react/jsx-no-constructed-context-values': 'off',
+    'react/jsx-filename-extension': [
+      1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'import/extensions': [
       'error',
       'ignorePackages',
@@ -37,9 +41,6 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'react/jsx-no-constructed-context-values':'off',
-    'react/jsx-filename-extension': [
-      1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
   },
   settings: {
     'import/resolver': {

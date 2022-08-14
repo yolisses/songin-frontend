@@ -43,7 +43,7 @@ export function CommentsPage() {
             </div>
             {!!comment.repliesCount
             && (
-            <button type="button" className="text-sm opacity-50 flex flex-row gap-1 items-center pt-1">
+            <button className="text-sm opacity-50 flex flex-row gap-1 items-center pt-1">
               {comment.repliesCount}
               {' '}
               resposta
@@ -52,7 +52,7 @@ export function CommentsPage() {
             </button>
             )}
           </div>
-          <button type="button" className="text-sm opacity-50">
+          <button className="text-sm opacity-50">
             <FaThumbsUp />
             {!!comment.likesCount && comment.likesCount}
           </button>

@@ -26,7 +26,6 @@ export function MePage() {
           </h1>
           <div>
             <button
-              type="button"
               className="rounded-full inline-block p-1 px-3 pr-2 text-sm bg-black bg-opacity-10"
             >
               Perfil
@@ -43,13 +42,12 @@ export function MePage() {
           </Link>
         </div>
       </div>
-      <div className="sticky top-0 flex flex-row bg-white h-12 items-center">
+      <div className="sticky top-0 flex flex-row h-12 items-center">
         <TabButtons
           tab={tab}
           setTab={setTab}
           labels={['Favoritas', 'Histórico']}
         />
-
       </div>
       <div className="w-full flex flex-col">
         <TabsContainer selected={tab}>

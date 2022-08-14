@@ -13,7 +13,7 @@ export function MusicListItem({ music }:MusicListItemProps) {
   }
   return (
     <button
-      type="button"
+
       onClick={handleClick}
       className="flex flex-row items-center p-1 gap-2 flex-1 text-start"
     >
@@ -23,7 +23,7 @@ export function MusicListItem({ music }:MusicListItemProps) {
         alt=""
       />
       <div>
-        <div>{music.name}</div>
+        <button>{music.name}</button>
         <div className="text-sm text-white text-opacity-70">{music.artist?.name}</div>
       </div>
     </button>

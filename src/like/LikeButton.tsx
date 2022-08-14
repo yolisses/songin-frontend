@@ -19,7 +19,6 @@ export function LikeButton({ music }:LikeButtonProps) {
   return (
     <FloatingCounter count={music.likesCount + add}>
       <button
-        type="button"
         onClick={handleClick}
         className="group relative"
       >
