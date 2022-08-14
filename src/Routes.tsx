@@ -10,6 +10,7 @@ import { HomePage } from './home/HomePage';
 import { Favorites } from './like/Favorites';
 import { MePage } from './me/MePage';
 import { LateralNav } from './nav/LateralNav';
+import { PlayerBar } from './player/PlayerBar';
 import { PlayerPage } from './player/PlayerPage';
 import { SignInPage } from './signIn/SignInPage';
 import { SplashScreen } from './splash/SplashScreen';
@@ -59,6 +60,7 @@ export function Routes() {
           <Route path="/comments" element={<CommentsPage />} />
         </Router>
       </div>
+      <PlayerBar />
     </BrowserRouter>
   );
 }

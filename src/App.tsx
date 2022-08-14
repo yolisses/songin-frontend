@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { Routes } from './Routes';
-import { PlayerBar } from './player/PlayerBar';
 import { UserContextProvider } from './user/UserContext';
 import { MusicsContextProvider } from './music/MusicsContext';
 import { PlayerContextProvider } from './player/PlayerContext';
@@ -14,7 +13,6 @@ export function App() {
       <MusicsContextProvider>
         <PlayerContextProvider>
           <Routes />
-          <PlayerBar />
         </PlayerContextProvider>
       </MusicsContextProvider>
     </UserContextProvider>

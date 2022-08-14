@@ -11,7 +11,13 @@ interface LikeButtonProps{
 export function LikeButton({ music, alreadyLiked }:LikeButtonProps) {
   const [active, setActive] = useState(alreadyLiked);
   const [animate, setAnimate] = useState(false);
-  const add = active ? 1 : 0;
+  let add = 0;
+  if (alreadyLiked && !active) {
+    add = -1;
+  }
+  if (!alreadyLiked && active) {
+    add = 1;
+  }
 
   function handleClick() {
     setActive((old) => {
