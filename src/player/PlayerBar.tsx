@@ -36,7 +36,7 @@ export function PlayerBar() {
           color: modalActive ? 'white' : undefined,
           backgroundColor: modalActive ? undefined : 'white',
         }}
-        className="fixed w-full z-10 bottom-0 h-16 duration-100 transition-colors flex flex-row justify-between items-center"
+        className="fixed w-full z-10 bottom-0 h-16 duration-[0.4s] transition-colors flex flex-row justify-between items-center"
       >
         <div className="flex flex-row items-center text-lg p-1 gap-4 ">
           <button type="button" className="p-2 rounded-full ">
