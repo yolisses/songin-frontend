@@ -2,16 +2,70 @@
   "users": [
     {
       "id": 0,
-      "name": "ulisses",
+      "username": "ulisses",
+      "name": "Ulisses Albuquerque",
       "image": "https://picsum.photos/id/338/96/96"
     },
     {
       "id": 1,
+      "username": "outrapessoa",
+      "name": "Outra pessoa só de boa",
+      "image": "https://picsum.photos/id/338/96/96"
+    },
+    {
+      "id": 2,
       "name": "john doe",
+      "username": "johndoe",
       "image": "https://picsum.photos/id/321/96/96"
     }
   ],
-  "comments": [],
+  "comments": [
+    {
+      "id": 0,
+      "userId": 1,
+      "liked": false,
+      "likesCount": 2,
+      "repliesCount": 0,
+      "createdAt": 1660504853984,
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum sit amet dui id tempus. Nam luctus mi sem, id efficitur ipsum convallis eu."
+    },
+    {
+      "id": 1,
+      "userId": 1,
+      "liked": true,
+      "likesCount": 2,
+      "repliesCount": 1,
+      "createdAt": 1660504853984,
+      "text": "Pellentesque nec tincidunt mauris"
+    },
+    {
+      "id": 2,
+      "userId": 0,
+      "liked": false,
+      "likesCount": 0,
+      "repliesCount": 5,
+      "createdAt": 1660504853984,
+      "text": "Só tem robô nesse chat?"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "liked": false,
+      "likesCount": 1,
+      "repliesCount": 0,
+      "createdAt": 1660504853984,
+      "text": "Se essa música não tocar no meu funeral eu nem morro"
+    },
+    {
+      "id": 4,
+      "userId": 2,
+      "liked": false,
+      "likesCount": 1,
+      "repliesCount": 10,
+      "createdAt": 1660504853984,
+      "text": "gud vibes"
+    }
+  ],
   "artists": [
     {
       "id": 0,
