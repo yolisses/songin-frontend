@@ -70,3 +70,19 @@ html {
 .animate-slide-up {
     animation: slide-up 0.15s;
 }
+
+@keyframes appear {
+    from {
+        height: 0;
+        opacity: 0;
+        /* scale: 50%; */
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-appear {
+    animation: appear 0.5s;
+}

@@ -1,4 +1,3 @@
-import { MusicContextProvider } from './music/MusicContext';
 import { MusicsContextProvider } from './music/MusicsContext';
 import { PlayerBar } from './player/PlayerBar';
 import { PlayerContextProvider } from './player/PlayerContext';
@@ -9,12 +8,10 @@ export function App() {
   return (
     <UserContextProvider>
       <MusicsContextProvider>
-        <MusicContextProvider>
-          <PlayerContextProvider>
-            <Routes />
-            <PlayerBar />
-          </PlayerContextProvider>
-        </MusicContextProvider>
+        <PlayerContextProvider>
+          <Routes />
+          {/* <PlayerBar /> */}
+        </PlayerContextProvider>
       </MusicsContextProvider>
     </UserContextProvider>
   );

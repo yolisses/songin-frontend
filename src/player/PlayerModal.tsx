@@ -1,19 +1,21 @@
-import { Music } from '../music/Music';
+import { useMusics } from '../music/MusicsContext';
+import { GradientBackground } from './GradientBackground';
 import { NextMusics } from './NextMusics';
 
-interface PlayerModalProps{
-    music:Music
-}
+export function PlayerModal() {
+  const { music } = useMusics();
 
-export function PlayerModal({ music }:PlayerModalProps) {
+  if (!music) return null;
+
   return (
-    <div className="bg-red-500 -z-10 fixed top-0 w-screen h-screen flex">
-      <div className="flex flex-row">
-        <img
-          alt={music.name}
-          src={music.image}
-          className="h-full aspect-square p-24"
-        />
+    <div className="flex flex-row overflow-y-hidden h-screen">
+      <GradientBackground />
+      <img
+        alt={music.name}
+        src={music.image}
+        className="h-full aspect-square p-32"
+      />
+      <div className="mb-16 overflow-auto flex-1">
         <NextMusics />
       </div>
     </div>
