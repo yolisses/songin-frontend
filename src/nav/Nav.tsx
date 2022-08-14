@@ -11,15 +11,13 @@ interface NavProps{
 
 export function Nav({ white = true, spacer = true }:NavProps) {
   const md = useMd();
-  if (md) {
-    return <></>;
-  }
+  if (md) return null;
 
   return (
     <>
       {spacer && <div className="h-12" />}
       <div
-        className="fixed bottom-0 z-10 h-12 justify-around w-full items-center text-center flex flex-row gap-2"
+        className="fixed bottom-0 z-10 h-12 justify-around w-screen items-center text-center flex flex-row gap-2"
         style={{ backgroundColor: white ? 'white' : undefined }}
       >
         <PlayButton />

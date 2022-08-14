@@ -16,7 +16,6 @@ export function PlayerCard({ music }:PlayerCardProps) {
   const iconsSize = 24;
 
   function handleShareClick() {
-    console.log(share);
     setShare((value) => !value);
   }
 

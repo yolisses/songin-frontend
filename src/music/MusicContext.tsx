@@ -4,15 +4,15 @@ import {
 import { Music } from './Music';
 import { ChildrenProps } from '../common/ChildrenProps';
 
-  interface MusicContext{
-      music:Music
-      setMusic:Dispatch<SetStateAction<Music>>
-  }
+interface MusicContext{
+    music?:Music
+    setMusic:Dispatch<SetStateAction<Music|undefined>>
+}
 
 const musicContext = createContext({} as MusicContext);
 
 export function MusicContextProvider({ children }:ChildrenProps) {
-  const [music, setMusic] = useState({} as Music);
+  const [music, setMusic] = useState<Music>();
 
   return (
     <musicContext.Provider value={{

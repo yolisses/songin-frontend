@@ -22,8 +22,9 @@ export function HomePage() {
 
   return (
     <div className="flex flex-col gap-10">
-      {musics
-      && repeat.map((value) => <MusicCarrousel musics={musics} title="Você vai gostar" />)}
+      {musics && repeat.map(
+        (value) => <MusicCarrousel musics={musics} title="Você vai gostar" />,
+      )}
       <Nav />
     </div>
   );

@@ -7,7 +7,6 @@ import { ConfigPage } from './config/ConfigPage';
 import { DevPage } from './dev/DevPage';
 import { HomePage } from './home/HomePage';
 import { MePage } from './me/MePage';
-import { PlayerBar } from './player/PlayerBar';
 import { PlayerPage } from './player/PlayerPage';
 import { SignInPage } from './signIn/SignInPage';
 import { SplashScreen } from './splash/SplashScreen';
@@ -52,7 +51,6 @@ export function Routes() {
         <Route path="/splash" element={<SplashScreen />} />
         <Route path="/comments" element={<CommentsPage />} />
       </Router>
-      <PlayerBar />
     </BrowserRouter>
   );
 }
