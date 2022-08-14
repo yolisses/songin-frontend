@@ -6,8 +6,10 @@ import { CommentsPage } from './comments/CommentsPage';
 import { ConfigPage } from './config/ConfigPage';
 import { DevPage } from './dev/DevPage';
 import { History } from './history/History';
+import { HistoryPage } from './history/HistoryPage';
 import { HomePage } from './home/HomePage';
 import { Favorites } from './like/Favorites';
+import { FavoritesPage } from './like/FavoritesPage';
 import { MePage } from './me/MePage';
 import { LateralNav } from './nav/LateralNav';
 import { PlayerBar } from './player/PlayerBar';
@@ -52,12 +54,12 @@ export function Routes() {
           <Route path="/" element={<HomePage />} />
           <Route path="/me" element={<MePage />} />
           <Route path="/dev" element={<DevPage />} />
-          <Route path="/history" element={<History />} />
           <Route path="/player" element={<PlayerPage />} />
           <Route path="/config" element={<ConfigPage />} />
           <Route path="/splash" element={<SplashScreen />} />
-          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/history" element={<HistoryPage />} />
           <Route path="/comments" element={<CommentsPage />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
         </Router>
       </div>
       <PlayerBar />
