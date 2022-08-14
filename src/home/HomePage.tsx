@@ -18,7 +18,7 @@ export function HomePage() {
     getMusics();
   }, []);
 
-  const repeat = range(10);
+  const repeat = range(6);
 
   return (
     <div className="flex flex-col gap-10">

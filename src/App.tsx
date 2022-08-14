@@ -1,4 +1,5 @@
 import { MusicsContextProvider } from './music/MusicsContext';
+import { LateralNav } from './nav/LateralNav';
 import { PlayerBar } from './player/PlayerBar';
 import { PlayerContextProvider } from './player/PlayerContext';
 import { Routes } from './Routes';
@@ -9,7 +10,10 @@ export function App() {
     <UserContextProvider>
       <MusicsContextProvider>
         <PlayerContextProvider>
-          <Routes />
+          <div className="flex flex-row overflow-x-hidden">
+            <LateralNav />
+            <Routes />
+          </div>
           <PlayerBar />
         </PlayerContextProvider>
       </MusicsContextProvider>

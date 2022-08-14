@@ -17,7 +17,7 @@ export function MusicCarrousel({ musics, title }:MusicCarrouselProps) {
       <div
         className="flex flex-row gap-2 px-4 overflow-x-auto no-scrollbar snap-x snap-mandatory"
       >
-        {musics.map((music) => (
+        {musics.slice(0, 10).map((music) => (
           <MusicCarrouselItem music={music} key={music.id} />
         ))}
       </div>
