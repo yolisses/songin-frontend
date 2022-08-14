@@ -51,8 +51,8 @@ export function MePage() {
       </div>
       <div className="w-full flex flex-col">
         <TabsContainer selected={tab}>
-          <History />
           <div>teste</div>
+          <History />
         </TabsContainer>
       </div>
 
