@@ -42,7 +42,7 @@ server.get('/users/me', (req, res) => {
 server.use(
   jsonServer.rewriter({
     '/users/me': '/users/0',
-    '/musics/history': '/musics',
+    '/musics/history': '/musics?_expand=artist',
   }),
 );
 

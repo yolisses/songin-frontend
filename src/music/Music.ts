@@ -5,5 +5,6 @@ export interface Music{
     name:string
     image:string
     artist:Artist
+    duration:number // seconds
     likesCount:number
 }

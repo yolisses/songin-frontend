@@ -21,7 +21,7 @@ export function HomePage() {
   const repeat = range(6);
 
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-10 py-4">
       {musics && repeat.map(
         (value) => <MusicCarrousel musics={musics} title="Você vai gostar" />,
       )}

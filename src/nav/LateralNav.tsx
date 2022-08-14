@@ -28,10 +28,10 @@ export function LateralNav() {
           <FaHeart />
           Favoritas
         </button>
-        <button type="button" className="flex flex-row items-center gap-2 p-2 hover:bg-gray-100 rounded-lg">
+        <Link to="/history" className="flex flex-row items-center gap-2 p-2 hover:bg-gray-100 rounded-lg">
           <FaHistory />
           Histórico
-        </button>
+        </Link>
         <Link to="/me" className="flex flex-row items-center gap-2 p-2 hover:bg-gray-100 rounded-lg">
           <FaUser />
           Perfil

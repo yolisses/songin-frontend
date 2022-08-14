@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { api } from '../api/api';
-import { MusicList } from '../me/MusicList';
+import { MusicTable } from '../common/MusicTable';
 import { Music } from '../music/Music';
 
 export function History() {
@@ -15,9 +15,7 @@ export function History() {
     getMusics();
   }, []);
 
-  return (
-    <div className="px-2">
-      {musics && <MusicList musics={musics} />}
-    </div>
-  );
+  if (!musics) return null;
+
+  return (<MusicTable musics={musics} />);
 }

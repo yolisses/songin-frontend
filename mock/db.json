@@ -23,173 +23,194 @@
     {
       "id": 0,
       "name": "Offline",
-      "image": "/offline.webp",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 100,
-      "artistId": 0
+      "image": "/offline.webp"
     },
     {
       "id": 1,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/82/200/200",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 43,
-      "artistId": 0
+      "image": "https://picsum.photos/id/82/200/200"
     },
     {
       "id": 2,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/543/200/200",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 100,
-      "artistId": 0
+      "image": "https://picsum.photos/id/543/200/200"
     },
     {
       "id": 3,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/94/200/200",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 543,
-      "artistId": 0
+      "image": "https://picsum.photos/id/94/200/200"
     },
     {
       "id": 4,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/84/200/200",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 100,
-      "artistId": 0
+      "image": "https://picsum.photos/id/84/200/200"
     },
     {
       "id": 5,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/423/200/200",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 4320043,
-      "artistId": 0
+      "image": "https://picsum.photos/id/423/200/200"
     },
     {
       "id": 6,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/675/200/200",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 2034032,
-      "artistId": 0
+      "image": "https://picsum.photos/id/675/200/200"
     },
     {
       "id": 7,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/726/200/200",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 100,
-      "artistId": 0
+      "image": "https://picsum.photos/id/726/200/200"
     },
     {
       "id": 8,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/662/200/200",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 4302034,
-      "artistId": 0
+      "image": "https://picsum.photos/id/662/200/200"
     },
     {
       "id": 9,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/842/200/200",
-      "likesCount": 321,
       "artistId": 0,
-      "artists": [
-        0
-      ]
+      "duration": 216,
+      "likesCount": 321,
+      "image": "https://picsum.photos/id/842/200/200"
     },
     {
       "id": 10,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/421/200/200",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 100,
-      "artistId": 0
+      "image": "https://picsum.photos/id/421/200/200"
     },
     {
       "id": 11,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/665/200/200",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 100,
-      "artistId": 0
+      "image": "https://picsum.photos/id/665/200/200"
     },
     {
       "id": 12,
       "name": "Offline",
-      "image": "/offline.webp",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 100,
-      "artistId": 0
+      "image": "/offline.webp"
     },
     {
       "id": 13,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/82/200/200",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 43,
-      "artistId": 0
+      "image": "https://picsum.photos/id/82/200/200"
     },
     {
       "id": 14,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/83/200/200",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 100,
-      "artistId": 0
+      "image": "https://picsum.photos/id/83/200/200"
     },
     {
       "id": 15,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/85/200/200",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 543,
-      "artistId": 0
+      "image": "https://picsum.photos/id/85/200/200"
     },
     {
       "id": 16,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/95/200/200",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 100,
-      "artistId": 0
+      "image": "https://picsum.photos/id/95/200/200"
     },
     {
       "id": 17,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/87/200/200",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 4320043,
-      "artistId": 0
+      "image": "https://picsum.photos/id/87/200/200"
     },
     {
       "id": 18,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/88/200/200",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 2034032,
-      "artistId": 0
+      "image": "https://picsum.photos/id/88/200/200"
     },
     {
       "id": 19,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/89/200/200",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 100,
-      "artistId": 0
+      "image": "https://picsum.photos/id/89/200/200"
     },
     {
       "id": 20,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/90/200/200",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 4302034,
-      "artistId": 0
+      "image": "https://picsum.photos/id/90/200/200"
     },
     {
       "id": 21,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/91/200/200",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 321,
-      "artistId": 0
+      "image": "https://picsum.photos/id/91/200/200"
     },
     {
       "id": 22,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/92/200/200",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 100,
-      "artistId": 0
+      "image": "https://picsum.photos/id/92/200/200"
     },
     {
       "id": 23,
       "name": "Sky full of stars",
-      "image": "https://picsum.photos/id/93/200/200",
+      "artistId": 0,
+      "duration": 216,
       "likesCount": 100,
-      "artistId": 0
+      "image": "https://picsum.photos/id/93/200/200"
     }
   ]
 }
