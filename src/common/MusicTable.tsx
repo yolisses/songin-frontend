@@ -1,4 +1,5 @@
 import { Music } from '../music/Music';
+import { formatMusicTime } from './formatMusicTime';
 
 interface MusicTableProps{
     musics:Music[]
@@ -23,7 +24,7 @@ export function MusicTable({ musics }:MusicTableProps) {
             {music.artist?.name}
           </td>
           <td className="opacity-50">
-            {music.duration }
+            {formatMusicTime(music.duration) }
           </td>
         </tr>
       ))}
