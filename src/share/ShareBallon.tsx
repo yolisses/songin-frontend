@@ -4,11 +4,12 @@ import { ShareButtons } from './ShareButtons';
 
 interface ShareBallonProps{
     music:Music
+    close:()=>void
 }
 
-export function ShareBallon({ music }:ShareBallonProps) {
+export function ShareBallon({ music, close }:ShareBallonProps) {
   return (
-    <Ballon>
+    <Ballon close={close}>
       <ShareButtons
         size={40}
         url={`https://musiks.com/music/${music.id}`}

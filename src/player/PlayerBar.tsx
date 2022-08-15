@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState } from 'react';
@@ -11,22 +12,24 @@ import { useMusics } from '../music/MusicsContext';
 import { useMd } from '../responsive/useMd';
 import { ShareBallon } from '../share/ShareBallon';
 import { ShareButton } from '../share/ShareButton';
+import { stopPropagation } from '../utils/stopPropagation';
 import { PlayerModal } from './PlayerModal';
 import { PlayerRange } from './PlayerRange';
-
-function StopPropagation({ children }:ChildrenProps) {
-  return (
-    <div onClick={(e) => { e.stopPropagation(); }}>
-      {children}
-    </div>
-  );
-}
 
 export function PlayerBar() {
   const md = useMd();
   const { music } = useMusics();
   const [modalActive, setModalActive] = useState(false);
   const [share, setShare] = useState(false);
+
+  function closeShare() {
+    setShare(false);
+  }
+
+  function closeAndStopPropagation(e:any) {
+    setModalActive(false);
+    stopPropagation(e);
+  }
 
   if (!md || !music) return null;
 
@@ -52,19 +55,20 @@ export function PlayerBar() {
         }}
         className="fixed w-full z-10 bottom-0 h-16 duration-[0.4s] transition-colors flex flex-row justify-between items-center"
       >
-        <StopPropagation>
-          <div className="flex flex-row items-center text-lg p-1 gap-4 ">
-            <button className="p-2 rounded-full ">
-              <FaStepBackward />
-            </button>
-            <button className="p-2 rounded-full text-2xl">
-              <FaPlay />
-            </button>
-            <button className="p-2 rounded-full ">
-              <FaStepForward />
-            </button>
-          </div>
-        </StopPropagation>
+        <div
+          onClick={stopPropagation}
+          className="flex flex-row items-center text-lg p-1 gap-4 "
+        >
+          <button className="p-2 rounded-full ">
+            <FaStepBackward />
+          </button>
+          <button className="p-2 rounded-full text-2xl">
+            <FaPlay />
+          </button>
+          <button className="p-2 rounded-full ">
+            <FaStepForward />
+          </button>
+        </div>
         <div className="flex flex-row gap-2 max-w-md w-full mr-28 items-center">
           <img
             alt={music.name}
@@ -79,35 +83,39 @@ export function PlayerBar() {
             <div className="font-semibold">
               {music.name}
             </div>
-            <StopPropagation>
-              <Link to={`/artist/${music.artist?.id}`} className="text-sm hover:underline">
-                {music.artist?.name}
-              </Link>
-            </StopPropagation>
+            <Link
+              onClick={closeAndStopPropagation}
+              to={`/artist/${music.artist?.id}`}
+              className="text-sm hover:underline"
+            >
+              {music.artist?.name}
+            </Link>
           </div>
           <div className="flex flex-row items-center ml-auto">
-            <StopPropagation>
-              <div className="flex flex-row gap-6">
-                <LikeButton music={music} alreadyLiked={music.liked} />
-                <div className="relative">
-                  {share && (
+            <div
+              onClick={stopPropagation}
+              className="flex flex-row gap-6"
+            >
+              <LikeButton music={music} alreadyLiked={music.liked} />
+              <div className="relative">
+                {share && (
                   <div className="absolute overflow-hidden bottom-[4rem] -right-[5.5rem]">
-                    <ShareBallon music={music} />
+                    <ShareBallon
+                      music={music}
+                      close={closeShare}
+                    />
                   </div>
-                  )}
-                  <ShareButton setShare={setShare} />
-                </div>
+                )}
+                <ShareButton setShare={setShare} />
               </div>
-            </StopPropagation>
+            </div>
           </div>
         </div>
-        <StopPropagation>
-          <div className="text-lg">
-            <button className="p-2 rounded-full">
-              <FaRedo />
-            </button>
-          </div>
-        </StopPropagation>
+        <div className="text-lg" onClick={stopPropagation}>
+          <button className="p-2 rounded-full">
+            <FaRedo />
+          </button>
+        </div>
       </button>
     </div>
   );

@@ -16,6 +16,9 @@ interface PlayerCardProps{
 export function PlayerCard({ music }:PlayerCardProps) {
   const [share, setShare] = useState(false);
   const iconsSize = 24;
+  function closeShare() {
+    setShare(false);
+  }
 
   return (
     <div
@@ -45,7 +48,13 @@ export function PlayerCard({ music }:PlayerCardProps) {
             </div>
           </div>
           <div className="overflow-hidden">
-            {share && (<ShareBallon music={music} />)}
+            {share && (
+            <ShareBallon
+              music={music}
+              // eslint-disable-next-line react/jsx-no-bind
+              close={closeShare}
+            />
+            )}
           </div>
           <div className="flex flex-row gap-8">
             <LikeButton music={music} alreadyLiked={music.liked} />
