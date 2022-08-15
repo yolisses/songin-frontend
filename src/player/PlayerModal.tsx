@@ -8,11 +8,10 @@ export function PlayerModal() {
 
   return (
     <div className="flex flex-row overflow-y-hidden h-screen text-white">
-      {/* <GradientBackground /> */}
       <div className="absolute -z-10 w-screen h-screen overflow-hidden bg-[#1b1c29]">
         <div
-          className="w-screen h-screen brightness-50 bg-center bg-no-repeat bg-cover blur-[100px] scale-[2] overflow-hidden"
           style={{ backgroundImage: `url("${music.image}")` }}
+          className="w-screen h-screen brightness-50 bg-center bg-no-repeat bg-cover blur-[100px] scale-[2] overflow-hidden"
         />
       </div>
       <div className="flex-1 flex items-center justify-center p-10">

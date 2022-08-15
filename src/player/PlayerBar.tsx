@@ -3,10 +3,10 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState } from 'react';
 import {
+  FaChevronDown,
   FaPlay, FaRedo, FaStepBackward, FaStepForward,
 } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { ChildrenProps } from '../common/ChildrenProps';
 import { LikeButton } from '../like/LikeButton';
 import { useMusics } from '../music/MusicsContext';
 import { useMd } from '../responsive/useMd';
@@ -70,15 +70,18 @@ export function PlayerBar() {
           </button>
         </div>
         <div className="flex flex-row gap-2 max-w-md w-full mr-28 items-center">
-          <img
-            alt={music.name}
-            src={music.image}
-            className="aspect-square h-14 rounded transition-all duration-[0.4s]"
-            style={{
-              scale: modalActive ? 0 : undefined,
-              opacity: modalActive ? 0 : undefined,
-            }}
-          />
+          <div className="aspect-square h-14 relative">
+            <FaChevronDown className="absolute w-full h-full p-[1.1rem] -z-10" />
+            <img
+              alt={music.name}
+              src={music.image}
+              className="rounded transition-all aspect-square duration-[0.4s]"
+              style={{
+                scale: modalActive ? 0 : undefined,
+                opacity: modalActive ? 0 : undefined,
+              }}
+            />
+          </div>
           <div className="flex flex-col items-start">
             <div className="font-semibold">
               {music.name}

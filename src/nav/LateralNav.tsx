@@ -13,14 +13,7 @@ export function LateralNav() {
   return (
     <>
       <div className="pr-[10rem] max-w-[10rem]" />
-      <div className="flex flex-col text-lg fixed top-0 w-[10rem]">
-        <Link
-          to="/"
-          className="mb-8 flex flex-row items-center gap-2 p-2 hover:bg-gray-100 rounded-lg"
-        >
-          <img alt="logo" src="logo/gradient.svg" className="aspect-square w-5" />
-          Musikz
-        </Link>
+      <div className="flex flex-col text-lg fixed top-0 w-[10rem] pt-10">
         <Link
           to="/"
           className="flex flex-row items-center gap-2 p-2 hover:bg-gray-100 rounded-lg"
