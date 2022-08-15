@@ -2,21 +2,20 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes as Router } from 'react-router-dom';
 import { api } from './api/api';
-import { CommentsPage } from './comments/CommentsPage';
-import { ConfigPage } from './config/ConfigPage';
-import { DevPage } from './dev/DevPage';
-import { History } from './history/History';
-import { HistoryPage } from './history/HistoryPage';
-import { HomePage } from './home/HomePage';
-import { Favorites } from './like/Favorites';
-import { FavoritesPage } from './like/FavoritesPage';
 import { MePage } from './me/MePage';
+import { DevPage } from './dev/DevPage';
+import { HomePage } from './home/HomePage';
+import { useUser } from './user/UserContext';
 import { LateralNav } from './nav/LateralNav';
+import { ProfilePage } from './me/ProfilePage';
 import { PlayerBar } from './player/PlayerBar';
+import { ConfigPage } from './config/ConfigPage';
 import { PlayerPage } from './player/PlayerPage';
 import { SignInPage } from './signIn/SignInPage';
+import { HistoryPage } from './history/HistoryPage';
+import { FavoritesPage } from './like/FavoritesPage';
 import { SplashScreen } from './splash/SplashScreen';
-import { useUser } from './user/UserContext';
+import { CommentsPage } from './comments/CommentsPage';
 
 export function Routes() {
   const { user, setUser } = useUser();
@@ -59,6 +58,7 @@ export function Routes() {
           <Route path="/splash" element={<SplashScreen />} />
           <Route path="/history" element={<HistoryPage />} />
           <Route path="/comments" element={<CommentsPage />} />
+          <Route path="/@:username" element={<ProfilePage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
         </Router>
       </div>

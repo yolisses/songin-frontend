@@ -4,7 +4,9 @@
       "id": 0,
       "username": "ulisses",
       "name": "Ulisses Albuquerque",
-      "image": "https://picsum.photos/id/338/96/96"
+      "coverImage": "https://picsum.photos/id/543/1080/1920",
+      "image": "https://picsum.photos/id/338/96/96",
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum sit amet dui id tempus. Nam luctus mi sem, id efficitur ipsum convallis eu."
     },
     {
       "id": 1,

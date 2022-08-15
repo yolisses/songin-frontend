@@ -25,17 +25,13 @@ server.post('/log-out', (req, res) => {
   res.end();// necessary
 });
 
-server.get('/users/me', (req, res) => {
+server.get('/users/me', (req, res, next) => {
   const sessionId = req.cookies.session_id;
   if (!sessionId) {
     res.status(403);
     res.send('Missing session_id coockie');
   } else {
-    res.send({
-      name: 'Ulisses',
-      email: 'ulisses@nano.com',
-      image: 'https://picsum.photos/id/338/96/96',
-    });
+    next();
   }
 });
 
@@ -43,6 +39,7 @@ server.use(
   jsonServer.rewriter({
     '/users/me': '/users/0',
     '/musics/history': '/musics?_expand=artist',
+    '/users/username/:username': '/users?username=:username',
     '/musics/favorites': '/musics?_expand=artist&liked=true',
   }),
 );

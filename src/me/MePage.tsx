@@ -56,7 +56,6 @@ export function MePage() {
           <History />
         </TabsContainer>
       </div>
-
       <Nav />
     </div>
 
