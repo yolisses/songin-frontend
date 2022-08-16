@@ -2,12 +2,20 @@ import { useEffect, useState } from 'react';
 import { FaUser } from 'react-icons/fa';
 import { useParams } from 'react-router';
 import { api } from '../api/api';
+import { MusicTable } from '../common/MusicTable';
+import { Favorites } from '../like/Favorites';
 import { User } from '../user/User';
+import { useUser } from '../user/UserContext';
 import { NumberIndicator } from './NumberIndicator';
 
-export function ProfilePage() {
+interface ProfilePageProps{
+  fixedUsername?:string
+}
+
+export function ProfilePage({ fixedUsername }:ProfilePageProps) {
   const [user, setUser] = useState<User>();
-  const { username } = useParams();
+  const { user: currentUser } = useUser();
+  const username = fixedUsername || useParams().username;
 
   async function getUser() {
     const res = await api.get(`/users/username/${username}`);
@@ -55,14 +63,21 @@ export function ProfilePage() {
             <NumberIndicator label="Curtidas" amount={2493} />
             <NumberIndicator label="Seguindo" amount={432} />
             <NumberIndicator label="Seguidores" amount={498} />
-            <button className="flex flex-row items-center gap-2 md:mr-auto">
-              <FaUser />
-              Seguir
-            </button>
+            {username !== currentUser.username ? (
+              <button className="flex flex-row items-center gap-2 md:mr-auto">
+                <FaUser />
+                Seguir
+              </button>
+            ) : <div className="hidden md:block md:mr-auto" />}
           </div>
         </div>
       </div>
-
+      <div className="p-2">
+        <h2 className="text-lg">
+          Músicas favoritas
+        </h2>
+        <Favorites />
+      </div>
     </div>
   );
 }

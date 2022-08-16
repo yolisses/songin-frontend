@@ -7,12 +7,18 @@ import { useUser } from '../user/UserContext';
 import { TabsContainer } from '../tab/TabsContainer';
 import { TabButtons } from '../tab/TabButtons';
 import { Favorites } from '../like/Favorites';
+import { OverlayPage } from '../common/OverlayPage';
+import { ProfilePage } from './ProfilePage';
 
 export function MePage() {
   const { user } = useUser();
   const [tab, setTab] = useState(0);
+  const [profile, setProfile] = useState(false);
 
-  const iconSize = 22;
+  function handleClick() {
+    setProfile(true);
+  }
+
   return (
     <div className="flex flex-col w-full">
       <div className="flex flex-row items-center gap-2 p-2">
@@ -27,20 +33,13 @@ export function MePage() {
           </h1>
           <div>
             <button
+              onClick={handleClick}
               className="rounded-full inline-block p-1 px-3 pr-2 text-sm bg-black bg-opacity-10"
             >
               Perfil
               <FaChevronRight className="inline pb-[0.1rem]" />
             </button>
           </div>
-        </div>
-        <div className="flex flex-row self-start gap-4 p-2">
-          <Link to="/notifications">
-            <FaBell size={iconSize} />
-          </Link>
-          <Link to="/config">
-            <FaCog size={iconSize} />
-          </Link>
         </div>
       </div>
       <div className="sticky top-0 flex flex-row h-12 items-center">
@@ -57,6 +56,11 @@ export function MePage() {
         </TabsContainer>
       </div>
       <Nav />
+      {profile && (
+      <OverlayPage>
+        <ProfilePage fixedUsername={user.username} />
+      </OverlayPage>
+      )}
     </div>
 
   );
