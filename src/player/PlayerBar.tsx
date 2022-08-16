@@ -75,7 +75,7 @@ export function PlayerBar() {
             <img
               alt={music.name}
               src={music.image}
-              className="rounded transition-all aspect-square duration-[0.4s]"
+              className="bg-gray-200 rounded transition-all aspect-square duration-[0.4s]"
               style={{
                 scale: modalActive ? 0 : undefined,
                 opacity: modalActive ? 0 : undefined,

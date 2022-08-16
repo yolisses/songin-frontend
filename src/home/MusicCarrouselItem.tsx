@@ -22,7 +22,7 @@ export function MusicCarrouselItem({ music }:MusicCarrouselItemProps) {
           key={music.id}
           alt={music.name}
           src={music.image}
-          className="bg-gray-300 aspect-square w-44 rounded-lg"
+          className="bg-gray-200 aspect-square w-44 rounded-lg"
         />
       </button>
       <button onClick={handleClick} className="hover:underline">

@@ -29,7 +29,7 @@ export function CommentsPage() {
           <img
             alt={comment.user?.username}
             src={comment.user?.image}
-            className="aspect-square h-9 rounded-full"
+            className="aspect-square h-9 rounded-full bg-gray-200"
           />
           <div className="flex-1">
             <div className="text-sm opacity-50">

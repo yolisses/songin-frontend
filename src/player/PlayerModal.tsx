@@ -18,7 +18,7 @@ export function PlayerModal() {
         <img
           alt={music.name}
           src={music.image}
-          className="aspect-square w-full max-w-[450px] rounded-lg"
+          className="bg-gray-200 aspect-square w-full max-w-[450px] rounded-lg"
         />
       </div>
       <div className="mb-20 overflow-auto flex-1 max-w-md">
