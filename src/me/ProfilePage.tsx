@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { FaUser } from 'react-icons/fa';
-import { useParams } from 'react-router';
+import { FaChevronLeft, FaUser } from 'react-icons/fa';
+import { useParams, useOutlet } from 'react-router';
+import { Link } from 'react-router-dom';
 import { api } from '../api/api';
-import { MusicTable } from '../common/MusicTable';
+import { useQuery } from '../common/useQuery';
 import { Favorites } from '../like/Favorites';
 import { User } from '../user/User';
 import { useUser } from '../user/UserContext';
@@ -16,6 +17,9 @@ export function ProfilePage({ fixedUsername }:ProfilePageProps) {
   const [user, setUser] = useState<User>();
   const { user: currentUser } = useUser();
   const username = fixedUsername || useParams().username;
+
+  const query = useQuery();
+  const me = query.get('me');
 
   async function getUser() {
     const res = await api.get(`/users/username/${username}`);
@@ -39,7 +43,11 @@ export function ProfilePage({ fixedUsername }:ProfilePageProps) {
       >
         <div className="absolute top-0 bottom-0 left-0 right-0 bg-black bg-opacity-50" />
         <div className="p-4 text-white z-10 relative gap-2 h-full flex flex-col justify-between">
-          <div className="hidden lg:block" />
+          {me ? (
+            <Link to="/me">
+              <FaChevronLeft size={20} />
+            </Link>
+          ) : <div className="hidden lg:block" />}
           <div className="gap-4 lg:justify-around flex flex-col lg:flex-row items-center justify-center">
             <div className="flex flex-row items-center gap-4">
               <img

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaBell, FaChevronRight, FaCog } from 'react-icons/fa';
+import { FaChevronRight } from 'react-icons/fa';
 import { useState } from 'react';
 import { Nav } from '../nav/Nav';
 import { History } from '../history/History';
@@ -7,17 +7,10 @@ import { useUser } from '../user/UserContext';
 import { TabsContainer } from '../tab/TabsContainer';
 import { TabButtons } from '../tab/TabButtons';
 import { Favorites } from '../like/Favorites';
-import { OverlayPage } from '../common/OverlayPage';
-import { ProfilePage } from './ProfilePage';
 
 export function MePage() {
   const { user } = useUser();
   const [tab, setTab] = useState(0);
-  const [profile, setProfile] = useState(false);
-
-  function handleClick() {
-    setProfile(true);
-  }
 
   return (
     <div className="flex flex-col w-full">
@@ -32,13 +25,13 @@ export function MePage() {
             {user.name}
           </h1>
           <div>
-            <button
-              onClick={handleClick}
+            <Link
+              to={`/@${user.username}?me=true`}
               className="rounded-full inline-block p-1 px-3 pr-2 text-sm bg-black bg-opacity-10"
             >
               Perfil
               <FaChevronRight className="inline pb-[0.1rem]" />
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -56,11 +49,6 @@ export function MePage() {
         </TabsContainer>
       </div>
       <Nav />
-      {profile && (
-      <OverlayPage>
-        <ProfilePage fixedUsername={user.username} />
-      </OverlayPage>
-      )}
     </div>
 
   );
