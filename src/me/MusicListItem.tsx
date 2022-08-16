@@ -13,7 +13,6 @@ export function MusicListItem({ music }:MusicListItemProps) {
   }
   return (
     <button
-
       onClick={handleClick}
       className="flex flex-row items-center p-1 gap-2 flex-1 text-start"
     >

@@ -28,7 +28,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/require-default-props': 'off',
     'import/prefer-default-export': 'off',
-    'treact/jsx-props-no-multi-spaces': 'warn',
+    'react/jsx-props-no-multi-spaces': 'warn',
     'react/jsx-no-constructed-context-values': 'off',
     'react/jsx-filename-extension': [
       1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
