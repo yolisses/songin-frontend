@@ -1,28 +1,42 @@
-import { useState } from 'react';
-import { FaComment, FaShare } from 'react-icons/fa';
-import { Ballon } from './Ballon';
+import {
+  Dispatch, SetStateAction, useEffect, useRef, useState,
+} from 'react';
+import { FaComment } from 'react-icons/fa';
 import { Music } from '../music/Music';
 import { PlayerRange } from './PlayerRange';
 import { LikeButton } from '../like/LikeButton';
 import { FloatingCounter } from './FloatingCounter';
-import { ShareButtons } from '../share/ShareButtons';
 import { ShareButton } from '../share/ShareButton';
 import { ShareBallon } from '../share/ShareBallon';
 
 interface PlayerCardProps{
     music:Music
+    setNewMusic:Dispatch<SetStateAction<Music|undefined>>
 }
 
-export function PlayerCard({ music }:PlayerCardProps) {
+export function PlayerCard({ music, setNewMusic }:PlayerCardProps) {
   const [share, setShare] = useState(false);
   const iconsSize = 24;
+  const ref = useRef();
+
   function closeShare() {
     setShare(false);
   }
 
+  useEffect(() => {
+    const observer = new IntersectionObserver((e) => {
+      setNewMusic(music);
+    }, { threshold: 0.80 });
+    observer.observe(ref.current as any);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <div
-      key={music.id}
+      ref={ref as any}
       className="h-screen w-screen overflow-hidden snap-start flex-shrink-0 relative"
     >
       <div
