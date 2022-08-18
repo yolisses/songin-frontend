@@ -26,10 +26,9 @@ export function MusicListItem({ music }:MusicListItemProps) {
         <button>{music.name}</button>
         <Link
           to={`/@${music.artist?.name}`}
-          className="text-sm text-white text-opacity-70"
+          className="text-sm text-white text-opacity-70 block"
         >
           {music.artist?.name}
-
         </Link>
       </div>
     </button>
