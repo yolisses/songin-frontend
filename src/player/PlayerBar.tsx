@@ -15,12 +15,13 @@ import { stopPropagation } from '../utils/stopPropagation';
 import { PlayButton } from './PlayButton';
 import { PlayerModal } from './PlayerModal';
 import { PlayerRange } from './PlayerRange';
+import { TimeCounter } from './TimeCounter';
 
 export function PlayerBar() {
   const md = useMd();
   const { music } = useMusics();
-  const [modalActive, setModalActive] = useState(false);
   const [share, setShare] = useState(false);
+  const [modalActive, setModalActive] = useState(false);
 
   function closeShare() {
     setShare(false);
@@ -66,6 +67,9 @@ export function PlayerBar() {
           <button className="p-2 rounded-full ">
             <FaStepForward />
           </button>
+          <div className="text-sm opacity-60">
+            <TimeCounter />
+          </div>
         </div>
         <div className="flex flex-row gap-2 max-w-md w-full mr-28 items-center">
           <div className="aspect-square h-14 relative">
@@ -86,7 +90,7 @@ export function PlayerBar() {
             </div>
             <Link
               onClick={closeAndStopPropagation}
-              to={`/artist/${music.artist?.id}`}
+              to={`/@${music.artist?.nickname}`}
               className="text-sm hover:underline"
             >
               {music.artist?.name}

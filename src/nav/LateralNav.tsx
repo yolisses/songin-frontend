@@ -40,7 +40,7 @@ export function LateralNav() {
           Histórico
         </Link>
         <Link
-          to={`/@${user.username}`}
+          to={`/@${user.nickname}`}
           className="flex flex-row items-center gap-2 p-2 hover:bg-gray-100 rounded-lg"
         >
           <FaUser />
