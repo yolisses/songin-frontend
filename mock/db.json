@@ -83,7 +83,7 @@
       "artistId": 0,
       "duration": 216,
       "likesCount": 100,
-      "image": "/offline.webp",
+      "image": "/offline.png",
       "audio": "offline.mp3"
     },
     {
@@ -192,7 +192,7 @@
       "artistId": 0,
       "duration": 216,
       "likesCount": 100,
-      "image": "/offline.webp",
+      "image": "/offline.png",
       "audio": "offline.mp3"
     },
     {
