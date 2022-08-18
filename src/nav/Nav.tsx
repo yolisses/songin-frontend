@@ -2,7 +2,7 @@
 import { FaHome, FaUser } from 'react-icons/fa';
 import { useMd } from '../responsive/useMd';
 import { NavButton } from './NavButton';
-import { PlayButton } from './PlayButton';
+import { NavPlayButton } from './NavPlayButton';
 
 interface NavProps{
   white?:boolean
@@ -20,7 +20,7 @@ export function Nav({ white = true, spacer = true }:NavProps) {
         className="fixed bottom-0 z-10 h-12 justify-around w-screen items-center text-center flex flex-row gap-2"
         style={{ backgroundColor: white ? 'white' : undefined }}
       >
-        <PlayButton />
+        <NavPlayButton />
         <NavButton
           to="/"
           Icon={FaHome}

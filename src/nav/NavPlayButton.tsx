@@ -6,7 +6,7 @@ import { NavButton } from './NavButton';
 import { usePlayer } from '../player/PlayerContext';
 import { PlayingIndicator } from './PlayingIndicator';
 
-export function PlayButton() {
+export function NavPlayButton() {
   const { isPlaying, setIsPlaying } = usePlayer();
   const { pathname } = useLocation();
   const playerPage = pathname === '/player';
