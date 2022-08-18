@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 import {
   createContext, Dispatch, SetStateAction, useContext, useEffect, useState,
 } from 'react';
@@ -9,22 +10,10 @@ interface MusicsContext{
   music?:Music
   musics?:Music[]
   setMusic:(music: Music) => void
+  jumpMusic:(foward?:boolean)=>void
 }
 
 const musicsContext = createContext({} as MusicsContext);
-
-function removeDuplicates(values:Music[]) {
-  const table:{[key:number]:boolean} = {};
-  const result:Music[] = [];
-  values.forEach((music) => {
-    const { id } = music;
-    if (!table[id]) {
-      table[id] = true;
-      result.push(music);
-    }
-  });
-  return result;
-}
 
 export function MusicsContextProvider({ children }:ChildrenProps) {
   const [nextMusics, setNextMusics] = useState<Music[]>([]);
@@ -47,15 +36,41 @@ export function MusicsContextProvider({ children }:ChildrenProps) {
     setSelectedMusics([music]);
   }
 
+  function removeDuplicates(values:Music[]) {
+    const table:{[key:number]:boolean} = {};
+    const result:Music[] = [];
+    values.forEach((music) => {
+      const { id } = music;
+      if (!table[id]) {
+        table[id] = true;
+        result.push(music);
+      }
+    });
+    return result;
+  }
+
   useEffect(() => {
     getMusics();
   }, []);
+
+  function jumpMusic(foward = true) {
+    const offset = foward ? 1 : -1;
+    setIndex((value) => {
+      const { length } = musics;
+      let newValue = value + offset;
+      newValue += length;
+      newValue = Math.max(newValue, 0);
+      newValue %= musics.length;
+      return newValue;
+    });
+  }
 
   return (
     <musicsContext.Provider value={{
       music,
       musics,
       setMusic,
+      jumpMusic,
     }}
     >
       {children}

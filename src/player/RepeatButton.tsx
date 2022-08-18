@@ -15,7 +15,7 @@ export function RepeatButton() {
       {(option === 'one')
        && <div className="text-sm absolute font-bold">1</div>}
       <FaRedo
-        className="group-active:scale-50 transition"
+        className="group-active:scale-50 transition-transform"
         style={{ opacity: option === 'none' ? 0.5 : undefined }}
       />
     </button>

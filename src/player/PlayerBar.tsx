@@ -12,6 +12,7 @@ import { useMd } from '../responsive/useMd';
 import { ShareBallon } from '../share/ShareBallon';
 import { ShareButton } from '../share/ShareButton';
 import { stopPropagation } from '../utils/stopPropagation';
+import { JumpButton } from './JumpButton';
 import { PlayButton } from './PlayButton';
 import { PlayerModal } from './PlayerModal';
 import { PlayerRange } from './PlayerRange';
@@ -61,13 +62,9 @@ export function PlayerBar() {
           onClick={stopPropagation}
           className="flex flex-row items-center text-lg p-1 gap-4 "
         >
-          <button className="p-2">
-            <FaStepBackward />
-          </button>
+          <JumpButton foward={false} />
           <PlayButton />
-          <button className="p-2">
-            <FaStepForward />
-          </button>
+          <JumpButton foward />
           <div className="text-sm opacity-60">
             <TimeCounter />
           </div>

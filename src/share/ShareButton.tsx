@@ -18,7 +18,7 @@ export function ShareButton({ setShare }:ShareButtonProps) {
         onClick={handleShareClick}
         className="group p-2"
       >
-        <FaShare className="transition group-active:scale-50" size={iconsSize} />
+        <FaShare className="transition-transform group-active:scale-50" size={iconsSize} />
       </button>
     </FloatingCounter>
   );
