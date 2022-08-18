@@ -31,7 +31,7 @@ export function Ballon({ children, close }:BallonProps) {
         {children}
       </div>
       <div
-        className="w-0 h-0 border-solid ml-[7.25rem]  backdrop-blur-lg"
+        className="w-0 h-0 border-solid ml-[7.75rem]  backdrop-blur-lg"
         style={{
           borderWidth: '0.5rem 0.5rem 0 0.5rem',
           borderColor: 'rgba(255,255,255,0.5) transparent transparent transparent',

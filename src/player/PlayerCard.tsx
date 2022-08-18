@@ -71,10 +71,10 @@ export function PlayerCard({ music, setNewMusic }:PlayerCardProps) {
             />
             )}
           </div>
-          <div className="flex flex-row gap-8">
+          <div className="flex flex-row gap-4">
             <LikeButton music={music} alreadyLiked={music.liked} />
             <FloatingCounter count={130}>
-              <button>
+              <button className="p-2">
                 <FaComment size={iconsSize} />
               </button>
             </FloatingCounter>

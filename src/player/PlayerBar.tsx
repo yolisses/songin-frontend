@@ -105,7 +105,7 @@ export function PlayerBar() {
               <LikeButton music={music} alreadyLiked={music.liked} />
               <div className="relative">
                 {share && (
-                  <div className="absolute overflow-hidden bottom-[4rem] -right-[5.5rem]">
+                  <div className="absolute overflow-hidden bottom-[4rem] -right-[4.5rem]">
                     <ShareBallon
                       music={music}
                       close={closeShare}
