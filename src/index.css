@@ -88,5 +88,5 @@ html {
 }
 
 img {
-    @apply text-xs text-gray-500 text-center
+    @apply text-xs text-gray-500 text-center overflow-hidden
 }

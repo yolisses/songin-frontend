@@ -10,7 +10,7 @@ export function FloatingCounter({ children, count }:FloatingCounterProps) {
   return (
     <div className="relative">
       {count && (
-      <div className="absolute -top-3 left-5 text-xs">
+      <div className="absolute -top-2 left-6 text-xs">
         {displayNumber(count, 1)}
       </div>
       )}

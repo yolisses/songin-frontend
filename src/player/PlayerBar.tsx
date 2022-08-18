@@ -15,6 +15,7 @@ import { stopPropagation } from '../utils/stopPropagation';
 import { PlayButton } from './PlayButton';
 import { PlayerModal } from './PlayerModal';
 import { PlayerRange } from './PlayerRange';
+import { RepeatButton } from './RepeatButton';
 import { TimeCounter } from './TimeCounter';
 
 export function PlayerBar() {
@@ -60,11 +61,11 @@ export function PlayerBar() {
           onClick={stopPropagation}
           className="flex flex-row items-center text-lg p-1 gap-4 "
         >
-          <button className="p-2 rounded-full ">
+          <button className="p-2">
             <FaStepBackward />
           </button>
           <PlayButton />
-          <button className="p-2 rounded-full ">
+          <button className="p-2">
             <FaStepForward />
           </button>
           <div className="text-sm opacity-60">
@@ -116,10 +117,8 @@ export function PlayerBar() {
             </div>
           </div>
         </div>
-        <div className="text-lg" onClick={stopPropagation}>
-          <button className="p-2 rounded-full">
-            <FaRedo />
-          </button>
+        <div className="text-xl pr-2" onClick={stopPropagation}>
+          <RepeatButton />
         </div>
       </button>
     </div>

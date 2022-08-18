@@ -35,7 +35,7 @@ export function LikeButton({ music, alreadyLiked }:LikeButtonProps) {
     <FloatingCounter count={music.likesCount + add}>
       <button
         onClick={handleClick}
-        className="group relative"
+        className="group relative p-2"
       >
         <FaHeart
           size={iconsSize}
