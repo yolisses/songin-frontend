@@ -8,7 +8,7 @@ import { Music } from './Music';
 interface MusicsContext{
   music?:Music
   musics?:Music[]
-  setMusic:Dispatch<SetStateAction<Music|undefined>>
+  setMusic:(music: Music) => void
   setMusics:Dispatch<SetStateAction<Music[]|undefined>>
 }
 
@@ -16,7 +16,8 @@ const musicsContext = createContext({} as MusicsContext);
 
 export function MusicsContextProvider({ children }:ChildrenProps) {
   const [musics, setMusics] = useState<Music[]>();
-  const [music, setMusic] = useState<Music>();
+  const [index, setIndex] = useState(0);
+  const music = musics ? musics[index] : undefined;
 
   async function getMusics() {
     const res = await api.get('/musics', {
@@ -25,6 +26,12 @@ export function MusicsContextProvider({ children }:ChildrenProps) {
       },
     });
     setMusics(res.data);
+  }
+
+  // eslint-disable-next-line no-shadow
+  function setMusic(music:Music) {
+    setIndex(0);
+    setMusics([music]);
   }
 
   useEffect(() => {

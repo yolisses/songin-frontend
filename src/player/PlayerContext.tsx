@@ -1,8 +1,10 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import {
   createContext, Dispatch, SetStateAction,
   SyntheticEvent, useContext, useEffect, useRef, useState,
 } from 'react';
 import { ChildrenProps } from '../common/ChildrenProps';
+import { useMusics } from '../music/MusicsContext';
 
 interface PlayerContext{
     elapsed :number
@@ -16,6 +18,7 @@ interface PlayerContext{
 const playerContext = createContext({} as PlayerContext);
 
 export function PlayerContextProvider({ children }:ChildrenProps) {
+  const { music } = useMusics();
   const [elapsed, setElapsed] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -60,6 +63,10 @@ export function PlayerContextProvider({ children }:ChildrenProps) {
     [audio, isPlaying],
   );
 
+  useEffect(() => {
+    changeElapsed(0);
+  }, [music]);
+
   return (
     <playerContext.Provider value={{
       elapsed,
@@ -71,7 +78,6 @@ export function PlayerContextProvider({ children }:ChildrenProps) {
     }}
     >
       <>
-        {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
         <audio
           controls={false}
           ref={audio as any}
