@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Comments } from '../comments/Comments';
 import { useMusics } from '../music/MusicsContext';
 import { TabButtons } from '../tab/TabButtons';
@@ -11,6 +11,18 @@ export function PlayerModal() {
 
   if (!music) return null;
 
+  function setBodyScroll(value :string) {
+    const body = document.querySelector('body');
+    body!.style.overflow = value;
+  }
+
+  useEffect(() => {
+    setBodyScroll('hidden');
+    return () => {
+      setBodyScroll('unset');
+    };
+  }, []);
+
   return (
     <div className="flex flex-row h-full w-full text-white overflow-hidden">
       <div
@@ -21,7 +33,7 @@ export function PlayerModal() {
         <img
           alt={music.name}
           src={music.image}
-          className="bg-gray-200 aspect-square flex-1 max-w-[450px] rounded-lg"
+          className="bg-gray-200 aspect-square flex-1 max-w-[450px] rounded-lg shadow-2xl"
         />
       </div>
       <div className="flex flex-col mb-20 flex-1 max-w-md">
