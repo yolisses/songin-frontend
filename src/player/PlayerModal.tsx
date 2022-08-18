@@ -1,8 +1,13 @@
+import { useState } from 'react';
+import { CommentsPage } from '../comments/CommentsPage';
 import { useMusics } from '../music/MusicsContext';
+import { TabButtons } from '../tab/TabButtons';
+import { TabsContainer } from '../tab/TabsContainer';
 import { NextMusics } from './NextMusics';
 
 export function PlayerModal() {
   const { music } = useMusics();
+  const [tab, setTab] = useState(0);
 
   if (!music) return null;
 
@@ -22,7 +27,19 @@ export function PlayerModal() {
         />
       </div>
       <div className="mb-20 overflow-auto flex-1 max-w-md">
-        <NextMusics />
+        <div className="sticky top-0 flex flex-row h-12 items-center">
+          <TabButtons
+            tab={tab}
+            setTab={setTab}
+            labels={['Sequência', 'Comentários']}
+          />
+        </div>
+        <div className="w-full flex flex-col">
+          <TabsContainer selected={tab}>
+            <NextMusics />
+            <CommentsPage />
+          </TabsContainer>
+        </div>
       </div>
     </div>
   );
