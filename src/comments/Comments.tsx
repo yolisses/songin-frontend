@@ -35,8 +35,8 @@ export function Comments() {
           placeholder="E aí, o que achou?"
           className="p-2 bg-transparent flex-1 rounded-full border-2 border-opacity-50"
         />
-        <button className="p-2 text-lg">
-          <FaPaperPlane />
+        <button className="p-2 text-lg group">
+          <FaPaperPlane className="group-active:scale-50 transition-transform" />
         </button>
       </div>
     </>
