@@ -17,6 +17,7 @@ import { FavoritesPage } from './like/FavoritesPage';
 import { SplashScreen } from './splash/SplashScreen';
 import { Comments } from './comments/Comments';
 import { CommentsPage } from './comments/CommentsPage';
+import { SearchPage } from './search/SearchPage';
 
 export function Routes() {
   const { user, setUser } = useUser();
@@ -55,6 +56,7 @@ export function Routes() {
           <Route path="/me" element={<MePage />} />
           <Route path="/dev" element={<DevPage />} />
           <Route path="/player" element={<PlayerPage />} />
+          <Route path="/search" element={<SearchPage />} />
           <Route path="/config" element={<ConfigPage />} />
           <Route path="/splash" element={<SplashScreen />} />
           <Route path="/history" element={<HistoryPage />} />

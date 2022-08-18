@@ -16,7 +16,7 @@ export function MusicListItem({ music }:MusicListItemProps) {
   return (
     <button
       onClick={handleClick}
-      className="flex flex-row items-center p-1 gap-2 flex-1 text-start"
+      className="flex flex-row items-center p-1 gap-2 flex-1 text-start rounded-lg hover:bg-black hover:bg-opacity-5"
     >
       <img
         alt={music.name}
@@ -24,10 +24,10 @@ export function MusicListItem({ music }:MusicListItemProps) {
         className="w-12 aspect-square rounded bg-gray-200"
       />
       <div>
-        <button>{music.name}</button>
+        <div>{music.name}</div>
         <Link
           to={`/@${music.artist?.name}`}
-          className="text-sm text-white text-opacity-70 block"
+          className="text-sm text-white text-opacity-70 block hover:underline"
         >
           {music.artist?.name}
         </Link>

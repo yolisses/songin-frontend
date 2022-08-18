@@ -27,7 +27,10 @@ export function MusicTable({ musics }:MusicTableProps) {
             </button>
           </td>
           <td>
-            <Link to={`/@${music.artist?.name}`} className="opacity-50">
+            <Link
+              to={`/@${music.artist?.name}`}
+              className="opacity-50 hover:underline"
+            >
               {music.artist?.name}
             </Link>
           </td>

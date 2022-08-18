@@ -21,10 +21,13 @@ export function LateralNav() {
           <FaHome />
           Início
         </Link>
-        <button className="flex flex-row items-center gap-2 p-2 hover:bg-gray-100 rounded-lg">
+        {/* <Link
+          to="/search"
+          className="flex flex-row items-center gap-2 p-2 hover:bg-gray-100 rounded-lg"
+        >
           <FaSearch />
           Pesquisar
-        </button>
+        </Link> */}
         <Link
           to="/favorites"
           className="flex flex-row items-center gap-2 p-2 hover:bg-gray-100 rounded-lg"
