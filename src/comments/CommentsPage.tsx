@@ -52,7 +52,7 @@ export function CommentsPage() {
             </button>
             )}
           </div>
-          <button className="text-sm opacity-50">
+          <button className="text-sm p-1 opacity-50">
             <FaThumbsUp />
             {!!comment.likesCount && comment.likesCount}
           </button>
