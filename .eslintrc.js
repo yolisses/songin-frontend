@@ -23,6 +23,7 @@ module.exports = {
   ],
   root: true,
   rules: {
+    'no-shadow': 'off',
     'no-unused-vars': 'warn',
     'react/button-has-type': 'off',
     'react/react-in-jsx-scope': 'off',

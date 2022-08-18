@@ -9,15 +9,29 @@ interface MusicsContext{
   music?:Music
   musics?:Music[]
   setMusic:(music: Music) => void
-  setMusics:Dispatch<SetStateAction<Music[]|undefined>>
 }
 
 const musicsContext = createContext({} as MusicsContext);
 
+function removeDuplicates(values:Music[]) {
+  const table:{[key:number]:boolean} = {};
+  const result:Music[] = [];
+  values.forEach((music) => {
+    const { id } = music;
+    if (!table[id]) {
+      table[id] = true;
+      result.push(music);
+    }
+  });
+  return result;
+}
+
 export function MusicsContextProvider({ children }:ChildrenProps) {
-  const [musics, setMusics] = useState<Music[]>();
+  const [nextMusics, setNextMusics] = useState<Music[]>([]);
+  const [selectedMusics, setSelectedMusics] = useState<Music[]>([]);
   const [index, setIndex] = useState(0);
-  const music = musics ? musics[index] : undefined;
+  const musics = removeDuplicates([...selectedMusics, ...nextMusics]);
+  const music = musics[index];
 
   async function getMusics() {
     const res = await api.get('/musics', {
@@ -25,31 +39,23 @@ export function MusicsContextProvider({ children }:ChildrenProps) {
         _expand: 'artist',
       },
     });
-    setMusics(res.data);
+    setNextMusics(res.data);
   }
 
-  // eslint-disable-next-line no-shadow
   function setMusic(music:Music) {
     setIndex(0);
-    setMusics([music]);
+    setSelectedMusics([music]);
   }
 
   useEffect(() => {
     getMusics();
   }, []);
 
-  useEffect(() => {
-    if (musics && !music) {
-      setMusic(musics[0]);
-    }
-  }, [musics]);
-
   return (
     <musicsContext.Provider value={{
       music,
       musics,
       setMusic,
-      setMusics,
     }}
     >
       {children}

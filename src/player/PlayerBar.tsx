@@ -3,7 +3,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState } from 'react';
 import {
-  FaChevronDown, FaRedo, FaStepBackward, FaStepForward,
+  FaChevronDown, FaStepBackward, FaStepForward,
 } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { LikeButton } from '../like/LikeButton';
