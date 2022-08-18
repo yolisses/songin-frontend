@@ -44,7 +44,7 @@ export function PlayerModal() {
             labels={['Sequência', 'Comentários']}
           />
         </div>
-        <div className="p-2 overflow-auto flex-1">
+        <div className="overflow-auto flex-1 flex flex-col items-stretch ">
           <TabsContainer selected={tab}>
             <NextMusics />
             <Comments />
