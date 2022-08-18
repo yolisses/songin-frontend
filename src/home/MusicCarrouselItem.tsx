@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Music } from '../music/Music';
 import { useMusics } from '../music/MusicsContext';
 
@@ -28,9 +29,9 @@ export function MusicCarrouselItem({ music }:MusicCarrouselItemProps) {
       <button onClick={handleClick} className="hover:underline">
         {music.name}
       </button>
-      <button className="text-gray-700 hover:underline">
+      <Link to={`/@${music.artist?.name}`} className="text-gray-700 text-center hover:underline">
         {music.artist?.name}
-      </button>
+      </Link>
     </div>
   );
 }

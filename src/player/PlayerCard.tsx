@@ -2,6 +2,7 @@ import {
   Dispatch, SetStateAction, useEffect, useRef, useState,
 } from 'react';
 import { FaComment } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import { Music } from '../music/Music';
 import { PlayerRange } from './PlayerRange';
 import { LikeButton } from '../like/LikeButton';
@@ -57,9 +58,9 @@ export function PlayerCard({ music, setNewMusic }:PlayerCardProps) {
             <div className="text-xl">
               {music.name}
             </div>
-            <div className="">
+            <Link to={`/@${music.artist?.name}`} className="">
               {music.artist?.name}
-            </div>
+            </Link>
           </div>
           <div className="overflow-hidden">
             {share && (

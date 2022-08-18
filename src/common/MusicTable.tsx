@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Music } from '../music/Music';
 import { useMusics } from '../music/MusicsContext';
 import { formatMusicTime } from './formatMusicTime';
@@ -25,8 +26,10 @@ export function MusicTable({ musics }:MusicTableProps) {
               {music.name}
             </button>
           </td>
-          <td className="opacity-50">
-            {music.artist?.name}
+          <td>
+            <Link to={`/@${music.artist?.name}`} className="opacity-50">
+              {music.artist?.name}
+            </Link>
           </td>
           <td className="opacity-50">
             {formatMusicTime(music.duration) }

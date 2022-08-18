@@ -1,5 +1,3 @@
-export interface Artist{
-    id:number
-    name:string
-    image:string
-}
+import { User } from '../user/User';
+
+export type Artist = User

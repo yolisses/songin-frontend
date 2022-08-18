@@ -86,3 +86,7 @@ html {
 .animate-appear {
     animation: appear 0.45s;
 }
+
+img {
+    @apply text-xs text-gray-500 text-center
+}

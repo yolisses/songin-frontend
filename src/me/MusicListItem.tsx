@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Music } from '../music/Music';
 import { useMusics } from '../music/MusicsContext';
 
@@ -23,7 +24,13 @@ export function MusicListItem({ music }:MusicListItemProps) {
       />
       <div>
         <button>{music.name}</button>
-        <div className="text-sm text-white text-opacity-70">{music.artist?.name}</div>
+        <Link
+          to={`/@${music.artist?.name}`}
+          className="text-sm text-white text-opacity-70"
+        >
+          {music.artist?.name}
+
+        </Link>
       </div>
     </button>
   );
