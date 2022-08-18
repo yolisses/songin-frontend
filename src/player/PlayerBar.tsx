@@ -3,8 +3,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState } from 'react';
 import {
-  FaChevronDown,
-  FaPlay, FaRedo, FaStepBackward, FaStepForward,
+  FaChevronDown, FaRedo, FaStepBackward, FaStepForward,
 } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { LikeButton } from '../like/LikeButton';
@@ -13,6 +12,7 @@ import { useMd } from '../responsive/useMd';
 import { ShareBallon } from '../share/ShareBallon';
 import { ShareButton } from '../share/ShareButton';
 import { stopPropagation } from '../utils/stopPropagation';
+import { PlayButton } from './PlayButton';
 import { PlayerModal } from './PlayerModal';
 import { PlayerRange } from './PlayerRange';
 
@@ -62,9 +62,7 @@ export function PlayerBar() {
           <button className="p-2 rounded-full ">
             <FaStepBackward />
           </button>
-          <button className="p-2 rounded-full text-2xl">
-            <FaPlay />
-          </button>
+          <PlayButton />
           <button className="p-2 rounded-full ">
             <FaStepForward />
           </button>
