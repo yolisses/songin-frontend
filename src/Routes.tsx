@@ -15,6 +15,7 @@ import { SignInPage } from './signIn/SignInPage';
 import { HistoryPage } from './history/HistoryPage';
 import { FavoritesPage } from './like/FavoritesPage';
 import { SplashScreen } from './splash/SplashScreen';
+import { Comments } from './comments/Comments';
 import { CommentsPage } from './comments/CommentsPage';
 
 export function Routes() {

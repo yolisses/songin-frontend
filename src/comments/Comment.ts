@@ -7,6 +7,5 @@ export interface Comment{
     likesCount:number
     replies?:Comment[]
     repliesCount:number
-
     createdAt:any // todo
 }
