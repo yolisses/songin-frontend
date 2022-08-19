@@ -25,12 +25,9 @@ export function MusicListItem({ music }:MusicListItemProps) {
       />
       <div>
         <div>{music.name}</div>
-        <Link
-          to={`/@${music.artist?.name}`}
-          className="text-sm text-white text-opacity-70 block hover:underline"
-        >
+        <div className="text-sm text-white text-opacity-70">
           {music.artist?.name}
-        </Link>
+        </div>
       </div>
     </button>
   );
