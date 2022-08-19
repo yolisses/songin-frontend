@@ -7,7 +7,7 @@ export function useSignIn() {
 
   return {
     async signIn(credential:string) {
-      const res = await api.post('/sign-in');
+      const res = await api.post('/sign-in', credential);
       const user:User = res.data;
       setUser(user);
     },
