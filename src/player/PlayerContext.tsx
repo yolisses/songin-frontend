@@ -85,7 +85,7 @@ export function PlayerContextProvider({ children }:ChildrenProps) {
           onPause={handlePause}
           onTimeUpdate={updateTime}
         >
-          <source src="offline.mp3" />
+          <source src="offline.m4a" />
         </audio>
         {children}
       </>
