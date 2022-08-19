@@ -39,7 +39,7 @@ export function LikeButton({ music, alreadyLiked }:LikeButtonProps) {
       >
         <FaHeart
           size={iconsSize}
-          className="group-active:scale-50 transition absolute focus:outline-none animate-explode select-none pointer-events-none"
+          className="group-active:scale-50 transition-transform absolute focus:outline-none animate-explode select-none pointer-events-none"
           style={{
             color: 'red',
             opacity: animate ? '100%' : '0',
@@ -48,7 +48,7 @@ export function LikeButton({ music, alreadyLiked }:LikeButtonProps) {
         />
         <FaHeart
           size={iconsSize}
-          className="group-active:scale-50 transition"
+          className="group-active:scale-50 transition-transform"
           style={{ color: active ? 'red' : undefined }}
         />
       </button>
