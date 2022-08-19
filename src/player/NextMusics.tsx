@@ -7,13 +7,13 @@ export function NextMusics() {
   if (!musics) return null;
 
   return (
-    <>
+    <div className="w-full flex flex-col gap-2 py-2">
       { musics.map((music) => (
         <MusicListItem
           key={music.id}
           music={music}
         />
       ))}
-    </>
+    </div>
   );
 }

@@ -24,7 +24,7 @@ export function PlayerModal() {
   }, []);
 
   return (
-    <div className="flex flex-row h-full w-full text-white overflow-hidden">
+    <div className="flex flex-row h-full w-full text-white overflow-hidden z-20">
       <div
         style={{ backgroundImage: `url("${music.image}")` }}
         className="w-full h-full absolute brightness-50 -z-10 bg-[#1b1c29] bg-center bg-no-repeat bg-cover blur-[50px] scale-[1.6]"
@@ -44,7 +44,7 @@ export function PlayerModal() {
             labels={['Sequência', 'Comentários']}
           />
         </div>
-        <div className="overflow-auto flex-1 flex flex-col items-stretch ">
+        <div className="overflow-auto flex-1 flex flex-col">
           <TabsContainer selected={tab}>
             <NextMusics />
             <Comments />

@@ -15,7 +15,10 @@ export function displayNumber(num:number, digits:number) {
       break;
     }
   }
-  return (num / suffix[i].value)
+  const result = (num / suffix[i].value)
     .toFixed(digits)
     .replace(rx, '$1') + suffix[i].symbol;
+
+  if (result === 'NaN') return '';
+  return result;
 }
