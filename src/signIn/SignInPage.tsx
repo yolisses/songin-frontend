@@ -40,6 +40,7 @@ export function SignInPage() {
           <a href="/privacy-policy" className="underline">
             Política de privacidade
           </a>
+          {' '}
           e os
           {' '}
           <a href="/use-terms" className="underline">
