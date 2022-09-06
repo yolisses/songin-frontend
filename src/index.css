@@ -28,65 +28,11 @@ html {
     scroll-behavior: smooth;
 }
 
+img {
+    @apply text-xs text-gray-500 text-center overflow-hidden
+}
+
 /* change to * to debug */
 .debug {
     outline: 1px solid #f00 !important;
-}
-
-@keyframes spring {
-    from {
-        transform: scaleY(50%);
-    }
-}
-
-.animate-spring {
-    animation: alternate infinite spring linear;
-}
-
-
-@keyframes explode {
-    to {
-        opacity: 0;
-        transform: scale(250%);
-    }
-}
-
-.animate-explode {
-    animation: explode 1s;
-}
-
-@keyframes slide-up {
-    from {
-        height: 0;
-        opacity: 0;
-    }
-
-    to {
-        height: 3.5rem;
-        opacity: 1;
-    }
-}
-
-.animate-slide-up {
-    animation: slide-up 0.15s;
-}
-
-@keyframes appear {
-    from {
-        height: 0;
-        opacity: 0;
-        scale: 70%;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.animate-appear {
-    animation: appear 0.45s;
-}
-
-img {
-    @apply text-xs text-gray-500 text-center overflow-hidden
 }

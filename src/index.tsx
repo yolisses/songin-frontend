@@ -1,8 +1,9 @@
 import './index.css';
+import './animations.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { reportWebVitals } from './generated/reportWebVitals';
 import { App } from './App';
+import { reportWebVitals } from './generated/reportWebVitals';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
