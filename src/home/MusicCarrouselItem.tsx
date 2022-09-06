@@ -29,7 +29,7 @@ export function MusicCarrouselItem({ music }:MusicCarrouselItemProps) {
       <button onClick={handleClick} className="hover:underline">
         {music.name}
       </button>
-      <Link to={`/@${music.artist?.name}`} className="text-center hover:underline opacity-50">
+      <Link to={`/@${music.artist?.name}`} className="text-center hover:underline opacity-60">
         {music.artist?.name}
       </Link>
     </div>
