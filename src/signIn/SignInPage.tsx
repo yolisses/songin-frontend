@@ -18,7 +18,7 @@ export function SignInPage() {
           <div>
             <div className="flex flex-row gap-1">
               <img src="logo/white.svg" alt="logo" width={15} className="inline-block" />
-              <h2 className="text-lg">Musikz</h2>
+              <h2 className="text-lg">Sonhin</h2>
             </div>
             <h1 className="text-3xl uppercase">Vem curtir vibes</h1>
           </div>

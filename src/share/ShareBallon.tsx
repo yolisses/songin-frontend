@@ -12,7 +12,7 @@ export function ShareBallon({ music, close }:ShareBallonProps) {
     <Ballon close={close}>
       <ShareButtons
         size={40}
-        url={`https://musiks.com/music/${music.id}`}
+        url={`https://sonhin.com/music/${music.id}`}
       />
     </Ballon>
   );

@@ -1,5 +1,5 @@
 {
-  "name": "musikz",
+  "name": "sonhin",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -51,7 +51,7 @@
     ]
   },
   "main": "index.tsx",
-  "repository": "https://github.com/yowlisses/musikz-frontend.git",
+  "repository": "https://github.com/yowlisses/sonhin-frontend.git",
   "author": "ulisses <iamurise@gmail.com>",
   "license": "UNLICENSED",
   "devDependencies": {
