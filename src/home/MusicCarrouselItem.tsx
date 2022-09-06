@@ -15,7 +15,7 @@ export function MusicCarrouselItem({ music }:MusicCarrouselItemProps) {
 
   return (
     <div
-      className="flex-shrink-0 max-w-[44vw] flex flex-col relative"
+      className="flex-shrink-0 max-w-[44vw] flex flex-col relative items-center"
     >
       <div className="snap-start absolute -left-2" />
       <button className="rounded-lg" onClick={handleClick}>
@@ -26,10 +26,10 @@ export function MusicCarrouselItem({ music }:MusicCarrouselItemProps) {
           className="aspect-square w-44 rounded-lg"
         />
       </button>
-      <button onClick={handleClick} className="hover:underline">
+      <button onClick={handleClick} className="hover:underline w-fit">
         {music.name}
       </button>
-      <Link to={`/@${music.artist?.name}`} className="text-center hover:underline opacity-60">
+      <Link to={`/@${music.artist?.name}`} className="text-center hover:underline opacity-60 w-fit">
         {music.artist?.name}
       </Link>
     </div>
