@@ -27,7 +27,7 @@ export function PlayerModal() {
     <div className="flex flex-row h-full w-full text-white overflow-hidden z-20">
       <div
         style={{ backgroundImage: `url("${music.image}")` }}
-        className="w-full h-full absolute brightness-50 -z-10 bg-zinc-800 bg-center bg-no-repeat bg-cover blur-[50px] scale-[1.6]"
+        className="w-full h-full absolute brightness-[0.3] -z-10 bg-zinc-800 bg-center bg-no-repeat bg-cover blur-[50px] scale-[1.6]"
       />
       <div className="flex-1 flex items-center justify-center p-10">
         <img
