@@ -53,8 +53,8 @@ export function PlayerBar() {
       <button
         onClick={handleClick}
         style={{
-          color: modalActive ? 'white' : undefined,
-          backgroundColor: modalActive ? undefined : 'white',
+          // color: modalActive ? 'white' : undefined,
+          backgroundColor: modalActive ? undefined : '#18181b',
         }}
         className="fixed w-full z-10 bottom-0 h-16 duration-[0.4s] transition-colors flex flex-row justify-between items-center"
       >
@@ -75,7 +75,7 @@ export function PlayerBar() {
             <img
               alt={music.name}
               src={music.image}
-              className="bg-gray-200 rounded transition-all aspect-square duration-[0.4s]"
+              className="rounded transition-all aspect-square duration-[0.4s]"
               style={{
                 scale: modalActive ? 0 : undefined,
                 opacity: modalActive ? 0 : undefined,

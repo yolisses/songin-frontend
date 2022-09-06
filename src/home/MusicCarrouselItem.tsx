@@ -23,13 +23,13 @@ export function MusicCarrouselItem({ music }:MusicCarrouselItemProps) {
           key={music.id}
           alt={music.name}
           src={music.image}
-          className="bg-gray-200 aspect-square w-44 rounded-lg"
+          className="aspect-square w-44 rounded-lg"
         />
       </button>
       <button onClick={handleClick} className="hover:underline">
         {music.name}
       </button>
-      <Link to={`/@${music.artist?.name}`} className="text-gray-700 text-center hover:underline">
+      <Link to={`/@${music.artist?.name}`} className="text-center hover:underline opacity-50">
         {music.artist?.name}
       </Link>
     </div>

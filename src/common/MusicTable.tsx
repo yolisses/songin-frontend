@@ -11,14 +11,14 @@ export function MusicTable({ musics }:MusicTableProps) {
   const { setMusic } = useMusics();
 
   return (
-    <table className="w-full table-auto border-spacing-1 border-separate">
+    <table className="w-full table-auto border-collapse">
       {musics.map((music) => (
-        <tr>
+        <tr className="active-opacity rounded-lg">
           <td className="w-12">
             <img
               alt={music.name}
               src={music.image}
-              className="bg-gray-200 aspect-square rounded w-12"
+              className="aspect-square rounded w-12"
             />
           </td>
           <td>
@@ -29,12 +29,12 @@ export function MusicTable({ musics }:MusicTableProps) {
           <td>
             <Link
               to={`/@${music.artist?.name}`}
-              className="opacity-50 hover:underline"
+              className="opacity-60 hover:underline"
             >
               {music.artist?.name}
             </Link>
           </td>
-          <td className="opacity-50">
+          <td className="opacity-60">
             {formatMusicTime(music.duration) }
           </td>
         </tr>

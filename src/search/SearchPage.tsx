@@ -7,7 +7,7 @@ export function SearchPage() {
         <input
           type="text"
           placeholder="Pesquisar"
-          className="p-2 bg-transparent flex-1 rounded-full border-2 border-opacity-50"
+          className="p-2 bg-transparent flex-1 rounded-full border-2 border-white border-opacity-50"
         />
         <button className="p-2 text-lg group">
           <FaSearch className="group-active:scale-50 transition-transform" />

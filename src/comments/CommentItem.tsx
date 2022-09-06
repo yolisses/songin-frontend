@@ -13,7 +13,7 @@ export function CommentItem({ comment }:CommentItemProps) {
       <img
         src={comment.user?.image}
         alt={comment.user?.nickname}
-        className="aspect-square h-9 rounded-full bg-gray-200"
+        className="aspect-square h-9 rounded-full"
       />
       <div className="flex-1">
         <div className="text-sm opacity-50">

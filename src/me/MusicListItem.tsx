@@ -21,7 +21,7 @@ export function MusicListItem({ music }:MusicListItemProps) {
       <img
         alt={music.name}
         src={music.image}
-        className="w-12 aspect-square rounded bg-gray-200"
+        className="w-12 aspect-square rounded"
       />
       <div>
         <div>{music.name}</div>

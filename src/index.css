@@ -20,6 +20,10 @@
     mask-image: linear-gradient(transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
+.center {
+    @apply items-center justify-center
+}
+
 li {
     list-style: none;
 }
@@ -28,11 +32,23 @@ html {
     scroll-behavior: smooth;
 }
 
+html {
+    @apply text-white bg-zinc-900
+}
+
 img {
-    @apply text-xs text-gray-500 text-center overflow-hidden
+    @apply bg-white bg-opacity-20
+}
+
+img[alt] {
+    @apply text-xs text-center overflow-hidden
 }
 
 /* change to * to debug */
 .debug {
     outline: 1px solid #f00 !important;
+}
+
+.active-opacity:hover {
+    @apply bg-white bg-opacity-20
 }

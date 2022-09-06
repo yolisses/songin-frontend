@@ -18,7 +18,7 @@ export function MePage() {
         <img
           src={user.image}
           alt={user.name}
-          className="rounded-full bg-gray-200 aspect-square h-20"
+          className="rounded-full aspect-square h-20"
         />
         <div className="flex flex-col gap-2 flex-1">
           <h1 className="text-2xl">

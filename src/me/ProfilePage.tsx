@@ -53,7 +53,7 @@ export function ProfilePage({ fixedUsername }:ProfilePageProps) {
               <img
                 alt={user.name}
                 src={user.image}
-                className="bg-gray-200 aspect-square h-32 md:h-40 rounded-full"
+                className="aspect-square h-32 md:h-40 rounded-full"
               />
               <div>
                 <div className="text-2xl">{user.name}</div>
