@@ -8,7 +8,7 @@ export function SplashScreen() {
           src="logo/gradient.svg"
           className="bg-transparent"
         />
-        <h1 className="text-3xl font-bold bg-gradient-to-tr from-sky-500 to-purple-500 bg-clip-text text-transparent">Sonhin</h1>
+        <h1 className="text-3xl logo">Sonhin</h1>
       </div>
     </div>
   );

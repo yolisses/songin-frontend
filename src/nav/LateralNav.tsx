@@ -22,7 +22,7 @@ export function LateralNav() {
             src="/logo/gradient.svg"
             className="bg-transparent"
           />
-          <h1 className="text-xl font-bold bg-gradient-to-tr from-sky-500 to-purple-500 bg-clip-text text-transparent">Sonhin</h1>
+          <h1 className="text-xl logo">Sonhin</h1>
         </div>
         <LateralNavItem
           to="/"
