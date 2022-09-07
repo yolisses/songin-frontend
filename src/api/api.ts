@@ -1,10 +1,8 @@
 import axios from 'axios';
 
-console.log(process.env);
-
 type ApiChoice = 'dev' | 'prod' | 'mock'
 
-const choice:ApiChoice = 'mock';
+const choice:ApiChoice = 'prod';
 
 let baseURL:string;
 
