@@ -23,7 +23,7 @@ export function SignInPage() {
                 src="logo/white.svg"
                 className="inline-block bg-transparent"
               />
-              <h2 className="text-lg">Sonhin</h2>
+              <h2 className="text-lg logo text-white">Sonhin</h2>
             </div>
             <h1 className="text-3xl uppercase">Vem curtir vibes</h1>
           </div>
