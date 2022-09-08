@@ -25,7 +25,7 @@ export function SignInPage() {
               />
               <h2 className="text-lg logo text-white">Sonhin</h2>
             </div>
-            <h1 className="text-3xl uppercase">Let&aposs vibes</h1>
+            <h1 className="text-3xl uppercase">Let&#39s vibes</h1>
           </div>
           {loading ? (
             <div className="brightness-0 invert">
