@@ -15,7 +15,10 @@ export function LateralNav() {
     <>
       <div className="pr-[10rem] max-w-[10rem]" />
       <div className="flex flex-col text-lg fixed top-0 w-[10rem]">
-        <div className="flex flex-row items-center gap-2 p-2">
+        <Link
+          to="/"
+          className="flex flex-row items-center gap-2 p-2"
+        >
           <img
             alt="logo"
             width={20}
@@ -23,7 +26,7 @@ export function LateralNav() {
             className="bg-transparent"
           />
           <h1 className="text-xl logo">Sonhin</h1>
-        </div>
+        </Link>
         <LateralNavItem
           to="/"
           text="Início"
@@ -47,7 +50,7 @@ export function LateralNav() {
         <LateralNavItem
           text="Perfil"
           Icon={FaUser}
-          to={`/@${user.nickname}`}
+          to={`/@${user?.nickname}`}
         />
       </div>
     </>

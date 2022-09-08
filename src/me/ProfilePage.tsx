@@ -71,7 +71,7 @@ export function ProfilePage({ fixedUsername }:ProfilePageProps) {
             <NumberIndicator label="Curtidas" amount={2493} />
             <NumberIndicator label="Seguindo" amount={432} />
             <NumberIndicator label="Seguidores" amount={498} />
-            {user.id !== currentUser.id ? (
+            {user.id !== currentUser?.id ? (
               <button className="flex flex-row items-center gap-2 md:mr-auto">
                 <FaUser />
                 Seguir

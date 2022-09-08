@@ -9,7 +9,7 @@ import { TabButtons } from '../tab/TabButtons';
 import { Favorites } from '../like/Favorites';
 
 export function MePage() {
-  const { user } = useUser();
+  const user = useUser().user!;
   const [tab, setTab] = useState(0);
 
   return (

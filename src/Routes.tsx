@@ -12,16 +12,14 @@ import { PlayerBar } from './player/PlayerBar';
 import { ConfigPage } from './config/ConfigPage';
 import { PlayerPage } from './player/PlayerPage';
 import { SignInPage } from './signIn/SignInPage';
+import { SearchPage } from './search/SearchPage';
 import { HistoryPage } from './history/HistoryPage';
 import { FavoritesPage } from './like/FavoritesPage';
 import { SplashScreen } from './splash/SplashScreen';
-import { Comments } from './comments/Comments';
 import { CommentsPage } from './comments/CommentsPage';
-import { SearchPage } from './search/SearchPage';
 
 export function Routes() {
-  const { user, setUser } = useUser();
-
+  const { setUser } = useUser();
   const [loading, setLoading] = useState(true);
 
   async function getMe() {
@@ -32,7 +30,7 @@ export function Routes() {
     } catch (err) {
       if (axios.isAxiosError(err)) {
         if (err.response?.status === 403) {
-          setUser(null as any);
+          setUser(undefined);
           setLoading(false);
         }
       }
@@ -44,8 +42,6 @@ export function Routes() {
   }, []);
 
   if (loading) return <SplashScreen />;
-
-  if (!user) return <SignInPage />;
 
   return (
     <BrowserRouter>

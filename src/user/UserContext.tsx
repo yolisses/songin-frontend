@@ -2,23 +2,23 @@ import {
   createContext, Dispatch, SetStateAction, useContext, useState,
 } from 'react';
 import { User } from './User';
-import { ChildrenProps } from '../common/ChildrenProps';
 import { api } from '../api/api';
+import { ChildrenProps } from '../common/ChildrenProps';
 
 interface UserContext{
-    user:User
+    user?:User
     logout:()=>void
-    setUser:Dispatch<SetStateAction<User>>
+    setUser:Dispatch<SetStateAction<User|undefined>>
 }
 
 const userContext = createContext({} as UserContext);
 
 export function UserContextProvider({ children }:ChildrenProps) {
-  const [user, setUser] = useState(null as any as User);
+  const [user, setUser] = useState<User>();
 
   async function logout() {
     await api.post('/log-out');
-    setUser(null as any);
+    setUser(undefined);
   }
 
   return (
