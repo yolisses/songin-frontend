@@ -1,6 +1,6 @@
 export function SignInModal() {
   return (
-    <div className="bg-zinc-800 p-4 rounded-lg">
+    <div>
       Sign in to continue
     </div>
   );

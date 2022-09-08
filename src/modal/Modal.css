@@ -1,0 +1,12 @@
+@keyframes modal-appear {
+    from {
+        opacity: 0;
+        scale: 70%;
+    }
+}
+
+@keyframes modal-overlay-appear {
+    from {
+        opacity: 0;
+    }
+}

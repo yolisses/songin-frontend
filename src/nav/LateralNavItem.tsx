@@ -15,12 +15,12 @@ interface LateralNavItemProps{
 export function LateralNavItem({
   to, Icon, text, requireSignIn,
 }:LateralNavItemProps) {
-  const { setModal } = useModal();
+  const { setContent } = useModal();
 
   function handleClick(e:MouseEvent) {
     e.stopPropagation();
     e.preventDefault();
-    setModal(<SignInModal />);
+    setContent(<SignInModal />);
   }
 
   return (

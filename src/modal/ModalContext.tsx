@@ -4,23 +4,31 @@ import {
   createContext, Dispatch, ReactNode, SetStateAction, useContext, useState,
 } from 'react';
 import { ChildrenProps } from '../common/ChildrenProps';
+import { Modal } from './Modal';
 import { ModalOverflow } from './ModalOverflow';
 
 interface ModalContext{
-    modal?:ReactNode
-    setModal:Dispatch<SetStateAction<ReactNode|undefined>>
+  close:()=>void
+  content?:ReactNode
+  setContent:Dispatch<SetStateAction<ReactNode|undefined>>
 }
 
 const modalContext = createContext({} as ModalContext);
 
 export function ModalContextProvider({ children }:ChildrenProps) {
-  const [modal, setModal] = useState<ReactNode>();
+  const [content, setContent] = useState<ReactNode>();
+
+  function close() {
+    setContent(undefined);
+  }
 
   return (
-    <modalContext.Provider value={{ modal, setModal }}>
-      {modal && (
-      <ModalOverflow setModal={setModal}>
-        {modal}
+    <modalContext.Provider value={{ content, setContent, close }}>
+      {content && (
+      <ModalOverflow>
+        <Modal>
+          {content}
+        </Modal>
       </ModalOverflow>
       )}
       {children}
