@@ -41,7 +41,7 @@ export function PlayerModal() {
           <TabButtons
             tab={tab}
             setTab={setTab}
-            labels={['Sequência', 'Comentários']}
+            labels={['Coming in', 'Comments']}
           />
         </div>
         <div className="overflow-auto flex-1 flex flex-col">

@@ -15,7 +15,7 @@ export function Modal({ children }:ChildrenProps) {
       className="bg-zinc-800 overflow-hidden rounded-2xl"
       style={{
         animation: 'modal-appear',
-        animationDuration: '0.5s',
+        animationDuration: '0.25s',
       }}
     >
       {children}

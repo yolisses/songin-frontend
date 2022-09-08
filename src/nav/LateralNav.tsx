@@ -29,28 +29,28 @@ export function LateralNav() {
         </Link>
         <LateralNavItem
           to="/"
-          text="Início"
+          text="Home"
           Icon={FaHome}
         />
         <LateralNavItem
           to="/search"
           Icon={FaSearch}
-          text="Pesquisar"
+          text="Search"
         />
         <LateralNavItem
           Icon={FaHeart}
           to="/favorites"
-          text="Favoritas"
+          text="Favorites"
         />
         <LateralNavItem
           to="/history"
-          text="Histórico"
+          text="History"
           Icon={FaHistory}
         />
         <LateralNavItem
-          text="Perfil"
           Icon={FaUser}
           requireSignIn
+          text="Profile"
           to={`/@${user?.nickname}`}
         />
       </div>
