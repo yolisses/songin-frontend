@@ -50,6 +50,7 @@ export function LateralNav() {
         <LateralNavItem
           text="Perfil"
           Icon={FaUser}
+          requireSignIn
           to={`/@${user?.nickname}`}
         />
       </div>

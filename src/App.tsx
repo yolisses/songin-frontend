@@ -5,6 +5,7 @@ import { configureTimeAgo } from './common/configureTimeAgo';
 import { MusicsContextProvider } from './music/MusicsContext';
 import { PlayerContextProvider } from './player/PlayerContext';
 import { SearchContextProvider } from './search/SearchContext';
+import { ModalContextProvider } from './modal/ModalContext';
 
 export function App() {
   useEffect(configureTimeAgo, []);
@@ -14,7 +15,9 @@ export function App() {
       <SearchContextProvider>
         <MusicsContextProvider>
           <PlayerContextProvider>
-            <Routes />
+            <ModalContextProvider>
+              <Routes />
+            </ModalContextProvider>
           </PlayerContextProvider>
         </MusicsContextProvider>
       </SearchContextProvider>
