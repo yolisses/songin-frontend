@@ -5,7 +5,7 @@ interface MusicCarrouselProps{
   group:Group
 }
 
-export function MusicCarrousel({ group }:MusicCarrouselProps) {
+export function GroupCarrousel({ group }:MusicCarrouselProps) {
   return (
     <div>
       {group.name && (
