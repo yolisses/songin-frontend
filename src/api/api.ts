@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { isDev } from '../common/isDev';
 
 type ApiChoice = 'dev' | 'prod' | 'mock'
 
@@ -11,7 +12,7 @@ const baseURLChoices = {
 } as const;
 
 let baseURL:string;
-if (process.env.NODE_ENV === 'development') {
+if (isDev) {
   baseURL = baseURLChoices[choice] as string;
 } else {
   baseURL = baseURLChoices.prod as string;
