@@ -1,7 +1,10 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import {
   createContext, Dispatch, ReactNode, SetStateAction, useContext, useState,
 } from 'react';
 import { ChildrenProps } from '../common/ChildrenProps';
+import { ModalOverflow } from './ModalOverflow';
 
 interface ModalContext{
     modal?:ReactNode
@@ -15,7 +18,11 @@ export function ModalContextProvider({ children }:ChildrenProps) {
 
   return (
     <modalContext.Provider value={{ modal, setModal }}>
-      {modal}
+      {modal && (
+      <ModalOverflow setModal={setModal}>
+        {modal}
+      </ModalOverflow>
+      )}
       {children}
     </modalContext.Provider>
   );

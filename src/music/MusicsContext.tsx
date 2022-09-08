@@ -1,6 +1,6 @@
 /* eslint-disable no-use-before-define */
 import {
-  createContext, Dispatch, SetStateAction, useContext, useEffect, useState,
+  createContext, useContext, useEffect, useState,
 } from 'react';
 import { api } from '../api/api';
 import { ChildrenProps } from '../common/ChildrenProps';

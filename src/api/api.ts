@@ -2,7 +2,7 @@ import axios from 'axios';
 
 type ApiChoice = 'dev' | 'prod' | 'mock'
 
-const choice:ApiChoice = 'mock';
+const choice:ApiChoice = 'prod';
 
 const baseURLChoices = {
   prod: process.env.REACT_APP_API_URL,
