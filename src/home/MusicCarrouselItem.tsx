@@ -15,21 +15,30 @@ export function MusicCarrouselItem({ music }:MusicCarrouselItemProps) {
 
   return (
     <div
-      className="flex-shrink-0 max-w-[44vw] flex flex-col relative items-center"
+      className="flex flex-col w-44 relative items-center overflow-hidden"
     >
       <div className="snap-start absolute -left-2" />
-      <button className="rounded-lg" onClick={handleClick}>
+      <button
+        onClick={handleClick}
+        className="rounded-lg"
+      >
         <img
           key={music.id}
           alt={music.name}
           src={music.image}
-          className="aspect-square w-44 rounded-lg"
+          className="aspect-square rounded-lg w-44"
         />
       </button>
-      <button onClick={handleClick} className="hover:underline w-fit">
+      <button
+        onClick={handleClick}
+        className="hover:underline"
+      >
         {music.name}
       </button>
-      <Link to={`/@${music.artist?.name}`} className="text-center hover:underline opacity-60 w-fit">
+      <Link
+        to={`/@${music.artist?.name}`}
+        className="text-center hover:underline opacity-60 w-fit"
+      >
         {music.artist?.name}
       </Link>
     </div>
