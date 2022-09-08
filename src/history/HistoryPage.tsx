@@ -5,7 +5,7 @@ export function HistoryPage() {
   return (
     <div className="p-2 w-full relative">
       <FloatingTitle>
-        Histórico
+        History
       </FloatingTitle>
       <History />
     </div>

@@ -5,7 +5,7 @@ export function FavoritesPage() {
   return (
     <div className="p-2 w-full">
       <FloatingTitle>
-        Favoritas
+        Favorites
       </FloatingTitle>
       <Favorites />
     </div>
