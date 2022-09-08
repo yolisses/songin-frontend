@@ -2,16 +2,15 @@ import { Group } from '../group/Group';
 import { MusicCarrouselItem } from './MusicCarrouselItem';
 
 interface MusicCarrouselProps{
-  title?:string
   group:Group
 }
 
-export function MusicCarrousel({ group, title }:MusicCarrouselProps) {
+export function MusicCarrousel({ group }:MusicCarrouselProps) {
   return (
     <div>
-      {title && (
+      {group.name && (
       <h3 className="text-xl md:text-2xl pb-2 pl-2">
-        {title}
+        {group.name}
       </h3>
       )}
       <div

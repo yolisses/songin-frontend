@@ -24,10 +24,7 @@ export function HomePage() {
     <div className="flex flex-col gap-10 py-4">
       {groups?.map(
         (group) => (
-          <MusicCarrousel
-            group={group}
-            title="Você vai gostar"
-          />
+          <MusicCarrousel group={group} />
         ),
       )}
       <Nav />
