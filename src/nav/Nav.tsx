@@ -18,7 +18,7 @@ export function Nav({ white = true, spacer = true }:NavProps) {
       {spacer && <div className="h-12" />}
       <div
         className="fixed bottom-0 z-10 h-12 justify-around w-screen items-center text-center flex flex-row gap-2"
-        style={{ backgroundColor: white ? 'white' : undefined }}
+        style={{ backgroundColor: white ? 'rgb(24 24 27)' : undefined }}
       >
         <NavPlayButton />
         <NavButton
