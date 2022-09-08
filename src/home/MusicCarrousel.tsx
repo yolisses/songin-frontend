@@ -1,12 +1,12 @@
-import { Music } from '../music/Music';
+import { Group } from '../group/Group';
 import { MusicCarrouselItem } from './MusicCarrouselItem';
 
 interface MusicCarrouselProps{
   title?:string
-  musics:Music[]
+  group:Group
 }
 
-export function MusicCarrousel({ musics, title }:MusicCarrouselProps) {
+export function MusicCarrousel({ group, title }:MusicCarrouselProps) {
   return (
     <div>
       {title && (
@@ -17,7 +17,7 @@ export function MusicCarrousel({ musics, title }:MusicCarrouselProps) {
       <div
         className="flex flex-row gap-2 px-4 overflow-x-auto no-scrollbar snap-x snap-mandatory"
       >
-        {musics.slice(0, 10).map((music) => (
+        {group.items.map((music) => (
           <MusicCarrouselItem music={music} key={music.id} />
         ))}
       </div>
