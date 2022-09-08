@@ -26,7 +26,7 @@ export function LateralNavItem({
   return (
     <Link
       to={to}
-      onClick={handleClick}
+      onClick={requireSignIn ? handleClick : undefined}
       className="flex flex-row items-center gap-2 p-2 active-opacity rounded-lg"
     >
       <Icon />
