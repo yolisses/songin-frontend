@@ -12,10 +12,10 @@ export function Modal({ children }:ChildrenProps) {
   return (
     <div
       onClick={handleClick}
-      className="bg-zinc-800 p-4 rounded-lg"
+      className="bg-zinc-800 overflow-hidden rounded-2xl"
       style={{
         animation: 'modal-appear',
-        animationDuration: '0.2s',
+        animationDuration: '0.5s',
       }}
     >
       {children}

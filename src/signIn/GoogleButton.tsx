@@ -41,7 +41,7 @@ export function GoogleButton() {
   return (
     <>
       <div
-        className="h-10"
+        className="h-10 w-[12.5rem]"
         ref={divRef}
       />
       <script src="https://accounts.google.com/gsi/client" async />

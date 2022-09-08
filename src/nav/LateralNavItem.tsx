@@ -20,7 +20,7 @@ export function LateralNavItem({
   function handleClick(e:MouseEvent) {
     e.stopPropagation();
     e.preventDefault();
-    setContent(<SignInModal />);
+    setContent(<SignInModal text="have a Profile" />);
   }
 
   return (
