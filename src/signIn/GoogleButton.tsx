@@ -1,6 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef } from 'react';
-import { useSignIn } from './useSignIn';
+
+import { api } from '../api/api';
+import { User } from '../user/User';
+import { useUser } from '../user/UserContext';
 
 declare global{
   interface Window{
@@ -10,18 +13,30 @@ declare global{
 
 export function GoogleButton() {
   const divRef = useRef(null);
-  const { signIn } = useSignIn();
+  const { setUser } = useUser();
+  const clientId = '456371025061-44c24jcod62qnejc2kp6f8dmj3amlshn.apps.googleusercontent.com';
+
+  async function signIn(credential:string) {
+    console.log('hereree');
+    const res = await api.post('/sign-in', credential);
+    const user:User = res.data;
+    console.log('response');
+    console.log(res.data);
+    setUser(user);
+  }
+
+  function callback(res:any, error:any) {
+    if (error) {
+      alert(error);
+    }
+    signIn(res.credential);
+  }
 
   useEffect(() => {
     if (window.google) {
       window.google.accounts.id.initialize({
-        client_id: '456371025061-44c24jcod62qnejc2kp6f8dmj3amlshn.apps.googleusercontent.com',
-        callback: (res:any, error:any) => {
-          if (error) {
-            alert(error);
-          }
-          signIn(res.credential);
-        },
+        callback,
+        client_id: clientId,
       });
     }
   }, [window.google]);

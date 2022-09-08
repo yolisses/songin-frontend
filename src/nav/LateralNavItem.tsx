@@ -4,6 +4,7 @@ import { IconType } from 'react-icons';
 import { Link } from 'react-router-dom';
 import { SignInModal } from '../auth/SignInModal';
 import { useModal } from '../modal/ModalContext';
+import { useUser } from '../user/UserContext';
 
 interface LateralNavItemProps{
     to:string
@@ -15,9 +16,11 @@ interface LateralNavItemProps{
 export function LateralNavItem({
   to, Icon, text, requireSignIn,
 }:LateralNavItemProps) {
+  const { user } = useUser();
   const { setContent } = useModal();
 
   function handleClick(e:MouseEvent) {
+    if (user) return;
     e.stopPropagation();
     e.preventDefault();
     setContent(<SignInModal text="have a Profile" />);

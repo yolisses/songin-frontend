@@ -19,28 +19,7 @@ import { SplashScreen } from './splash/SplashScreen';
 import { CommentsPage } from './comments/CommentsPage';
 
 export function Routes() {
-  const { setUser } = useUser();
-  const [loading, setLoading] = useState(true);
-
-  async function getMe() {
-    try {
-      const res = await api.get('users/me');
-      setUser(res.data);
-      setLoading(false);
-    } catch (err) {
-      if (axios.isAxiosError(err)) {
-        if (err.response?.status === 403) {
-          setUser(undefined);
-          setLoading(false);
-        }
-      }
-    }
-  }
-
-  useEffect(() => {
-    getMe();
-  }, []);
-
+  const { loading } = useUser();
   if (loading) return <SplashScreen />;
 
   return (
