@@ -17,9 +17,7 @@ if (process.env.NODE_ENV === 'development') {
   baseURL = baseURLChoices.prod as string;
 }
 
-export const api = axios.create(
-  {
-    withCredentials: true,
-    baseURL,
-  },
-);
+export const api = axios.create({
+  baseURL,
+  withCredentials: true,
+});
