@@ -1,31 +1,21 @@
-import { useEffect, useState } from 'react';
-import { api } from '../api/api';
+import { useEffect } from 'react';
 import { Nav } from '../nav/Nav';
-import { Group } from '../group/Group';
 import { Carrousel } from './Carrousel';
 import { Spinner } from '../common/Spinner';
+import { useHome } from './HomeContext';
 
 export function HomePage() {
-  const [groups, setGroups] = useState<Group[]>();
-  const [loading, setLoading] = useState(true);
-
-  async function getGroups() {
-    const res = await api.get('/groups/recommend', {
-      params: {
-        _expand: 'artist',
-      },
-    });
-    setGroups(res.data);
-    setLoading(false);
-  }
+  const { groups, getGroups, loading } = useHome();
 
   useEffect(() => {
-    getGroups();
+    if (!groups) {
+      getGroups();
+    }
   }, []);
 
   if (loading) {
     return (
-      <div className="flex flex-col gap-4 center text-lg expand-directions fixed">
+      <div className="flex flex-col gap-4 center text-lg expand-directions fixed pointer-events-none">
         <Spinner />
         Picking musics just for you
       </div>
