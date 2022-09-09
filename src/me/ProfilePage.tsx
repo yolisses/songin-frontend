@@ -1,44 +1,51 @@
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
 import { FaChevronLeft, FaUser } from 'react-icons/fa';
-import { useParams, useOutlet } from 'react-router';
-import { Link } from 'react-router-dom';
+
 import { api } from '../api/api';
+import { Profile } from './Profile';
 import { useQuery } from '../common/useQuery';
 import { Favorites } from '../like/Favorites';
-import { User } from '../user/User';
 import { useUser } from '../user/UserContext';
 import { NumberIndicator } from './NumberIndicator';
 
-interface ProfilePageProps{
-  fixedUsername?:string
-}
-
-export function ProfilePage({ fixedUsername }:ProfilePageProps) {
-  const [user, setUser] = useState<User>();
+export function ProfilePage() {
+  const { username } = useParams();
   const { user: currentUser } = useUser();
-  const username = fixedUsername || useParams().username;
+  const [loading, setLoading] = useState(true);
+  const [profile, setProfile] = useState<Profile>();
 
   const query = useQuery();
   const me = query.get('me');
 
   async function getUser() {
-    const res = await api.get('/users/1}');
-
-    if (Array.isArray(res.data)) {
-      setUser(res.data[0]);
-    } else setUser(res.data);
+    setLoading(true);
+    const res = await api.get(`/users/username/${username}`);
+    setProfile(res.data);
+    setLoading(false);
   }
 
   useEffect(() => {
     getUser();
   }, []);
 
+  if (loading || !profile) {
+    return null;
+  }
+
+  const {
+    user,
+    following,
+    followersCounter,
+    followingCounter,
+  } = profile;
   const isCurrent = user?.id !== currentUser?.id;
 
   return (
     <div className="w-full flex flex-col">
       <div
-        className="w-full relative h-96 z-0 bg-gray-500 bg-center bg-no-repeat bg-cover"
+        className="w-full relative h-64 z-0 bg-gray-500 bg-center bg-no-repeat bg-cover"
         style={{ backgroundImage: `url("${user?.coverImage}")` }}
       >
         <div className="absolute top-0 bottom-0 left-0 right-0 bg-black bg-opacity-50" />
@@ -68,10 +75,15 @@ export function ProfilePage({ fixedUsername }:ProfilePageProps) {
             </div>
           </div>
           <div className="flex flex-row justify-between gap-6">
-            <NumberIndicator label="Curtidas" amount={2493} />
-            <NumberIndicator label="Seguindo" amount={432} />
-            <NumberIndicator label="Seguidores" amount={498} />
-            {isCurrent ? (
+            <NumberIndicator
+              label="Seguindo"
+              amount={followingCounter}
+            />
+            <NumberIndicator
+              label="Seguidores"
+              amount={followersCounter}
+            />
+            {(!isCurrent && !following) ? (
               <button className="flex flex-row items-center gap-2 md:mr-auto">
                 <FaUser />
                 Seguir
