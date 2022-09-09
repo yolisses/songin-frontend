@@ -1,18 +1,30 @@
+/* eslint-disable react/jsx-no-bind */
 import {
   FaHeart, FaHistory, FaHome, FaSearch, FaUser,
 } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { MouseEvent } from 'react';
 import { useHome } from '../home/HomeContext';
 import { useMd } from '../responsive/useMd';
 import { useUser } from '../user/UserContext';
 import { LateralNavItem } from './LateralNavItem';
+import { SignInModal } from '../auth/SignInModal';
+import { useModal } from '../modal/ModalContext';
 
 export function LateralNav() {
   const md = useMd();
   const { user } = useUser();
-  if (!md) return null;
-
+  const { setContent } = useModal();
   const { refreshGroups } = useHome();
+
+  function requireSignIn(e:MouseEvent) {
+    if (user) return;
+    e.stopPropagation();
+    e.preventDefault();
+    setContent(<SignInModal text="have a Profile" />);
+  }
+
+  if (!md) return null;
 
   return (
     <>
@@ -55,6 +67,7 @@ export function LateralNav() {
         <LateralNavItem
           Icon={FaUser}
           text="Profile"
+          onClick={requireSignIn}
           to={user ? `/@${user.nickname}` : '/profile'}
         />
       </div>

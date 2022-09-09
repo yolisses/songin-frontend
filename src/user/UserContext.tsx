@@ -24,9 +24,8 @@ export function UserContextProvider({ children }:ChildrenProps) {
       setUser(res.data);
       setLoading(false);
     } catch (err) {
-      //
+      setUser(undefined);
     }
-    setUser(undefined);
     setLoading(false);
   }
 
