@@ -6,6 +6,10 @@ interface MusicCarrouselProps{
 }
 
 export function Carrousel({ group }:MusicCarrouselProps) {
+  if (group.items.length === 0) {
+    return null;
+  }
+
   return (
     <div>
       {group.name && (
