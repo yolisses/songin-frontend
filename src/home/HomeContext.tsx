@@ -7,6 +7,7 @@ interface HomeContext{
     groups?:Group[]
     loading:boolean
     getGroups:()=>void
+    refreshGroups:()=>void
 }
 
 const homeContext = createContext({} as HomeContext);
@@ -26,11 +27,18 @@ export function HomeContextProvider({ children }:ChildrenProps) {
     setLoading(false);
   }
 
+  function refreshGroups() {
+    if (window.location.pathname === '/') {
+      getGroups();
+    }
+  }
+
   return (
     <homeContext.Provider value={{
       groups,
       loading,
       getGroups,
+      refreshGroups,
     }}
     >
       {children}

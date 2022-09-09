@@ -10,11 +10,11 @@ interface LateralNavItemProps{
     to:string
     Icon:IconType
     text:string
-    requireSignIn?:boolean
+    onClick?:(e:MouseEvent)=>void
 }
 
 export function LateralNavItem({
-  to, Icon, text, requireSignIn,
+  to, Icon, text, onClick,
 }:LateralNavItemProps) {
   const { user } = useUser();
   const { setContent } = useModal();
@@ -29,7 +29,7 @@ export function LateralNavItem({
   return (
     <Link
       to={to}
-      onClick={requireSignIn ? handleClick : undefined}
+      onClick={onClick}
       className="flex flex-row items-center gap-2 p-2 active-opacity rounded-lg"
     >
       <Icon />

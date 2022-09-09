@@ -30,7 +30,7 @@ export function ModalOverflow({ children }:ModalOverflowProps) {
         animation: 'modal-overlay-appear',
         animationDuration: '0.1s',
       }}
-      className="flex center expand-directions fixed bg-black bg-opacity-50 z-[100]"
+      className="flex center expand-directions fixed bg-black bg-opacity-70 z-[100]"
     >
       {children}
     </div>
