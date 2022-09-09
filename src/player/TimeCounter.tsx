@@ -4,8 +4,6 @@ import { usePlayer } from './PlayerContext';
 export function TimeCounter() {
   const { elapsed, duration } = usePlayer();
 
-  console.log(elapsed, duration);
-
   return (
     <div>
       {formatMusicTime(elapsed) }
