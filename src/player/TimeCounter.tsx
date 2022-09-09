@@ -1,9 +1,10 @@
 import { formatMusicTime } from '../common/formatMusicTime';
-import { Music } from '../music/Music';
 import { usePlayer } from './PlayerContext';
 
 export function TimeCounter() {
   const { elapsed, duration } = usePlayer();
+
+  console.log(elapsed, duration);
 
   return (
     <div>
@@ -11,7 +12,7 @@ export function TimeCounter() {
       {' '}
       /
       {' '}
-      {formatMusicTime(duration) }
+      {duration ? formatMusicTime(duration) : '0:00' }
     </div>
   );
 }

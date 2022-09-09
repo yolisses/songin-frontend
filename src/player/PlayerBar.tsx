@@ -52,10 +52,7 @@ export function PlayerBar() {
       </div>
       <button
         onClick={handleClick}
-        style={{
-          // color: modalActive ? 'white' : undefined,
-          backgroundColor: modalActive ? undefined : '#18181b',
-        }}
+        style={{ backgroundColor: modalActive ? undefined : '#18181b' }}
         className="fixed w-full z-10 bottom-0 h-16 duration-[0.4s] transition-colors flex flex-row justify-between items-center"
       >
         <div

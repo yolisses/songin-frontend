@@ -9,7 +9,7 @@ interface FloatingCounterProps{
 export function FloatingCounter({ children, count }:FloatingCounterProps) {
   return (
     <div className="relative">
-      {count && (
+      {!!count && (
       <div className="absolute -top-2 left-6 text-xs">
         {displayNumber(count, 1)}
       </div>
