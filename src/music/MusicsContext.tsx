@@ -4,6 +4,7 @@ import {
 } from 'react';
 import { api } from '../api/api';
 import { ChildrenProps } from '../common/ChildrenProps';
+import { useUser } from '../user/UserContext';
 import { Music } from './Music';
 
 interface MusicsContext{
@@ -16,9 +17,10 @@ interface MusicsContext{
 const musicsContext = createContext({} as MusicsContext);
 
 export function MusicsContextProvider({ children }:ChildrenProps) {
+  const { loading: loadingUser, user } = useUser();
+  const [index, setIndex] = useState(0);
   const [nextMusics, setNextMusics] = useState<Music[]>([]);
   const [selectedMusics, setSelectedMusics] = useState<Music[]>([]);
-  const [index, setIndex] = useState(0);
   const musics = removeDuplicates([...selectedMusics, ...nextMusics]);
   const music = musics[index];
 
@@ -50,8 +52,10 @@ export function MusicsContextProvider({ children }:ChildrenProps) {
   }
 
   useEffect(() => {
-    getMusics();
-  }, []);
+    if (!loadingUser) {
+      getMusics();
+    }
+  }, [loadingUser, user]);
 
   function jumpMusic(foward = true) {
     const offset = foward ? 1 : -1;
