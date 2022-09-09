@@ -25,7 +25,7 @@ export function HomePage() {
 
   if (loading) {
     return (
-      <div className="flex flex-col gap-4 center text-lg w-full h-screen fixed">
+      <div className="flex flex-col gap-4 center text-lg expand-directions fixed">
         <Spinner />
         Picking musics just for you
       </div>

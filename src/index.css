@@ -73,3 +73,7 @@ img[alt] {
 .active-opacity:hover {
     @apply bg-white bg-opacity-20
 }
+
+.expand-directions {
+    @apply top-0 right-0 left-0 bottom-0
+}
