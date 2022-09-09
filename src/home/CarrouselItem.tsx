@@ -6,7 +6,7 @@ interface MusicCarrouselItemProps{
     music:Music
 }
 
-export function MusicCarrouselItem({ music }:MusicCarrouselItemProps) {
+export function CarrouselItem({ music }:MusicCarrouselItemProps) {
   const { setMusic } = useMusics();
 
   function handleClick() {
