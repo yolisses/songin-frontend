@@ -64,6 +64,10 @@ export function PlayerContextProvider({ children }:ChildrenProps) {
   );
 
   useEffect(() => {
+    if (audio.current) {
+      audio.current.load();
+      audio.current.play();
+    }
     changeElapsed(0);
   }, [music]);
 
@@ -85,7 +89,7 @@ export function PlayerContextProvider({ children }:ChildrenProps) {
           onPause={handlePause}
           onTimeUpdate={updateTime}
         >
-          <source src="offline.m4a" />
+          <source src={music?.audio} />
         </audio>
         {children}
       </>
