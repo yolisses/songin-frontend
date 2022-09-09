@@ -15,7 +15,7 @@ export function MusicCarrouselItem({ music }:MusicCarrouselItemProps) {
 
   return (
     <div
-      className="flex flex-col w-44 relative items-center overflow-hidden"
+      className="flex-shrink-0 flex flex-col w-44 relative items-center"
     >
       <div className="snap-start absolute -left-2" />
       <button
