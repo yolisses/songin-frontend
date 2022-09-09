@@ -22,11 +22,9 @@ export function HomePage() {
 
   return (
     <div className="flex flex-col gap-10 py-4 overflow-hidden">
-      {groups?.map(
-        (group) => (
-          <Carrousel group={group} />
-        ),
-      )}
+      {groups?.map((group) => (
+        <Carrousel group={group} />
+      ))}
       <Nav />
     </div>
   );
