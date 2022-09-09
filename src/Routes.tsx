@@ -1,7 +1,4 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes as Router } from 'react-router-dom';
-import { api } from './api/api';
 import { MePage } from './me/MePage';
 import { DevPage } from './dev/DevPage';
 import { HomePage } from './home/HomePage';
@@ -11,7 +8,6 @@ import { ProfilePage } from './me/ProfilePage';
 import { PlayerBar } from './player/PlayerBar';
 import { ConfigPage } from './config/ConfigPage';
 import { PlayerPage } from './player/PlayerPage';
-import { SignInPage } from './signIn/SignInPage';
 import { SearchPage } from './search/SearchPage';
 import { HistoryPage } from './history/HistoryPage';
 import { FavoritesPage } from './like/FavoritesPage';
@@ -35,6 +31,7 @@ export function Routes() {
           <Route path="/config" element={<ConfigPage />} />
           <Route path="/splash" element={<SplashScreen />} />
           <Route path="/history" element={<HistoryPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/comments" element={<CommentsPage />} />
           <Route path="/@:username" element={<ProfilePage />} />
           <Route path="/favorites" element={<FavoritesPage />} />

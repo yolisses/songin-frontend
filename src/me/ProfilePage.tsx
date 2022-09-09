@@ -22,7 +22,7 @@ export function ProfilePage({ fixedUsername }:ProfilePageProps) {
   const me = query.get('me');
 
   async function getUser() {
-    const res = await api.get(`/users/username/${username}`);
+    const res = await api.get('/users/1}');
 
     if (Array.isArray(res.data)) {
       setUser(res.data[0]);
@@ -33,13 +33,13 @@ export function ProfilePage({ fixedUsername }:ProfilePageProps) {
     getUser();
   }, []);
 
-  if (!user) return null;
+  const isCurrent = user?.id !== currentUser?.id;
 
   return (
     <div className="w-full flex flex-col">
       <div
         className="w-full relative h-96 z-0 bg-gray-500 bg-center bg-no-repeat bg-cover"
-        style={{ backgroundImage: `url("${user.coverImage}")` }}
+        style={{ backgroundImage: `url("${user?.coverImage}")` }}
       >
         <div className="absolute top-0 bottom-0 left-0 right-0 bg-black bg-opacity-50" />
         <div className="p-4 text-white z-10 relative gap-2 h-full flex flex-col justify-between">
@@ -51,27 +51,27 @@ export function ProfilePage({ fixedUsername }:ProfilePageProps) {
           <div className="gap-4 lg:justify-around flex flex-col lg:flex-row items-center justify-center">
             <div className="flex flex-row items-center gap-4">
               <img
-                alt={user.name}
-                src={user.image}
+                alt={user?.name}
+                src={user?.image}
                 className="aspect-square h-32 md:h-40 rounded-full"
               />
               <div>
-                <div className="text-2xl">{user.name}</div>
+                <div className="text-2xl">{user?.name}</div>
                 <div className="opacity-80">
                   @
-                  {user.nickname}
+                  {user?.nickname}
                 </div>
               </div>
             </div>
             <div className="max-w-sm">
-              {user.bio}
+              {user?.bio}
             </div>
           </div>
           <div className="flex flex-row justify-between gap-6">
             <NumberIndicator label="Curtidas" amount={2493} />
             <NumberIndicator label="Seguindo" amount={432} />
             <NumberIndicator label="Seguidores" amount={498} />
-            {user.id !== currentUser?.id ? (
+            {isCurrent ? (
               <button className="flex flex-row items-center gap-2 md:mr-auto">
                 <FaUser />
                 Seguir
