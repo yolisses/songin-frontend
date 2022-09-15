@@ -17,11 +17,9 @@ export function GoogleButton() {
   const clientId = '456371025061-44c24jcod62qnejc2kp6f8dmj3amlshn.apps.googleusercontent.com';
 
   async function signIn(credential:string) {
-    console.log('hereree');
     const res = await api.post('/sign-in', credential);
     const user:User = res.data;
-    console.log('response');
-    console.log(res.data);
+    console.log('user', user);
     setUser(user);
   }
 
