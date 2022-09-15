@@ -4,9 +4,9 @@ import { useState } from 'react';
 import { Nav } from '../nav/Nav';
 import { History } from '../history/History';
 import { useUser } from '../user/UserContext';
-import { TabsContainer } from '../tab/TabsContainer';
-import { TabButtons } from '../tab/TabButtons';
 import { Favorites } from '../like/Favorites';
+import { TabButtons } from '../tab/TabButtons';
+import { TabsContainer } from '../tab/TabsContainer';
 
 export function MePage() {
   const user = useUser().user!;
@@ -30,7 +30,9 @@ export function MePage() {
               className="rounded-full inline-block p-1 px-3 pr-2 text-sm bg-black bg-opacity-10"
             >
               Perfil
-              <FaChevronRight className="inline pb-[0.1rem]" />
+              <FaChevronRight
+                className="inline pb-[0.1rem]"
+              />
             </Link>
           </div>
         </div>

@@ -2,9 +2,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState } from 'react';
-import {
-  FaChevronDown, FaStepBackward, FaStepForward,
-} from 'react-icons/fa';
+import { FaChevronDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { LikeButton } from '../like/LikeButton';
 import { useMusics } from '../music/MusicsContext';
