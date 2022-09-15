@@ -1,8 +1,9 @@
 import {
   Dispatch, SetStateAction, useEffect, useRef, useState,
 } from 'react';
-import { FaComment } from 'react-icons/fa';
+import './PlayerCard.css';
 import { Link } from 'react-router-dom';
+import { FaComment } from 'react-icons/fa';
 import { Music } from '../music/Music';
 import { PlayerRange } from './PlayerRange';
 import { LikeButton } from '../like/LikeButton';
@@ -47,7 +48,7 @@ export function PlayerCard({ music, setNewMusic }:PlayerCardProps) {
       <img
         src={music.image}
         alt={music.name}
-        className="mask absolute -z-30 w-screen aspect-square max-w-[100vh]
+        className="gradient-mask absolute -z-30 w-screen aspect-square max-w-[100vh]
 -translate-y-1/2 top-1/2 translate-x-1/2 right-1/2 "
       />
       <div
