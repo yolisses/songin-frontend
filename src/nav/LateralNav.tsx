@@ -68,6 +68,13 @@ export function LateralNav() {
           Icon={FaUser}
           text="Profile"
           onClick={requireSignIn}
+          IconNode={user && (
+          <img
+            alt={user.name}
+            src={user.image}
+            className="rounded-full w-5 aspect-square border-white border-2"
+          />
+          )}
           to={user ? `/@${user.nick}` : '/profile'}
         />
       </div>

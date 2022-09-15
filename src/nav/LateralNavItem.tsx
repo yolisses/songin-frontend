@@ -1,17 +1,18 @@
 /* eslint-disable react/jsx-no-bind */
-import { MouseEvent } from 'react';
+import { MouseEvent, ReactNode } from 'react';
 import { IconType } from 'react-icons';
 import { Link } from 'react-router-dom';
 
 interface LateralNavItemProps{
     to:string
-    Icon:IconType
     text:string
+    Icon:IconType
+    IconNode?:ReactNode
     onClick?:(e:MouseEvent)=>void
 }
 
 export function LateralNavItem({
-  to, Icon, text, onClick,
+  to, Icon, text, onClick, IconNode,
 }:LateralNavItemProps) {
   return (
     <Link
@@ -19,7 +20,7 @@ export function LateralNavItem({
       onClick={onClick}
       className="flex flex-row items-center gap-2 p-2 active-opacity rounded-lg"
     >
-      <Icon />
+      {IconNode || <Icon />}
       {text}
     </Link>
   );
