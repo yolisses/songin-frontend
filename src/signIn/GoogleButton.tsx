@@ -19,7 +19,6 @@ export function GoogleButton() {
   async function signIn(credential:string) {
     const res = await api.post('/sign-in', credential);
     const user:User = res.data;
-    console.log('user', user);
     setUser(user);
   }
 

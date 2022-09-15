@@ -38,10 +38,6 @@ export function UserContextProvider({ children }:ChildrenProps) {
     getMe();
   }, []);
 
-  useEffect(() => {
-    console.log('user', user);
-  }, [user]);
-
   return (
     <userContext.Provider value={{
       user,
