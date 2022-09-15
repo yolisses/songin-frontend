@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 0,
-      "nickname": "ulisses",
+      "nick": "ulisses",
       "name": "Ulisses Albuquerque",
       "coverImage": "https://picsum.photos/id/543/1080/1920",
       "image": "https://picsum.photos/id/338/96/96",
@@ -10,20 +10,20 @@
     },
     {
       "id": 1,
-      "nickname": "outrapessoa",
+      "nick": "outrapessoa",
       "name": "Outra pessoa só de boa",
       "image": "https://picsum.photos/id/338/96/96"
     },
     {
       "id": 2,
       "name": "john doe",
-      "nickname": "johndoe",
+      "nick": "johndoe",
       "image": "https://picsum.photos/id/321/96/96"
     },
     {
       "id": 3,
       "name": "Coldplay",
-      "nickname": "coldplay",
+      "nick": "coldplay",
       "image": "https://picsum.photos/id/32/200/200"
     }
   ],
@@ -78,7 +78,7 @@
     {
       "id": 0,
       "name": "Coldplay",
-      "nickname": "coldplay",
+      "nick": "coldplay",
       "image": "https://picsum.photos/id/32/200/200"
     }
   ],

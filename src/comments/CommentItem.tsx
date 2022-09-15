@@ -12,16 +12,16 @@ export function CommentItem({ comment }:CommentItemProps) {
     <div className="flex flex-row items-start gap-2 w-full">
       <img
         src={comment.user?.image}
-        alt={comment.user?.nickname}
+        alt={comment.user?.nick}
         className="aspect-square h-9 rounded-full"
       />
       <div className="flex-1">
         <div className="text-sm opacity-50">
           <Link
-            to={`/@${comment.user?.nickname}`}
+            to={`/@${comment.user?.nick}`}
             className="hover:underline"
           >
-            {comment.user?.nickname}
+            {comment.user?.nick}
           </Link>
           <span className="text-xs opacity-50 pl-4">
             {format(comment.createdAt, 'pt')}

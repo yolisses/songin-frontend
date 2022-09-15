@@ -68,7 +68,7 @@ export function LateralNav() {
           Icon={FaUser}
           text="Profile"
           onClick={requireSignIn}
-          to={user ? `/@${user.nickname}` : '/profile'}
+          to={user ? `/@${user.nick}` : '/profile'}
         />
       </div>
     </>

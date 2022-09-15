@@ -21,7 +21,7 @@ export function ProfilePage() {
 
   async function getUser() {
     setLoading(true);
-    const res = await api.get(`/users/username/${username}`);
+    const res = await api.get(`/profile/nick/${username}`);
     setProfile(res.data);
     setLoading(false);
   }
@@ -66,7 +66,7 @@ export function ProfilePage() {
                 <div className="text-2xl">{user?.name}</div>
                 <div className="opacity-80">
                   @
-                  {user?.nickname}
+                  {user?.nick}
                 </div>
               </div>
             </div>

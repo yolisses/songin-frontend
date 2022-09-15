@@ -26,7 +26,7 @@ export function MePage() {
           </h1>
           <div>
             <Link
-              to={`/@${user.nickname}?me=true`}
+              to={`/@${user.nick}?me=true`}
               className="rounded-full inline-block p-1 px-3 pr-2 text-sm bg-black bg-opacity-10"
             >
               Perfil

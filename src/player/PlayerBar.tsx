@@ -85,7 +85,7 @@ export function PlayerBar() {
             </div>
             <Link
               onClick={closeAndStopPropagation}
-              to={`/@${music.artist?.nickname}`}
+              to={`/@${music.artist?.nick}`}
               className="text-sm hover:underline"
             >
               {music.artist?.name}
