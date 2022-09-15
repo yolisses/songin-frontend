@@ -4,6 +4,7 @@ import { ChildrenProps } from '../common/ChildrenProps';
 import { Group } from '../group/Group';
 
 interface HomeContext{
+    error:boolean
     groups?:Group[]
     loading:boolean
     getGroups:()=>void
@@ -15,15 +16,22 @@ const homeContext = createContext({} as HomeContext);
 export function HomeContextProvider({ children }:ChildrenProps) {
   const [groups, setGroups] = useState<Group[]>();
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   async function getGroups() {
+    setError(false);
     setLoading(true);
-    const res = await api.get('/groups/recommend', {
-      params: {
-        _expand: 'artist',
-      },
-    });
-    setGroups(res.data);
+    try {
+      const res = await api.get('/groups/recommend', {
+        params: {
+          _expand: 'artist',
+        },
+      });
+
+      setGroups(res.data);
+    } catch (err) {
+      setError(true);
+    }
     setLoading(false);
   }
 
@@ -35,6 +43,7 @@ export function HomeContextProvider({ children }:ChildrenProps) {
 
   return (
     <homeContext.Provider value={{
+      error,
       groups,
       loading,
       getGroups,
