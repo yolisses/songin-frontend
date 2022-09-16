@@ -27,7 +27,9 @@ export function ProfilePage() {
   }
 
   useEffect(() => {
-    getUser();
+    if (!profile) {
+      getUser();
+    }
   }, []);
 
   if (loading || !profile) {
@@ -76,17 +78,17 @@ export function ProfilePage() {
           </div>
           <div className="flex flex-row justify-between gap-6">
             <NumberIndicator
-              label="Seguindo"
+              label="Following"
               amount={followingCounter}
             />
             <NumberIndicator
-              label="Seguidores"
+              label="Followers"
               amount={followersCounter}
             />
             {(!isCurrent && !following) ? (
               <button className="flex flex-row items-center gap-2 md:mr-auto">
                 <FaUser />
-                Seguir
+                Follow
               </button>
             ) : <div className="hidden md:block md:mr-auto" />}
           </div>
@@ -94,7 +96,7 @@ export function ProfilePage() {
       </div>
       <div className="p-2">
         <h2 className="text-lg">
-          Músicas favoritas
+          Favorites
         </h2>
         <Favorites />
       </div>
