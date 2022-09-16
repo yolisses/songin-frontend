@@ -7,16 +7,35 @@ import { Music } from '../music/Music';
 export function History() {
   const [musics, setMusics] = useState<Music[]>();
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   async function getMusics() {
     setLoading(true);
-    const res = await api.get('/musics/history');
-    setMusics(res.data);
+    try {
+      const res = await api.get('/musics/history');
+      setMusics(res.data);
+    } catch {
+      setError(true);
+    }
     setLoading(false);
   }
   useEffect(() => {
     getMusics();
   }, []);
+
+  if (error) {
+    return (
+      <div className="flex flex-col gap-8 center text-lg expand-directions fixed">
+        Something gone wrong loading the history
+        <button
+          onClick={getMusics}
+          className="bg-blue-500 rounded-lg p-2"
+        >
+          Try again
+        </button>
+      </div>
+    );
+  }
 
   return <MusicTable musics={musics} />;
 }
