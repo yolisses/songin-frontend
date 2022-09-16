@@ -1,28 +1,20 @@
-import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
-import { FaChevronLeft } from 'react-icons/fa';
-
 import { api } from '../api/api';
 import { Profile } from './Profile';
-import { useQuery } from '../common/useQuery';
 import { Favorites } from '../like/Favorites';
-import { NumberIndicator } from './NumberIndicator';
 import { FollowButton } from './FollowButton';
+import { NumberIndicator } from './NumberIndicator';
+import { MusicTable } from '../common/MusicTable';
 
 export function ProfilePage() {
   const { username } = useParams();
-  const [loading, setLoading] = useState(true);
   const [profile, setProfile] = useState<Profile>();
-
-  const query = useQuery();
-  const me = query.get('me');
+  const loading = profile === undefined;
 
   async function getUser() {
-    setLoading(true);
     const res = await api.get(`/profile/nick/${username}`);
     setProfile(res.data);
-    setLoading(false);
   }
 
   useEffect(() => {
@@ -31,68 +23,64 @@ export function ProfilePage() {
     }
   }, []);
 
-  if (loading || !profile) {
-    return null;
-  }
-
-  const {
-    user,
-    followersCounter,
-    followingCounter,
-  } = profile;
-
   return (
     <div className="w-full flex flex-col">
       <div
-        className="w-full relative h-64 z-0 bg-gray-500 bg-center bg-no-repeat bg-cover"
-        style={{ backgroundImage: `url("${user?.coverImage}")` }}
+        className="w-full relative h-64 z-0 bg-zinc-700 bg-center bg-no-repeat bg-cover"
+        style={{ backgroundImage: profile ? `url("${profile.user?.coverImage}")` : undefined }}
       >
         <div className="absolute top-0 bottom-0 left-0 right-0 bg-black bg-opacity-50" />
         <div className="p-4 text-white z-10 relative gap-2 h-full flex flex-col justify-between">
-          {me ? (
-            <Link to="/me">
-              <FaChevronLeft size={20} />
-            </Link>
-          ) : <div className="hidden lg:block" />}
           <div className="gap-4 lg:justify-around flex flex-col lg:flex-row items-center justify-center">
             <div className="flex flex-row items-center gap-4">
-              <img
-                alt={user?.name}
-                src={user?.image}
-                className="aspect-square h-32 md:h-40 rounded-full"
-              />
+              {loading
+                ? <div className="aspect-square h-32 md:h-40 rounded-full gradient-loading" />
+                : (
+                  <img
+                    alt={profile.user?.name}
+                    src={profile.user?.image}
+                    className="aspect-square h-32 md:h-40 rounded-full"
+                  />
+                )}
               <div>
-                <div className="text-2xl">{user?.name}</div>
+                <div className="text-2xl">
+                  { loading
+                    ? <div className="gradient-loading w-48 mb-1">&nbsp;</div>
+                    : profile?.user?.name}
+                </div>
                 <div className="opacity-80">
-                  @
-                  {user?.nick}
+                  { loading
+                    ? <div className="gradient-loading w-32">&nbsp;</div>
+                    : `@${profile?.user?.name}`}
                 </div>
               </div>
             </div>
             <div className="max-w-sm">
-              {user?.bio}
+              {profile?.user?.bio}
             </div>
           </div>
           <div className="flex flex-row justify-between gap-6">
             <NumberIndicator
               label="Following"
-              amount={followingCounter}
+              amount={profile?.followingCounter}
             />
             <NumberIndicator
               label="Followers"
-              amount={followersCounter}
+              amount={profile?.followersCounter}
             />
-            <FollowButton user={user} />
+            <FollowButton user={profile?.user} />
             <div className="flex-1" />
           </div>
         </div>
       </div>
-      <div className="p-2">
+      <section className="p-2">
         <h2 className="text-lg">
           Favorites
         </h2>
-        <Favorites />
-      </div>
+        {loading
+          ? <MusicTable loadingCount={8} />
+          : <Favorites />}
+      </section>
     </div>
   );
 }

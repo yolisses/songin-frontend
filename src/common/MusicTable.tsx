@@ -4,9 +4,10 @@ import { MusicTableItem } from './MusicTableItem';
 
 interface MusicTableProps{
   musics?:Music[]
+  loadingCount?:number
 }
 
-export function MusicTable({ musics }:MusicTableProps) {
+export function MusicTable({ musics, loadingCount }:MusicTableProps) {
   return (
     <table className="w-full table-auto border-collapse">
       {musics ? musics.map((music) => (
@@ -15,7 +16,7 @@ export function MusicTable({ musics }:MusicTableProps) {
           key={music.id}
         />
       ))
-        : repeat(<MusicTableItem />, 10)}
+        : repeat(<MusicTableItem />, loadingCount || 10)}
     </table>
   );
 }

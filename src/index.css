@@ -55,7 +55,7 @@ img[alt] {
 }
 
 .active-opacity:hover {
-    @apply bg-white bg-opacity-20
+    @apply bg-white bg-opacity-5
 }
 
 .expand-directions {
