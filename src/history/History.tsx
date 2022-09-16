@@ -37,6 +37,14 @@ export function History() {
     );
   }
 
+  if (musics && !musics.length) {
+    return (
+      <div className="warn">
+        The songs you listen to will appear here
+      </div>
+    );
+  }
+
   return (
     <>
       <MusicTable musics={musics} />

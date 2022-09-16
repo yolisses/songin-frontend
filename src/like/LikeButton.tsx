@@ -4,7 +4,7 @@ import { Music } from '../music/Music';
 import { FloatingCounter } from '../player/FloatingCounter';
 
 interface LikeButtonProps{
-  music:Music
+  music?:Music
   alreadyLiked:boolean
 }
 
@@ -33,7 +33,7 @@ export function LikeButton({ music, alreadyLiked }:LikeButtonProps) {
 
   const iconsSize = 24;
   return (
-    <FloatingCounter count={music.likesCount + add}>
+    <FloatingCounter count={music && (music.likesCount + add)}>
       <button
         onClick={handleClick}
         className="group relative p-2"

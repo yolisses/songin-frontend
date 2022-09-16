@@ -3,21 +3,19 @@ import { api } from '../api/api';
 import { MusicTable } from '../common/MusicTable';
 import { Music } from '../music/Music';
 import { NavSpacer } from '../nav/NavSpacer';
+import { LikeButton } from './LikeButton';
 
 export function Favorites() {
   const [musics, setMusics] = useState<Music[]>();
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   async function getMusics() {
-    setLoading(true);
     try {
       const res = await api.get('/musics/favorites');
       setMusics(res.data);
     } catch {
       setError(true);
     }
-    setLoading(false);
   }
   useEffect(() => {
     getMusics();
@@ -33,6 +31,20 @@ export function Favorites() {
         >
           Try again
         </button>
+      </div>
+    );
+  }
+
+  if (musics && !musics.length) {
+    return (
+      <div className="warn">
+        <div>
+          The musics you click the like button
+          <div className="flex center">
+            <LikeButton alreadyLiked={false} />
+          </div>
+          will appear here
+        </div>
       </div>
     );
   }
