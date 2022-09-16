@@ -6,8 +6,8 @@ interface NavItemProps{
     to:string
     text?:string
     Icon?:IconType
-    iconNode?:ReactNode
     onClick?:()=>void
+    iconNode?:ReactNode
 }
 
 export function NavItem({

@@ -27,11 +27,11 @@ export function Nav({ spacer = true }:NavProps) {
         <NavItem
           to="/"
           Icon={FaHome}
-          text="Início"
+          text="Home"
         />
         <NavItem
           to="/me"
-          text="Eu"
+          text="Me"
           Icon={FaUser}
         />
       </div>

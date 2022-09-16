@@ -30,7 +30,7 @@ export function NavPlayButton() {
       iconNode={iconNode}
       // eslint-disable-next-line react/jsx-no-bind
       onClick={handleOnClick}
-      text={playerPage ? undefined : 'Música'}
+      text={playerPage ? undefined : 'Music'}
     />
   );
 }
