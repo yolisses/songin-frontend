@@ -6,11 +6,13 @@ interface NumberIndicatorProps {
 }
 
 export function NumberIndicator({ label, amount }:NumberIndicatorProps) {
+  const loading = amount === undefined;
+
   return (
     <div className="flex flex-col items-center">
-      {amount
-        ? <div className="text-lg">{displayNumber(amount, 1)}</div>
-        : <div className="gradient-loading w-8">&nbsp;</div>}
+      {loading
+        ? <div className="gradient-loading w-8">&nbsp;</div>
+        : <div className="text-lg">{displayNumber(amount, 1)}</div>}
       <div className="text-xs">{label}</div>
     </div>
   );
