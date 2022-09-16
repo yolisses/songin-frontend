@@ -9,6 +9,7 @@ import { useQuery } from '../common/useQuery';
 import { Favorites } from '../like/Favorites';
 import { useUser } from '../user/UserContext';
 import { NumberIndicator } from './NumberIndicator';
+import { FollowButton } from './FollowButton';
 
 export function ProfilePage() {
   const { username } = useParams();
@@ -85,12 +86,7 @@ export function ProfilePage() {
               label="Followers"
               amount={followersCounter}
             />
-            {(!isCurrent && !following) ? (
-              <button className="flex flex-row items-center gap-2 md:mr-auto">
-                <FaUser />
-                Follow
-              </button>
-            ) : <div className="hidden md:block md:mr-auto" />}
+            <FollowButton />
           </div>
         </div>
       </div>
