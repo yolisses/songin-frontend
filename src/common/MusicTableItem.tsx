@@ -19,7 +19,7 @@ export function MusicTableItem({ music }:MusicTableItemProps) {
 
   return (
     <tr className="active-opacity rounded-lg">
-      <td className="mr-2 w-12">
+      <td className="w-14">
         {loading ? (
           <div
             className="gradient-loading aspect-square rounded w-12"
@@ -50,7 +50,7 @@ export function MusicTableItem({ music }:MusicTableItemProps) {
             to={`/@${music.artist?.name}`}
             className="opacity-60 hover:underline"
           >
-            {music.artist?.name || '&nbsp;'}
+            {music.artist?.name}
           </Link>
         )}
       </td>
