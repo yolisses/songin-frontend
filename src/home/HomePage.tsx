@@ -6,7 +6,7 @@ import { repeat } from '../common/repeat';
 
 export function HomePage() {
   const {
-    groups, getGroups, error,
+    groups, getGroups, error, loading,
   } = useHome();
 
   useEffect(() => {
@@ -31,12 +31,12 @@ export function HomePage() {
 
   return (
     <div className="flex flex-col gap-10 py-4 overflow-hidden">
-      {groups ? groups.map((group) => (
-        <Carrousel
-          group={group}
-        />
-      ))
-        : repeat(<Carrousel />, 4)}
+      {!groups || loading ? repeat(<Carrousel />, 4)
+        : groups.map((group) => (
+          <Carrousel
+            group={group}
+          />
+        ))}
       <Nav />
     </div>
   );
