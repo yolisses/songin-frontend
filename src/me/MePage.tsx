@@ -15,9 +15,9 @@ export function MePage() {
     <div className="flex flex-col w-full">
       <div className="flex flex-row items-center gap-2 p-2">
         <img
-          src={user.image}
           alt={user.name}
-          className="rounded-full aspect-square h-20"
+          src={user.image}
+          className="rounded-full aspect-square w-20"
         />
         <div className="flex flex-col gap-2 flex-1">
           <h1 className="text-2xl">
@@ -28,7 +28,7 @@ export function MePage() {
               to={`/@${user.nick}?me=true`}
               className="rounded-full inline-block p-1 px-3 pr-2 text-sm bg-black bg-opacity-10"
             >
-              Perfil
+              Profile
               <FaChevronRight
                 className="inline pb-[0.1rem]"
               />
