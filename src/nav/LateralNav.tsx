@@ -29,7 +29,7 @@ export function LateralNav() {
   return (
     <>
       <div className="pr-[10rem] max-w-[10rem]" />
-      <div className="flex flex-col text-lg fixed top-0 w-[10rem] z-10">
+      <div className="flex flex-col text-lg fixed top-0 w-[10rem]">
         <Link
           to="/"
           onClick={refreshGroups}
