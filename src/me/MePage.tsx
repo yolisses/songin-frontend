@@ -14,7 +14,7 @@ export function MePage() {
 
   if (!user) {
     return (
-      <div className="expand flex flex-col center gap-4 p-4 text-center text-lg">
+      <div className="expand flex flex-col center gap-4 p-4 text-center text-lg fixed">
         Sign in to have better recommendations and save the musics you love
         <GoogleButton />
       </div>
