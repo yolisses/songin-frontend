@@ -9,23 +9,24 @@ export function History() {
   const [loading, setLoading] = useState(true);
 
   async function getMusics() {
-    const res = await api.get('musics/history');
+    setLoading(true);
+    const res = await api.get('/musics/history');
+    console.log(res.data);
     setMusics(res.data);
     setLoading(false);
   }
+  useEffect(() => {
+    getMusics();
+  }, []);
 
   if (loading) {
     return (
-      <div className="flex flex-col gap-4 center text-lg fixed expand-directions pointer-events-none">
+      <div className="flex flex-col gap-4 center text-lg fixed expand-directions">
         <Spinner />
         Getting the updated history
       </div>
     );
   }
-
-  useEffect(() => {
-    getMusics();
-  }, []);
 
   if (!musics) return null;
 

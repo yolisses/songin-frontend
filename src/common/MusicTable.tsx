@@ -18,7 +18,7 @@ export function MusicTable({ musics }:MusicTableProps) {
             <img
               alt={music.name}
               src={music.image}
-              className="aspect-square rounded w-12"
+              className="aspect-square rounded w-12 mr-2"
             />
           </td>
           <td>
