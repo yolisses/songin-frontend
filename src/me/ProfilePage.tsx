@@ -1,19 +1,17 @@
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
-import { FaChevronLeft, FaUser } from 'react-icons/fa';
+import { FaChevronLeft } from 'react-icons/fa';
 
 import { api } from '../api/api';
 import { Profile } from './Profile';
 import { useQuery } from '../common/useQuery';
 import { Favorites } from '../like/Favorites';
-import { useUser } from '../user/UserContext';
 import { NumberIndicator } from './NumberIndicator';
 import { FollowButton } from './FollowButton';
 
 export function ProfilePage() {
   const { username } = useParams();
-  const { user: currentUser } = useUser();
   const [loading, setLoading] = useState(true);
   const [profile, setProfile] = useState<Profile>();
 
@@ -39,11 +37,9 @@ export function ProfilePage() {
 
   const {
     user,
-    following,
     followersCounter,
     followingCounter,
   } = profile;
-  const isCurrent = user?.id !== currentUser?.id;
 
   return (
     <div className="w-full flex flex-col">
@@ -86,7 +82,8 @@ export function ProfilePage() {
               label="Followers"
               amount={followersCounter}
             />
-            <FollowButton />
+            <FollowButton user={user} />
+            <div className="flex-1" />
           </div>
         </div>
       </div>
