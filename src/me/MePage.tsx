@@ -14,8 +14,8 @@ export function MePage() {
 
   if (!user) {
     return (
-      <div className="h-screen flex flex-col center gap-4 p-4">
-        Do Sign In to have a profile, history and better recommendations
+      <div className="h-screen flex flex-col center gap-4 p-4 text-center text-lg">
+        Sign in to have better recommendations and save the musics you love
         <GoogleButton />
       </div>
     );
