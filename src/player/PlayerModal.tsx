@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Comments } from '../comments/Comments';
+import { image } from '../common/image';
 import { useMusics } from '../music/MusicsContext';
 import { TabButtons } from '../tab/TabButtons';
 import { TabsContainer } from '../tab/TabsContainer';
@@ -26,13 +27,13 @@ export function PlayerModal() {
   return (
     <div className="flex flex-row h-full w-full text-white overflow-hidden z-20">
       <div
-        style={{ backgroundImage: `url("${music.image}")` }}
+        style={{ backgroundImage: `url("${image(music, 64)}")` }}
         className="w-full h-full absolute brightness-[0.3] -z-10 bg-zinc-800 bg-center bg-no-repeat bg-cover blur-[50px] scale-[1.6]"
       />
       <div className="flex-1 flex items-center justify-center p-10">
         <img
           alt={music.name}
-          src={music.image}
+          src={image(music, 512)}
           className="aspect-square flex-1 max-w-[450px] rounded-lg shadow-2xl"
         />
       </div>

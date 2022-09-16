@@ -10,6 +10,7 @@ import { LikeButton } from '../like/LikeButton';
 import { FloatingCounter } from './FloatingCounter';
 import { ShareButton } from '../share/ShareButton';
 import { ShareBallon } from '../share/ShareBallon';
+import { image } from '../common/image';
 
 interface PlayerCardProps{
     music:Music
@@ -43,10 +44,10 @@ export function PlayerCard({ music, setNewMusic }:PlayerCardProps) {
     >
       <div
         className="absolute -z-40 w-screen h-screen bg-cover bg-center bg-no-repeat blur-lg scale-110"
-        style={{ backgroundImage: `url("${music.image}")` }}
+        style={{ backgroundImage: `url("${image(music, 16)}")` }}
       />
       <img
-        src={music.image}
+        src={image(music, 512)}
         alt={music.name}
         className="gradient-mask absolute -z-30 w-screen aspect-square max-w-[100vh]
 -translate-y-1/2 top-1/2 translate-x-1/2 right-1/2 "

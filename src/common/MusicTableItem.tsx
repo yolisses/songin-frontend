@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Music } from '../music/Music';
 import { useMusics } from '../music/MusicsContext';
 import { formatMusicTime } from './formatMusicTime';
+import { image } from './image';
 
 interface MusicTableItemProps{
     music?:Music
@@ -28,7 +29,7 @@ export function MusicTableItem({ music }:MusicTableItemProps) {
           : (
             <img
               alt={music.name}
-              src={music.image}
+              src={image(music, 128)}
               className="aspect-square rounded w-12"
             />
           )}

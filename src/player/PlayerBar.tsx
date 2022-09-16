@@ -4,6 +4,7 @@
 import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { image } from '../common/image';
 import { LikeButton } from '../like/LikeButton';
 import { useMusics } from '../music/MusicsContext';
 import { useMd } from '../responsive/useMd';
@@ -69,7 +70,7 @@ export function PlayerBar() {
             <FaChevronDown className="absolute w-full h-full p-[1.1rem] -z-10" />
             <img
               alt={music.name}
-              src={music.image}
+              src={image(music, 64)}
               className="rounded transition-all aspect-square duration-[0.4s]"
               style={{
                 scale: modalActive ? 0 : undefined,

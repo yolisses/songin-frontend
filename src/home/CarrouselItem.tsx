@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { image } from '../common/image';
 import { Music } from '../music/Music';
 import { useMusics } from '../music/MusicsContext';
 
@@ -29,7 +30,7 @@ export function CarrouselItem({ music }:MusicCarrouselItemProps) {
             <img
               key={music.id}
               alt={music.name}
-              src={music.image}
+              src={image(music, 256)}
               className="aspect-square rounded-lg w-44 max-w-[44vw]"
             />
           </button>
