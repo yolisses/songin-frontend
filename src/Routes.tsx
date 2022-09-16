@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes as Router } from 'react-router-dom';
+import { Nav } from './nav/Nav';
 import { MePage } from './me/MePage';
 import { DevPage } from './dev/DevPage';
 import { HomePage } from './home/HomePage';
@@ -12,8 +13,6 @@ import { SearchPage } from './search/SearchPage';
 import { HistoryPage } from './history/HistoryPage';
 import { FavoritesPage } from './like/FavoritesPage';
 import { SplashScreen } from './splash/SplashScreen';
-import { CommentsPage } from './comments/CommentsPage';
-import { Nav } from './nav/Nav';
 
 export function Routes() {
   const { loading } = useUser();
@@ -34,7 +33,6 @@ export function Routes() {
           <Route path="/splash" element={<SplashScreen />} />
           <Route path="/history" element={<HistoryPage />} />
           <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/comments" element={<CommentsPage />} />
           <Route path="/@:username" element={<ProfilePage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
         </Router>

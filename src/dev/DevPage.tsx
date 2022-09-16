@@ -1,7 +1,5 @@
-import { CommentsPage } from '../comments/CommentsPage';
-
 export function DevPage() {
   return (
-    <CommentsPage />
+    <div>42</div>
   );
 }
