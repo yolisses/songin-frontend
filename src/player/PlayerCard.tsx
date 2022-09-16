@@ -44,7 +44,7 @@ export function PlayerCard({ music, setNewMusic }:PlayerCardProps) {
     >
       <div
         className="absolute -z-40 w-screen h-screen bg-cover bg-center bg-no-repeat blur-lg scale-110"
-        style={{ backgroundImage: `url("${image(music, 16)}")` }}
+        style={{ backgroundImage: `url("${image(music, 512)}")` }}
       />
       <img
         src={image(music, 512)}
