@@ -78,9 +78,9 @@ img[alt] {
 }
 
 .gradient-loading {
-    @apply from-zinc-800 via-zinc-700 to-zinc-800 bg-gradient-to-r rounded
+    @apply from-[#fff1] via-[#fff0] to-[#fff1] bg-gradient-to-r rounded
 }
 
 .gradient-loading {
-    @apply bg-zinc-800
+    @apply bg-[#fff1]
 }
