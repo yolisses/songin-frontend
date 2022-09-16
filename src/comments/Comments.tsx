@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { FaPaperPlane } from 'react-icons/fa';
 import { api } from '../api/api';
-import { Music } from '../music/Music';
 import { Comment } from './Comment';
+import { Music } from '../music/Music';
 import { CommentItem } from './CommentItem';
+import { CommentInput } from './CommentInput';
 
 interface CommentsProps{
   music:Music
@@ -33,16 +33,7 @@ export function Comments({ music }:CommentsProps) {
           />
         ))}
       </div>
-      <div className="w-full flex flex-row gap-2 p-2 items-center">
-        <input
-          type="text"
-          placeholder="E aí, o que achou?"
-          className="p-2 bg-transparent flex-1 rounded-full border-2 border-opacity-50"
-        />
-        <button className="p-2 text-lg group">
-          <FaPaperPlane className="group-active:scale-50 transition-transform" />
-        </button>
-      </div>
+      <CommentInput />
     </>
   );
 }
