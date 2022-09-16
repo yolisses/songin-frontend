@@ -2,7 +2,7 @@
 import { FaHome, FaUser } from 'react-icons/fa';
 import { useLocation } from 'react-router';
 import { useMd } from '../responsive/useMd';
-import { NavButton } from './NavButton';
+import { NavItem } from './NavItem';
 import { NavPlayButton } from './NavPlayButton';
 
 interface NavProps{
@@ -24,12 +24,12 @@ export function Nav({ spacer = true }:NavProps) {
         style={{ backgroundColor: playerPage ? undefined : 'rgb(24 24 27)' }}
       >
         <NavPlayButton />
-        <NavButton
+        <NavItem
           to="/"
           Icon={FaHome}
           text="Início"
         />
-        <NavButton
+        <NavItem
           to="/me"
           text="Eu"
           Icon={FaUser}

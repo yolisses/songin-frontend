@@ -2,7 +2,7 @@ import { IconType } from 'react-icons';
 import { useLocation } from 'react-router';
 import { ReactNode } from 'react';
 import { FaPause, FaPlay } from 'react-icons/fa';
-import { NavButton } from './NavButton';
+import { NavItem } from './NavItem';
 import { usePlayer } from '../player/PlayerContext';
 import { PlayingIndicator } from './PlayingIndicator';
 
@@ -24,7 +24,7 @@ export function NavPlayButton() {
   }
 
   return (
-    <NavButton
+    <NavItem
       to="/player"
       Icon={icon}
       iconNode={iconNode}

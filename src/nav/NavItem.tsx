@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { IconType } from 'react-icons';
 import { Link } from 'react-router-dom';
 
-interface NavButtonProps{
+interface NavItemProps{
     to:string
     text?:string
     Icon?:IconType
@@ -10,9 +10,9 @@ interface NavButtonProps{
     onClick?:()=>void
 }
 
-export function NavButton({
+export function NavItem({
   text, Icon, to, onClick, iconNode,
-}:NavButtonProps) {
+}:NavItemProps) {
   return (
     <Link
       to={to}
