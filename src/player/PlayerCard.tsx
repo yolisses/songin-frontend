@@ -50,7 +50,7 @@ export function PlayerCard({ music, setNewMusic }:PlayerCardProps) {
         src={image(music, 512)}
         alt={music.name}
         className="gradient-mask absolute -z-30 w-screen aspect-square max-w-[100vh]
--translate-y-1/2 top-1/2 translate-x-1/2 right-1/2 "
+-translate-y-1/2 top-1/2 translate-x-1/2 right-1/2 bg-transparent"
       />
       <div
         className="bottom-0 absolute w-screen"
