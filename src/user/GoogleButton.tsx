@@ -1,8 +1,8 @@
+/* eslint-disable no-alert */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef } from 'react';
-
-import { api } from '../api/api';
 import { User } from './User';
+import { api } from '../api/api';
 import { useUser } from './UserContext';
 
 declare global{
@@ -53,8 +53,8 @@ export function GoogleButton() {
   return (
     <>
       <div
-        className="h-10 w-[12.5rem]"
         ref={divRef}
+        className="h-10 w-[12.5rem]"
       />
       <script src="https://accounts.google.com/gsi/client" async />
     </>
