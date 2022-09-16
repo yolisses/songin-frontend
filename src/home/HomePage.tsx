@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import { Nav } from '../nav/Nav';
-import { Carrousel } from './Carrousel';
-import { Spinner } from '../common/Spinner';
 import { useHome } from './HomeContext';
+import { Carrousel } from './Carrousel';
+import { repeat } from '../common/repeat';
 
 export function HomePage() {
   const {
-    groups, getGroups, loading, error,
+    groups, getGroups, error,
   } = useHome();
 
   useEffect(() => {
@@ -29,20 +29,14 @@ export function HomePage() {
     );
   }
 
-  if (loading) {
-    return (
-      <div className="flex flex-col gap-4 center text-lg expand-directions fixed">
-        <Spinner />
-        Picking musics just for you
-      </div>
-    );
-  }
-
   return (
     <div className="flex flex-col gap-10 py-4 overflow-hidden">
-      {groups?.map((group) => (
-        <Carrousel group={group} />
-      ))}
+      {groups ? groups.map((group) => (
+        <Carrousel
+          group={group}
+        />
+      ))
+        : repeat(<Carrousel />, 4)}
       <Nav />
     </div>
   );

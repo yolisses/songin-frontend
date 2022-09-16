@@ -61,3 +61,26 @@ img[alt] {
 .expand-directions {
     @apply top-0 right-0 left-0 bottom-0
 }
+
+@keyframes gradient-loading {
+    0% {
+        background-position-x: 200%;
+    }
+
+    100% {
+        background-position-x: -200%;
+    }
+}
+
+.gradient-loading {
+    animation: gradient-loading 10s infinite;
+    background-size: 400%;
+}
+
+.gradient-loading {
+    @apply from-zinc-800 via-zinc-700 to-zinc-800 bg-gradient-to-r
+}
+
+.gradient-loading {
+    @apply bg-zinc-800
+}

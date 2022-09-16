@@ -1,28 +1,40 @@
+import { range } from '../common/range';
+import { repeat } from '../common/repeat';
 import { Group } from '../group/Group';
 import { CarrouselItem } from './CarrouselItem';
 
 interface MusicCarrouselProps{
-  group:Group
+  group?:Group
 }
 
 export function Carrousel({ group }:MusicCarrouselProps) {
-  if (group.items.length === 0) {
+  const loading = group === undefined;
+
+  if (!loading && group.items.length === 0) {
     return null;
   }
 
   return (
     <div>
-      {group.name && (
-      <h3 className="text-xl md:text-2xl pb-2 pl-2">
-        {group.name}
-      </h3>
-      )}
+      <div className="text-xl md:text-2xl pb-2 pl-2">
+        {loading ? (
+          <div className="gradient-loading rounded w-24">
+          &nbsp;
+          </div>
+        )
+          : <h3>{group.name}</h3>}
+      </div>
       <div
         className="flex flex-row gap-2 px-4 overflow-x-auto no-scrollbar snap-x snap-mandatory"
       >
-        {group.items.map((music) => (
-          <CarrouselItem music={music} key={music.id} />
-        ))}
+        {loading
+          ? repeat(<CarrouselItem />, 8)
+          : group.items.map((music) => (
+            <CarrouselItem
+              music={music}
+              key={music.id}
+            />
+          ))}
       </div>
     </div>
 
