@@ -1,3 +1,4 @@
+import './logo.css';
 import './index.css';
 import './animations.css';
 import React from 'react';

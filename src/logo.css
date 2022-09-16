@@ -1,0 +1,11 @@
+.logo {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.logo {
+    @apply font-bold
+}
+
+.logo-gradient {
+    @apply logo bg-gradient-to-tr from-sky-500 to-purple-500 bg-clip-text text-transparent
+}
