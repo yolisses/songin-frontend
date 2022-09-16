@@ -13,6 +13,7 @@ import { HistoryPage } from './history/HistoryPage';
 import { FavoritesPage } from './like/FavoritesPage';
 import { SplashScreen } from './splash/SplashScreen';
 import { CommentsPage } from './comments/CommentsPage';
+import { Nav } from './nav/Nav';
 
 export function Routes() {
   const { loading } = useUser();
@@ -22,6 +23,7 @@ export function Routes() {
     <BrowserRouter>
       <div className="flex flex-row overflow-x-hidden">
         <LateralNav />
+        <Nav />
         <Router>
           <Route path="/" element={<HomePage />} />
           <Route path="/me" element={<MePage />} />

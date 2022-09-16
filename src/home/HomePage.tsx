@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { Nav } from '../nav/Nav';
 import { useHome } from './HomeContext';
 import { Carrousel } from './Carrousel';
 import { repeat } from '../common/repeat';
@@ -37,7 +36,6 @@ export function HomePage() {
             group={group}
           />
         ))}
-      <Nav />
     </div>
   );
 }

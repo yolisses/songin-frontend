@@ -1,7 +1,6 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaChevronRight } from 'react-icons/fa';
-import { useState } from 'react';
-import { Nav } from '../nav/Nav';
 import { History } from '../history/History';
 import { useUser } from '../user/UserContext';
 import { Favorites } from '../like/Favorites';
@@ -50,7 +49,6 @@ export function MePage() {
           <History />
         </TabsContainer>
       </div>
-      <Nav />
     </div>
 
   );
