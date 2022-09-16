@@ -6,10 +6,20 @@ import { useUser } from '../user/UserContext';
 import { Favorites } from '../like/Favorites';
 import { TabButtons } from '../tab/TabButtons';
 import { TabsContainer } from '../tab/TabsContainer';
+import { GoogleButton } from '../user/GoogleButton';
 
 export function MePage() {
-  const user = useUser().user!;
+  const { user } = useUser();
   const [tab, setTab] = useState(0);
+
+  if (!user) {
+    return (
+      <div className="h-screen flex flex-col center gap-4 p-4">
+        Do Sign In to have a profile, history and better recommendations
+        <GoogleButton />
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col w-full">
@@ -50,6 +60,5 @@ export function MePage() {
         </TabsContainer>
       </div>
     </div>
-
   );
 }
