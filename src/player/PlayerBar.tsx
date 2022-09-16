@@ -39,7 +39,7 @@ export function PlayerBar() {
   }
 
   return (
-    <div className="h-16 mt-2 z-20">
+    <div className="h-16 mt-2 z-30">
       {modalActive && (
       <div className="fixed bottom-0 w-full h-full animate-appear">
         <PlayerModal />
