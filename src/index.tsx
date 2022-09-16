@@ -1,5 +1,6 @@
 import './styles/logo.css';
 import './styles/index.css';
+import './styles/loading.css';
 import './styles/animations.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
