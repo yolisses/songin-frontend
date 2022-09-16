@@ -24,7 +24,7 @@ function MusicTableLine({ music }:MusicTableLineProps) {
 
   return (
     <tr className="active-opacity rounded-lg">
-      <td className="mr-2">
+      <td className="mr-2 w-12">
         {loading ? (
           <div
             className="gradient-loading aspect-square rounded w-12"
