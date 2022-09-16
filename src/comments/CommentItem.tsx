@@ -26,7 +26,7 @@ export function CommentItem({ comment }:CommentItemProps) {
       <div className="flex-1">
         <div className="text-sm opacity-50">
           {loading
-            ? <div className="gradient-loading">&nbsp;</div>
+            ? <div className="loading">&nbsp;</div>
             : (
               <>
                 <Link
@@ -43,7 +43,7 @@ export function CommentItem({ comment }:CommentItemProps) {
         </div>
         <div>
           {loading
-            ? <div className="gradient-loading">&nbsp;</div>
+            ? <div className="loading">&nbsp;</div>
             : comment.text}
         </div>
         {!!comment?.repliesCount && (

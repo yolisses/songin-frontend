@@ -15,7 +15,7 @@ export function FollowButton({ user }:FollowButtonProps) {
   }
 
   if (!user) {
-    return <div className="gradient-loading w-20">&nbsp;</div>;
+    return <div className="loading w-20">&nbsp;</div>;
   }
 
   return (

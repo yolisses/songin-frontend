@@ -23,7 +23,7 @@ export function MusicTableItem({ music }:MusicTableItemProps) {
       <td className="w-14">
         {loading ? (
           <div
-            className="gradient-loading aspect-square rounded w-12"
+            className="loading aspect-square rounded w-12"
           />
         )
           : (
@@ -35,7 +35,7 @@ export function MusicTableItem({ music }:MusicTableItemProps) {
           )}
       </td>
       <td>
-        {loading ? <div className="gradient-loading w-32">&nbsp;</div>
+        {loading ? <div className="loading w-32">&nbsp;</div>
           : (
             <button
               onClick={handleClick}
@@ -46,7 +46,7 @@ export function MusicTableItem({ music }:MusicTableItemProps) {
           )}
       </td>
       <td>
-        {loading ? <div className="gradient-loading w-32">&nbsp;</div> : (
+        {loading ? <div className="loading w-32">&nbsp;</div> : (
           <Link
             to={`/@${music.artist?.name}`}
             className="opacity-60 hover:underline"
@@ -57,7 +57,7 @@ export function MusicTableItem({ music }:MusicTableItemProps) {
       </td>
       <td className="opacity-60 pr-2">
         {loading
-          ? <div className="gradient-loading w-10">&nbsp;</div>
+          ? <div className="loading w-10">&nbsp;</div>
           : formatMusicTime(music.duration)}
       </td>
     </tr>

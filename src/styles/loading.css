@@ -1,4 +1,4 @@
-@keyframes gradient-loading {
+@keyframes loading {
     0% {
         background-position-x: 200%;
     }
@@ -8,15 +8,15 @@
     }
 }
 
-.gradient-loading {
-    animation: gradient-loading 10s infinite;
+.loading {
+    animation: loading 10s infinite;
     background-size: 400%;
 }
 
-.gradient-loading {
+.loading {
     @apply from-[#fff1] via-[#fff0] to-[#fff1] bg-gradient-to-r rounded
 }
 
-.gradient-loading {
+.loading {
     @apply bg-[#fff1]
 }

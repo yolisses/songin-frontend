@@ -34,7 +34,7 @@ export function ProfilePage() {
           <div className="gap-4 lg:justify-around flex flex-col lg:flex-row items-center justify-center">
             <div className="flex flex-row items-center gap-4">
               {loading
-                ? <div className="aspect-square h-32 md:h-40 rounded-full gradient-loading" />
+                ? <div className="aspect-square h-32 md:h-40 rounded-full loading" />
                 : (
                   <img
                     alt={profile.user?.name}
@@ -45,12 +45,12 @@ export function ProfilePage() {
               <div>
                 <div className="text-2xl">
                   { loading
-                    ? <div className="gradient-loading w-48 mb-1">&nbsp;</div>
+                    ? <div className="loading w-48 mb-1">&nbsp;</div>
                     : profile?.user?.name}
                 </div>
                 <div className="opacity-80">
                   { loading
-                    ? <div className="gradient-loading w-32">&nbsp;</div>
+                    ? <div className="loading w-32">&nbsp;</div>
                     : `@${profile?.user?.name}`}
                 </div>
               </div>

@@ -18,7 +18,7 @@ export function Carrousel({ group }:MusicCarrouselProps) {
     <div>
       <div className="text-xl md:text-2xl pb-2 pl-2">
         {loading ? (
-          <div className="gradient-loading rounded w-24">
+          <div className="loading rounded w-24">
           &nbsp;
           </div>
         )

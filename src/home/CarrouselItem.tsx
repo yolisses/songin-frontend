@@ -21,7 +21,7 @@ export function CarrouselItem({ music }:MusicCarrouselItemProps) {
     >
       <div className="snap-start absolute -left-2" />
       {loading
-        ? <div className="gradient-loading aspect-square rounded-lg w-44 max-w-[44vw]" />
+        ? <div className="loading aspect-square rounded-lg w-44 max-w-[44vw]" />
         : (
           <button
             onClick={handleClick}
