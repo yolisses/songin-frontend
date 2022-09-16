@@ -7,12 +7,12 @@ interface LateralNavItemProps{
     to:string
     text:string
     Icon:IconType
-    IconNode?:ReactNode
+    iconNode?:ReactNode
     onClick?:(e:MouseEvent)=>void
 }
 
 export function LateralNavItem({
-  to, Icon, text, onClick, IconNode,
+  to, Icon, text, onClick, iconNode,
 }:LateralNavItemProps) {
   return (
     <Link
@@ -20,7 +20,7 @@ export function LateralNavItem({
       onClick={onClick}
       className="flex flex-row items-center gap-2 p-2 active-opacity rounded-lg"
     >
-      {IconNode || <Icon />}
+      {iconNode || <Icon />}
       {text}
     </Link>
   );
