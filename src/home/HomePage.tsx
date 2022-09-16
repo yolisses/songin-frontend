@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useHome } from './HomeContext';
 import { Carrousel } from './Carrousel';
 import { repeat } from '../common/repeat';
+import { NavSpacer } from '../nav/NavSpacer';
 
 export function HomePage() {
   const {
@@ -36,6 +37,7 @@ export function HomePage() {
             group={group}
           />
         ))}
+      <NavSpacer />
     </div>
   );
 }
