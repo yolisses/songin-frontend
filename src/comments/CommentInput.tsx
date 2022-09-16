@@ -5,7 +5,7 @@ export function CommentInput() {
     <div className="w-full flex flex-row gap-2 p-2 items-center">
       <input
         type="text"
-        placeholder="E aí, o que achou?"
+        placeholder="So, what do think?"
         className="p-2 bg-transparent flex-1 rounded-full border-2 border-opacity-50"
       />
       <button className="p-2 text-lg group">
