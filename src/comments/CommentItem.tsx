@@ -2,6 +2,7 @@ import { FaChevronRight, FaThumbsUp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { format } from 'timeago.js';
 import { Comment } from './Comment';
+import { CommentLikeButton } from './CommentLikeButton';
 
 interface CommentItemProps{
     comment:Comment
@@ -41,10 +42,7 @@ export function CommentItem({ comment }:CommentItemProps) {
       </button>
       )}
       </div>
-      <button className="text-sm p-1 opacity-50">
-        <FaThumbsUp />
-        {!!comment.likesCount && comment.likesCount}
-      </button>
+      <CommentLikeButton comment={comment} />
     </div>
   );
 }
