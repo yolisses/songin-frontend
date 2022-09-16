@@ -61,3 +61,7 @@ img[alt] {
 .expand {
     @apply top-0 right-0 left-0 bottom-0 -z-10
 }
+
+.warn {
+    @apply expand fixed flex flex-col center gap-8 text-lg p-4
+}

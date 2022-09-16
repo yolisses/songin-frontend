@@ -25,7 +25,7 @@ export function History() {
 
   if (error) {
     return (
-      <div className="flex flex-col gap-8 center text-lg expand fixed">
+      <div className="warn">
         Something gone wrong loading the history
         <button
           onClick={getMusics}
