@@ -15,18 +15,18 @@ export function CommentItem({ comment }:CommentItemProps) {
   return (
     <div className="flex flex-row items-start gap-2 w-full">
       {loading
-        ? <div className="aspect-square h-9 rounded-full gradined-loading" />
+        ? <div className="aspect-square h-9 rounded-full loading" />
         : (
           <img
-            src={comment.user?.image}
             alt={comment.user?.nick}
+            src={comment.user?.image}
             className="aspect-square h-9 rounded-full"
           />
         )}
       <div className="flex-1">
         <div className="text-sm opacity-50">
           {loading
-            ? <div className="loading">&nbsp;</div>
+            ? <div className="loading w-20 mb-1">&nbsp;</div>
             : (
               <>
                 <Link
@@ -43,7 +43,12 @@ export function CommentItem({ comment }:CommentItemProps) {
         </div>
         <div>
           {loading
-            ? <div className="loading">&nbsp;</div>
+            ? (
+              <>
+                <div className="loading mb-1">&nbsp;</div>
+                <div className="loading w-1/2 mb-1">&nbsp;</div>
+              </>
+            )
             : comment.text}
         </div>
         {!!comment?.repliesCount && (

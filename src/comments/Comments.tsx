@@ -25,7 +25,7 @@ export function Comments({ music }:CommentsProps) {
 
   return (
     <>
-      <div className="flex flex-col gap-2 flex-1 overflow-auto p-2">
+      <div className="flex flex-col gap-4 flex-1 overflow-auto p-2">
         {loading
           ? repeat(<CommentItem />, 10)
           : comments.map((comment) => (
