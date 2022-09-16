@@ -47,7 +47,7 @@ export function PlayerModal() {
         <div className="overflow-auto flex-1 flex flex-col">
           <TabsContainer selected={tab}>
             <NextMusics />
-            <Comments />
+            <Comments music={music} />
           </TabsContainer>
         </div>
       </div>
