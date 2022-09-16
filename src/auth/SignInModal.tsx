@@ -1,10 +1,20 @@
+import { useEffect } from 'react';
+import { useModal } from '../modal/ModalContext';
 import { GoogleButton } from '../user/GoogleButton';
+import { useUser } from '../user/UserContext';
 
 interface SignInModalProps{
   text?:string
 }
 
 export function SignInModal({ text }:SignInModalProps) {
+  const { user } = useUser();
+  const { close } = useModal();
+
+  useEffect(() => {
+    if (user)close();
+  }, [user]);
+
   return (
     <div className="flex flex-row items-stretch">
       <div
