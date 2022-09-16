@@ -4,6 +4,7 @@ import { Comment } from './Comment';
 import { Music } from '../music/Music';
 import { CommentItem } from './CommentItem';
 import { CommentInput } from './CommentInput';
+import { repeat } from '../common/repeat';
 
 interface CommentsProps{
   music:Music
@@ -11,6 +12,7 @@ interface CommentsProps{
 
 export function Comments({ music }:CommentsProps) {
   const [comments, setComments] = useState<Comment[]>();
+  const loading = comments === undefined;
 
   async function getComments() {
     const res = await api.get(`/musics/${music.id}/comments`);
@@ -21,17 +23,17 @@ export function Comments({ music }:CommentsProps) {
     getComments();
   }, []);
 
-  if (!comments) return null;
-
   return (
     <>
       <div className="flex flex-col gap-2 flex-1 overflow-auto p-2">
-        {comments.map((comment) => (
-          <CommentItem
-            key={comment.id}
-            comment={comment}
-          />
-        ))}
+        {loading
+          ? repeat(<CommentItem />, 10)
+          : comments.map((comment) => (
+            <CommentItem
+              key={comment.id}
+              comment={comment}
+            />
+          ))}
       </div>
       <CommentInput />
     </>
