@@ -16,11 +16,11 @@ export function CarrouselItem({ music }:MusicCarrouselItemProps) {
 
   return (
     <div
-      className="flex-shrink-0 flex flex-col w-44 relative items-center"
+      className="flex-shrink-0 flex flex-col w-44 max-w-[44vw] relative items-center"
     >
       <div className="snap-start absolute -left-2" />
       {loading
-        ? <div className="gradient-loading aspect-square rounded-lg w-44" />
+        ? <div className="gradient-loading aspect-square rounded-lg w-44 max-w-[44vw]" />
         : (
           <button
             onClick={handleClick}
@@ -30,7 +30,7 @@ export function CarrouselItem({ music }:MusicCarrouselItemProps) {
               key={music.id}
               alt={music.name}
               src={music.image}
-              className="aspect-square rounded-lg w-44"
+              className="aspect-square rounded-lg w-44 max-w-[44vw]"
             />
           </button>
         )}
