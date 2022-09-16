@@ -5,7 +5,7 @@ export function TimeCounter() {
   const { elapsed, duration } = usePlayer();
 
   return (
-    <div>
+    <div className="whitespace-nowrap">
       {formatMusicTime(elapsed) }
       {' '}
       /
