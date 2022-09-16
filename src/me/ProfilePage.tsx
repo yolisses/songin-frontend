@@ -39,7 +39,7 @@ export function ProfilePage() {
                   <img
                     alt={profile.user?.name}
                     src={profile.user?.image}
-                    className="aspect-square w-32 md:h-40 rounded-full"
+                    className="aspect-square w-32 md:w-40 rounded-full"
                   />
                 )}
               <div>
