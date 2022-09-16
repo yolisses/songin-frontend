@@ -11,7 +11,6 @@ export function History() {
   async function getMusics() {
     setLoading(true);
     const res = await api.get('/musics/history');
-    console.log(res.data);
     setMusics(res.data);
     setLoading(false);
   }
@@ -19,16 +18,5 @@ export function History() {
     getMusics();
   }, []);
 
-  if (loading) {
-    return (
-      <div className="flex flex-col gap-4 center text-lg fixed expand-directions">
-        <Spinner />
-        Getting the updated history
-      </div>
-    );
-  }
-
-  if (!musics) return null;
-
-  return (<MusicTable musics={musics} />);
+  return <MusicTable musics={musics} />;
 }
