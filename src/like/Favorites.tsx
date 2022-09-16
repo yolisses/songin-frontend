@@ -25,7 +25,7 @@ export function Favorites() {
 
   if (error) {
     return (
-      <div className="flex flex-col gap-8 center text-lg expand-directions fixed">
+      <div className="flex flex-col gap-8 center text-lg expand fixed">
         Something gone wrong loading the favorites
         <button
           onClick={getMusics}
