@@ -17,7 +17,7 @@ export function HomePage() {
 
   if (error) {
     return (
-      <div className="flex flex-col gap-8 center text-lg expand-directions fixed pointer-events-none">
+      <div className="flex flex-col gap-8 center text-lg expand-directions fixed">
         Something gone wrong loading the songs
         <button
           onClick={getGroups}
@@ -31,7 +31,7 @@ export function HomePage() {
 
   if (loading) {
     return (
-      <div className="flex flex-col gap-4 center text-lg expand-directions fixed pointer-events-none">
+      <div className="flex flex-col gap-4 center text-lg expand-directions fixed">
         <Spinner />
         Picking musics just for you
       </div>
