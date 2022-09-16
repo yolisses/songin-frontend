@@ -2,8 +2,8 @@
 import { useEffect, useRef } from 'react';
 
 import { api } from '../api/api';
-import { User } from '../user/User';
-import { useUser } from '../user/UserContext';
+import { User } from './User';
+import { useUser } from './UserContext';
 
 declare global{
   interface Window{

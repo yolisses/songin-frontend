@@ -1,4 +1,4 @@
-import { GoogleButton } from '../signIn/GoogleButton';
+import { GoogleButton } from '../user/GoogleButton';
 
 interface SignInModalProps{
   text?:string
