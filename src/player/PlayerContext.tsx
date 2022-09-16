@@ -5,6 +5,7 @@ import {
 } from 'react';
 import { ChildrenProps } from '../common/ChildrenProps';
 import { useMusics } from '../music/MusicsContext';
+import { audio as audioFromMusic } from '../music/audio';
 
 interface PlayerContext{
     elapsed :number
@@ -89,7 +90,10 @@ export function PlayerContextProvider({ children }:ChildrenProps) {
           onPause={handlePause}
           onTimeUpdate={updateTime}
         >
-          <source src={music?.audio} />
+          <source src={music
+            ? audioFromMusic(music)
+            : ''}
+          />
         </audio>
         {children}
       </>
