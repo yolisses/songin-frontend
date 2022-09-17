@@ -51,7 +51,7 @@ export function ProfilePage() {
                 <div className="opacity-80">
                   { loading
                     ? <div className="loading w-32">&nbsp;</div>
-                    : `@${profile?.user?.name}`}
+                    : `@${profile?.user?.nick}`}
                 </div>
               </div>
             </div>
@@ -79,7 +79,7 @@ export function ProfilePage() {
         </h2>
         {loading
           ? <MusicTable loadingCount={8} />
-          : <Favorites />}
+          : <Favorites user={profile.user} />}
       </section>
     </div>
   );

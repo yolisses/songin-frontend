@@ -2,24 +2,34 @@ import { useEffect, useState } from 'react';
 import { api } from '../api/api';
 import { MusicTable } from '../common/MusicTable';
 import { Music } from '../music/Music';
-import { NavSpacer } from '../nav/NavSpacer';
+import { User } from '../user/User';
 import { LikeButton } from './LikeButton';
+import { NavSpacer } from '../nav/NavSpacer';
+import { useUser } from '../user/UserContext';
 
-export function Favorites() {
+interface Props{
+  user?:User
+}
+
+export function Favorites({ user }:Props) {
   const [musics, setMusics] = useState<Music[]>();
   const [error, setError] = useState(false);
+  const { user: currentUser } = useUser();
 
   async function getMusics() {
-    try {
-      const res = await api.get('/musics/favorites');
-      setMusics(res.data);
-    } catch {
-      setError(true);
+    if (user !== undefined) {
+      try {
+        setError(false);
+        const res = await api.get(`/users/${user.id}/favorites`);
+        setMusics(res.data);
+      } catch {
+        setError(true);
+      }
     }
   }
   useEffect(() => {
     getMusics();
-  }, []);
+  }, [user]);
 
   if (error) {
     return (
@@ -36,15 +46,23 @@ export function Favorites() {
   }
 
   if (musics && !musics.length) {
+    if (user?.id === currentUser?.id) {
+      return (
+        <div className="warn">
+          <div>
+            The musics you click the like button
+            <div className="flex center">
+              <LikeButton alreadyLiked={false} />
+            </div>
+            will appear here
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div className="warn">
-        <div>
-          The musics you click the like button
-          <div className="flex center">
-            <LikeButton alreadyLiked={false} />
-          </div>
-          will appear here
-        </div>
+        No favorites to show
       </div>
     );
   }
