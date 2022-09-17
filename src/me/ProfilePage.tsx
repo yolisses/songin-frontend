@@ -1,3 +1,4 @@
+import './ProfilePage.css';
 import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
 import { api } from '../api/api';
@@ -24,7 +25,7 @@ export function ProfilePage() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col">
+    <div className="w-full flex flex-col profile-page">
       <div
         className="w-full relative h-64 z-0 bg-zinc-700 bg-center bg-no-repeat bg-cover"
         style={{ backgroundImage: profile ? `url("${profile.user?.coverImage}")` : undefined }}

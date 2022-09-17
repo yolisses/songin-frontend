@@ -1,11 +1,11 @@
+import { FaHeart } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
 import { api } from '../api/api';
-import { MusicTable } from '../common/MusicTable';
-import { Music } from '../music/Music';
 import { User } from '../user/User';
-import { LikeButton } from './LikeButton';
+import { Music } from '../music/Music';
 import { NavSpacer } from '../nav/NavSpacer';
 import { useUser } from '../user/UserContext';
+import { MusicTable } from '../common/MusicTable';
 
 interface Props{
   user?:User
@@ -51,9 +51,10 @@ export function Favorites({ user }:Props) {
         <div className="warn">
           <div>
             The musics you click the like button
-            <div className="flex center">
-              <LikeButton alreadyLiked={false} />
-            </div>
+            <FaHeart
+              size={24}
+              className="inline mx-1"
+            />
             will appear here
           </div>
         </div>
