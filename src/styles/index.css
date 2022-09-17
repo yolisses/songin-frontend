@@ -41,6 +41,10 @@ html {
     @apply text-white bg-zinc-900
 }
 
+body {
+    @apply md:pl-[10rem]
+}
+
 img {
     @apply bg-white bg-opacity-20
 }

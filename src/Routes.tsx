@@ -20,23 +20,21 @@ export function Routes() {
 
   return (
     <BrowserRouter>
-      <div className="flex flex-row overflow-x-hidden">
-        <LateralNav />
-        <Nav />
-        <Router>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/me" element={<MePage />} />
-          <Route path="/dev" element={<DevPage />} />
-          <Route path="/player" element={<PlayerPage />} />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="/config" element={<ConfigPage />} />
-          <Route path="/splash" element={<SplashScreen />} />
-          <Route path="/history" element={<HistoryPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/@:nick" element={<ProfilePage />} />
-          <Route path="/favorites" element={<FavoritesPage />} />
-        </Router>
-      </div>
+      <LateralNav />
+      <Router>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/me" element={<MePage />} />
+        <Route path="/dev" element={<DevPage />} />
+        <Route path="/player" element={<PlayerPage />} />
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="/config" element={<ConfigPage />} />
+        <Route path="/splash" element={<SplashScreen />} />
+        <Route path="/history" element={<HistoryPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/@:nick" element={<ProfilePage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
+      </Router>
+      <Nav />
       <PlayerBar />
     </BrowserRouter>
   );

@@ -1,6 +1,6 @@
 export function SplashScreen() {
   return (
-    <div className="width-screen h-screen flex justify-center items-center flex-col">
+    <div className="expand fixed flex justify-center items-center flex-col">
       <div className="my-auto flex flex-col items-center gap-4">
         <img
           alt="logo"

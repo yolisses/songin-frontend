@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-useless-fragment */
-import { FaHome, FaUser } from 'react-icons/fa';
+import { FaHome, FaSearch, FaUser } from 'react-icons/fa';
 import { useLocation } from 'react-router';
 import { useMd } from '../responsive/useMd';
 import { NavItem } from './NavItem';
@@ -20,8 +20,13 @@ export function Nav() {
       <NavPlayButton />
       <NavItem
         to="/"
-        Icon={FaHome}
         text="Home"
+        Icon={FaHome}
+      />
+      <NavItem
+        to="/search"
+        text="Search"
+        Icon={FaSearch}
       />
       <NavItem
         to="/me"

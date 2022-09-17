@@ -11,8 +11,8 @@ export function SearchMusicItem({ music }:Props) {
     <div className="flex flex-row gap-2 active-opacity items-center w-full p-2 pr-4 rounded-lg">
       <img
         alt={music.name}
-        className="rounded-lg"
         src={image(music, 64)}
+        className="rounded-lg aspect-square w-16"
       />
       <div>
         <div>

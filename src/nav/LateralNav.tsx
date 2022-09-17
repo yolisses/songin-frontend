@@ -27,57 +27,54 @@ export function LateralNav() {
   if (!md) return null;
 
   return (
-    <>
-      <div className="pr-[10rem] max-w-[10rem]" />
-      <div className="flex flex-col text-lg fixed top-0 w-[10rem]">
-        <Link
-          to="/"
-          onClick={refreshGroups}
-          className="flex flex-row items-center gap-2 p-2"
-        >
-          <img
-            alt="logo"
-            width={20}
-            src="/logo/gradient.svg"
-            className="bg-transparent"
-          />
-          <h1 className="text-xl logo">Sonhin</h1>
-        </Link>
-        <LateralNavItem
-          to="/"
-          text="Home"
-          Icon={FaHome}
-          onClick={refreshGroups}
+    <div className="flex flex-col text-lg fixed left-0 top-0 w-[10rem] bg-zinc-900">
+      <Link
+        to="/"
+        onClick={refreshGroups}
+        className="flex flex-row items-center gap-2 p-2"
+      >
+        <img
+          alt="logo"
+          width={20}
+          src="/logo/gradient.svg"
+          className="bg-transparent"
         />
-        <LateralNavItem
-          to="/search"
-          Icon={FaSearch}
-          text="Search"
-        />
-        <LateralNavItem
-          Icon={FaHeart}
-          to="/favorites"
-          text="Favorites"
-        />
-        <LateralNavItem
-          to="/history"
-          text="History"
-          Icon={FaHistory}
-        />
-        <LateralNavItem
-          Icon={FaUser}
-          text="Profile"
-          onClick={requireSignIn}
-          to={user ? `/@${user.nick}` : '/profile'}
-          iconNode={user && (
+        <h1 className="text-xl logo">Sonhin</h1>
+      </Link>
+      <LateralNavItem
+        to="/"
+        text="Home"
+        Icon={FaHome}
+        onClick={refreshGroups}
+      />
+      <LateralNavItem
+        to="/search"
+        Icon={FaSearch}
+        text="Search"
+      />
+      <LateralNavItem
+        Icon={FaHeart}
+        to="/favorites"
+        text="Favorites"
+      />
+      <LateralNavItem
+        to="/history"
+        text="History"
+        Icon={FaHistory}
+      />
+      <LateralNavItem
+        Icon={FaUser}
+        text="Profile"
+        onClick={requireSignIn}
+        to={user ? `/@${user.nick}` : '/profile'}
+        iconNode={user && (
           <img
             alt={user.name}
             src={user.image}
             className="rounded-full w-5 aspect-square border-white border-2"
           />
-          )}
-        />
-      </div>
-    </>
+        )}
+      />
+    </div>
   );
 }
