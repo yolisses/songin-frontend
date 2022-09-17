@@ -1,10 +1,20 @@
-import { FormEvent } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 
-export function SearchInput() {
+interface Props{
+    getMusics:(q:string)=>Promise<void>
+}
+
+export function SearchInput({ getMusics }:Props) {
+  const [q, setQ] = useState('');
+
   function handleSubmit(e:FormEvent) {
     e.preventDefault();
-    alert('foi');
+    getMusics(q);
+  }
+
+  function handleChange(e:ChangeEvent<HTMLInputElement>) {
+    setQ(e.target.value);
   }
 
   return (
@@ -13,8 +23,10 @@ export function SearchInput() {
       className="w-full max-w-xl flex flex-row items-center"
     >
       <input
+        value={q}
         type="text"
         placeholder="Search"
+        onChange={handleChange}
         className="p-2 px-4 bg-transparent flex-1 rounded-full border-2 border-white border-opacity-50"
       />
       <button
