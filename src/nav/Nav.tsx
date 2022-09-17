@@ -5,11 +5,7 @@ import { useMd } from '../responsive/useMd';
 import { NavItem } from './NavItem';
 import { NavPlayButton } from './NavPlayButton';
 
-interface NavProps{
-  spacer?:boolean
-}
-
-export function Nav({ spacer = true }:NavProps) {
+export function Nav() {
   const md = useMd();
   const { pathname } = useLocation();
   const playerPage = pathname === '/player';
@@ -17,24 +13,21 @@ export function Nav({ spacer = true }:NavProps) {
   if (md) return null;
 
   return (
-    <>
-      {spacer && <div className="h-12" />}
-      <div
-        className="fixed bottom-0 z-10 h-12 justify-around w-screen items-center text-center flex flex-row gap-2"
-        style={{ backgroundColor: playerPage ? undefined : 'rgb(24 24 27)' }}
-      >
-        <NavPlayButton />
-        <NavItem
-          to="/"
-          Icon={FaHome}
-          text="Home"
-        />
-        <NavItem
-          to="/me"
-          text="Me"
-          Icon={FaUser}
-        />
-      </div>
-    </>
+    <div
+      style={{ backgroundColor: playerPage ? undefined : 'rgb(24 24 27)' }}
+      className="fixed bottom-0 right-0 left-0 z-10 h-12 justify-around text-center flex flex-row gap-2 items-center"
+    >
+      <NavPlayButton />
+      <NavItem
+        to="/"
+        Icon={FaHome}
+        text="Home"
+      />
+      <NavItem
+        to="/me"
+        text="Me"
+        Icon={FaUser}
+      />
+    </div>
   );
 }
