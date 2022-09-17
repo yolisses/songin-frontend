@@ -23,9 +23,9 @@ export function SearchPage() {
   }
 
   return (
-    <div className="relative -z-10 flex flex-col items-center p-2 gap-8 md:pr-[10rem]">
-      <div className="h-8 w-full relative flex center">
-        <div className="fixed top-0 w-full bg-zinc-900 flex center z-10 p-4">
+    <div className="relative flex flex-col items-center p-2 gap-8 md:pr-[10rem]">
+      <div className="h-6 w-full relative flex center">
+        <div className="fixed top-0 right-0 left-0 md:right-40 md:left-40 bg-zinc-900 flex center z-10 p-2">
           <SearchInput getMusics={getMusics} />
         </div>
       </div>
