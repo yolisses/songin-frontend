@@ -9,20 +9,19 @@ import { NumberIndicator } from './NumberIndicator';
 import { MusicTable } from '../common/MusicTable';
 
 export function ProfilePage() {
-  const { username } = useParams();
+  const { nick } = useParams();
   const [profile, setProfile] = useState<Profile>();
   const loading = profile === undefined;
 
   async function getUser() {
-    const res = await api.get(`/profile/nick/${username}`);
+    setProfile(undefined);
+    const res = await api.get(`/profile/nick/${nick}`);
     setProfile(res.data);
   }
 
   useEffect(() => {
-    if (!profile) {
-      getUser();
-    }
-  }, []);
+    getUser();
+  }, [nick]);
 
   return (
     <div className="w-full flex flex-col profile-page">

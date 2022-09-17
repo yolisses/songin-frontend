@@ -33,7 +33,7 @@ export function Routes() {
           <Route path="/splash" element={<SplashScreen />} />
           <Route path="/history" element={<HistoryPage />} />
           <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/@:username" element={<ProfilePage />} />
+          <Route path="/@:nick" element={<ProfilePage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
         </Router>
       </div>
