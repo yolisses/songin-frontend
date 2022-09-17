@@ -1,0 +1,30 @@
+import { formatMusicTime } from '../common/formatMusicTime';
+import { image } from '../common/image';
+import { Music } from '../music/Music';
+
+interface Props{
+    music:Music
+}
+
+export function SearchMusicItem({ music }:Props) {
+  return (
+    <div className="flex flex-row gap-2 active-opacity items-center w-full p-2 pr-4 rounded-lg">
+      <img
+        alt={music.name}
+        className="rounded-lg"
+        src={image(music, 64)}
+      />
+      <div>
+        <div>
+          {music.name}
+        </div>
+        <div className="opacity-50">
+          {music.artist?.name || 'Lorem ipsum dolor sit amet'}
+        </div>
+      </div>
+      <div className="ml-auto opacity-50">
+        {formatMusicTime(music.duration)}
+      </div>
+    </div>
+  );
+}

@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-no-bind */
 import { useState } from 'react';
 import { api } from '../api/api';
-import { CarrouselItem } from '../home/CarrouselItem';
 import { Music } from '../music/Music';
 import { SearchInput } from './SearchInput';
+import { SearchMusicItem } from './SearchMusicItem';
 
 export function SearchPage() {
   const [musics, setMusics] = useState<Music[]|undefined>([]);
@@ -22,16 +22,21 @@ export function SearchPage() {
   }
 
   return (
-    <div className="w-full flex flex-col items-center p-6">
+    <div className="w-full flex flex-col items-center p-6 gap-8">
       <SearchInput getMusics={getMusics} />
-
       {error
         ? (
           <div className="warn">
             Something gone wrong searching musics
           </div>
         )
-        : musics?.map((music) => <CarrouselItem music={music} />)}
+        : (
+          <div className="flex flex-col max-w-3xl w-full">
+            { musics?.map((music) => (
+              <SearchMusicItem music={music} />
+            ))}
+          </div>
+        )}
     </div>
   );
 }
