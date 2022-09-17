@@ -25,11 +25,7 @@ export function MusicsContextProvider({ children }:ChildrenProps) {
   const music = musics[index];
 
   async function getMusics() {
-    const res = await api.get('/musics', {
-      params: {
-        _expand: 'artist',
-      },
-    });
+    const res = await api.get('/feed');
     setNextMusics(res.data);
   }
 

@@ -52,7 +52,7 @@ export function Favorites({ user }:Props) {
           <div>
             The musics you click the like button
             <FaHeart
-              size={24}
+              size={22}
               className="inline mx-1"
             />
             will appear here
