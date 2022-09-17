@@ -1,13 +1,12 @@
-import { Link } from 'react-router-dom';
-import { image } from '../common/image';
-import { Music } from '../music/Music';
-import { useMusics } from '../music/MusicsContext';
+import { image } from '../../common/image';
+import { Music } from '../../music/Music';
+import { useMusics } from '../../music/MusicsContext';
 
 interface MusicListItemProps{
     music:Music
 }
 
-export function MusicListItem({ music }:MusicListItemProps) {
+export function NextMusicItem({ music }:MusicListItemProps) {
   const { setMusic } = useMusics();
 
   function handleClick() {

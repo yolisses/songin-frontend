@@ -4,7 +4,7 @@ import { image } from '../../common/image';
 import { useMusics } from '../../music/MusicsContext';
 import { TabButtons } from '../../tab/TabButtons';
 import { TabsContainer } from '../../tab/TabsContainer';
-import { NextMusics } from '../NextMusics';
+import { NextMusics } from '../next/NextMusics';
 
 export function PlayerModal() {
   const { music } = useMusics();
