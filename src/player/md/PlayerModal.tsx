@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Comments } from '../comments/Comments';
-import { image } from '../common/image';
-import { useMusics } from '../music/MusicsContext';
-import { TabButtons } from '../tab/TabButtons';
-import { TabsContainer } from '../tab/TabsContainer';
-import { NextMusics } from './NextMusics';
+import { Comments } from '../../comments/Comments';
+import { image } from '../../common/image';
+import { useMusics } from '../../music/MusicsContext';
+import { TabButtons } from '../../tab/TabButtons';
+import { TabsContainer } from '../../tab/TabsContainer';
+import { NextMusics } from '../NextMusics';
 
 export function PlayerModal() {
   const { music } = useMusics();

@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import { useState } from 'react';
-import { Nav } from '../nav/Nav';
+import { Nav } from '../../nav/Nav';
 import { PlayerCard } from './PlayerCard';
-import { useMusics } from '../music/MusicsContext';
+import { useMusics } from '../../music/MusicsContext';
 import { GradientBackground } from './GradientBackground';
-import { Music } from '../music/Music';
+import { Music } from '../../music/Music';
 
 export function PlayerPage() {
   const { musics } = useMusics();

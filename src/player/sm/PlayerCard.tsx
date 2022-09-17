@@ -4,13 +4,13 @@ import {
 import './PlayerCard.css';
 import { Link } from 'react-router-dom';
 import { FaComment } from 'react-icons/fa';
-import { Music } from '../music/Music';
-import { PlayerRange } from './PlayerRange';
-import { LikeButton } from '../like/LikeButton';
-import { FloatingCounter } from './FloatingCounter';
-import { ShareButton } from '../share/ShareButton';
-import { ShareBallon } from '../share/ShareBallon';
-import { image } from '../common/image';
+import { Music } from '../../music/Music';
+import { image } from '../../common/image';
+import { PlayerRange } from '../PlayerRange';
+import { ShareBallon } from '../../share/ShareBallon';
+import { FloatingCounter } from '../FloatingCounter';
+import { LikeButton } from '../../like/LikeButton';
+import { ShareButton } from '../../share/ShareButton';
 
 interface PlayerCardProps{
     music:Music

@@ -1,5 +1,5 @@
 import { FaStepBackward, FaStepForward } from 'react-icons/fa';
-import { useMusics } from '../music/MusicsContext';
+import { useMusics } from '../../music/MusicsContext';
 
 interface JumpButtonProps{
     foward:boolean

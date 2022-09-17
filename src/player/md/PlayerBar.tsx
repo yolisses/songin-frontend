@@ -4,19 +4,19 @@
 import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { image } from '../common/image';
-import { LikeButton } from '../like/LikeButton';
-import { useMusics } from '../music/MusicsContext';
-import { useMd } from '../responsive/useMd';
-import { ShareBallon } from '../share/ShareBallon';
-import { ShareButton } from '../share/ShareButton';
-import { stopPropagation } from '../utils/stopPropagation';
+import { image } from '../../common/image';
+import { LikeButton } from '../../like/LikeButton';
+import { useMusics } from '../../music/MusicsContext';
+import { useMd } from '../../responsive/useMd';
+import { ShareBallon } from '../../share/ShareBallon';
+import { ShareButton } from '../../share/ShareButton';
+import { stopPropagation } from '../../utils/stopPropagation';
 import { JumpButton } from './JumpButton';
-import { PlayButton } from './PlayButton';
+import { PlayButton } from '../PlayButton';
 import { PlayerModal } from './PlayerModal';
-import { PlayerRange } from './PlayerRange';
-import { RepeatButton } from './RepeatButton';
-import { TimeCounter } from './TimeCounter';
+import { PlayerRange } from '../PlayerRange';
+import { RepeatButton } from '../RepeatButton';
+import { TimeCounter } from '../TimeCounter';
 
 export function PlayerBar() {
   const md = useMd();
