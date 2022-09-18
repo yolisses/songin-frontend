@@ -14,9 +14,9 @@
 }
 
 .loading {
-    @apply from-[#fff1] via-[#fff0] to-[#fff1] bg-gradient-to-r rounded
+    @apply from-[#fff2] via-[#fff1] to-[#fff2] bg-gradient-to-r rounded
 }
 
 .loading {
-    @apply bg-[#fff1]
+    @apply bg-[#fff2]
 }
