@@ -110,7 +110,7 @@ export function PlayerBar() {
             </div>
           </div>
         </div>
-        <div className="text-xl pr-2" onClick={stopPropagation}>
+        <div className="pr-2" onClick={stopPropagation}>
           <RepeatButton />
         </div>
       </button>
