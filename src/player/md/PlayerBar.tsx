@@ -35,7 +35,7 @@ export function PlayerBar() {
         <PlayerBarControls />
         <button
           onClick={handleClick}
-          className="w-full pr-48 flex center"
+          className="w-full pr-48 h-full flex center"
         >
           <PlayerBarCenter
             music={music}
