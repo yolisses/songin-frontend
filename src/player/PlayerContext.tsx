@@ -86,6 +86,7 @@ export function PlayerContextProvider({ children }:ChildrenProps) {
         <audio
           controls={false}
           ref={audio as any}
+          preload="metadata"
           onPlay={handlePlay}
           onPause={handlePause}
           onTimeUpdate={updateTime}
