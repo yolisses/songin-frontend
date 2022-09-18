@@ -8,10 +8,16 @@ import { SearchInput } from './SearchInput';
 import { SearchMusicItem } from './SearchMusicItem';
 
 export function SearchPage() {
-  const [musics, setMusics] = useState<Music[]|undefined>([]);
+  const [empty, setEmpty] = useState(true);
   const [error, setError] = useState(false);
+  const [musics, setMusics] = useState<Music[]|undefined>([]);
 
   async function getMusics(q:string) {
+    if (q === '') {
+      setEmpty(true);
+      return;
+    }
+    setEmpty(false);
     try {
       setMusics(undefined);
       setError(false);
@@ -25,8 +31,13 @@ export function SearchPage() {
   }
 
   let content:ReactNode;
-
-  if (error) {
+  if (empty) {
+    content = (
+      <div className="warn opacity-50">
+        Type something above to search
+      </div>
+    );
+  } else if (error) {
     content = (
       <div className="warn">
         Something gone wrong searching musics.
