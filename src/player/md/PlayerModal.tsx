@@ -34,7 +34,7 @@ export function PlayerModal() {
         <img
           alt={music.name}
           src={image(music, 512)}
-          className="aspect-square flex-1 max-w-[450px] rounded-lg shadow-2xl"
+          className="aspect-square flex-1 max-w-[450px] w-full rounded-lg shadow-2xl"
         />
       </div>
       <div className="flex flex-col mb-20 flex-1 max-w-md">
