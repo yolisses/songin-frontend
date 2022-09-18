@@ -1,43 +1,22 @@
-/* eslint-disable react/jsx-no-bind */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState } from 'react';
-import { FaChevronDown } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import { image } from '../../common/image';
-import { LikeButton } from '../../like/LikeButton';
-import { useMusics } from '../../music/MusicsContext';
-import { useMd } from '../../responsive/useMd';
-import { ShareBallon } from '../../share/ShareBallon';
-import { ShareButton } from '../../share/ShareButton';
-import { stopPropagation } from '../../utils/stopPropagation';
-import { JumpButton } from './JumpButton';
-import { PlayButton } from '../PlayButton';
 import { PlayerModal } from './PlayerModal';
 import { PlayerRange } from '../PlayerRange';
+import { useMd } from '../../responsive/useMd';
 import { RepeatButton } from '../RepeatButton';
-import { TimeCounter } from '../TimeCounter';
+import { PlayerBarCenter } from './PlayerBarCenter';
+import { useMusics } from '../../music/MusicsContext';
+import { PlayerBarControls } from './PlayerBarControls';
 
 export function PlayerBar() {
   const md = useMd();
   const { music } = useMusics();
-  const [share, setShare] = useState(false);
   const [modalActive, setModalActive] = useState(false);
-
-  function closeShare() {
-    setShare(false);
-  }
-
-  function closeAndStopPropagation(e:any) {
-    setModalActive(false);
-    stopPropagation(e);
-  }
-
-  if (!md || !music) return null;
 
   function handleClick() {
     setModalActive((value) => !value);
   }
+
+  if (!md || !music) return null;
 
   return (
     <div className="h-16 mt-2 z-30">
@@ -49,71 +28,16 @@ export function PlayerBar() {
       <div className="fixed right-0 bottom-16 translate-y-1/2 w-full z-[11]">
         <PlayerRange />
       </div>
-      <button
-        onClick={handleClick}
+      <div
         style={{ backgroundColor: modalActive ? undefined : '#18181b' }}
-        className="fixed w-full z-10 right-0 bottom-0 h-16 duration-[0.4s] transition-colors flex flex-row justify-between items-center"
+        className="fixed w-full z-10 right-0 bottom-0 h-16 duration-[0.4s] transition-colors flex flex-row justify-between items-center px-2"
       >
-        <div
-          onClick={stopPropagation}
-          className="flex flex-row items-center text-lg p-1 gap-4 "
-        >
-          <JumpButton foward={false} />
-          <PlayButton />
-          <JumpButton foward />
-          <div className="text-sm opacity-60">
-            <TimeCounter />
-          </div>
-        </div>
-        <div className="flex flex-row gap-2 max-w-md w-full mr-28 items-center">
-          <div className="aspect-square h-14 relative">
-            <FaChevronDown className="absolute w-full h-full p-[1.1rem] -z-10" />
-            <img
-              alt={music.name}
-              src={image(music, 64)}
-              className="rounded transition-all aspect-square duration-[0.4s]"
-              style={{
-                scale: modalActive ? 0 : undefined,
-                opacity: modalActive ? 0 : undefined,
-              }}
-            />
-          </div>
-          <div className="flex flex-col items-start">
-            <div className="font-semibold">
-              {music.name}
-            </div>
-            <Link
-              onClick={closeAndStopPropagation}
-              to={`/@${music.artist?.nick}`}
-              className="text-sm hover:underline"
-            >
-              {music.artist?.name}
-            </Link>
-          </div>
-          <div className="flex flex-row items-center ml-auto">
-            <div
-              onClick={stopPropagation}
-              className="flex flex-row gap-6"
-            >
-              <LikeButton music={music} alreadyLiked={music.liked} />
-              <div className="relative">
-                {share && (
-                  <div className="absolute overflow-hidden bottom-[4rem] -right-[4.5rem]">
-                    <ShareBallon
-                      music={music}
-                      close={closeShare}
-                    />
-                  </div>
-                )}
-                <ShareButton setShare={setShare} />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="pr-2" onClick={stopPropagation}>
-          <RepeatButton />
-        </div>
-      </button>
+        <PlayerBarControls />
+        <button onClick={handleClick} className="w-full pr-48 flex center">
+          <PlayerBarCenter modalActive={modalActive} music={music} />
+        </button>
+        <RepeatButton />
+      </div>
     </div>
   );
 }

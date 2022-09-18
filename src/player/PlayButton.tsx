@@ -14,7 +14,7 @@ export function PlayButton() {
   return (
     <button
       onClick={handleClick}
-      className="p-2 rounded-full text-2xl group"
+      className="p-2 rounded-lg text-2xl group"
     >
       <div className="group-active:scale-75 transition-transform">
         <Icon />
