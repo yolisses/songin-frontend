@@ -1,5 +1,6 @@
 import { formatMusicTime } from '../common/formatMusicTime';
 import { image } from '../common/image';
+import { LoadingLine } from '../common/LoadingLine';
 import { Music } from '../music/Music';
 import { useMusics } from '../music/MusicsContext';
 
@@ -35,18 +36,18 @@ export function SearchMusicItem({ music }:Props) {
       <div>
         <div>
           {loading
-            ? <div className="w-32 loading mb-1">&nbsp;</div>
+            ? <LoadingLine w={32} />
             : music.name}
         </div>
         <div className="opacity-50">
           {loading
-            ? <div className="opacity-50 w-44 loading">&nbsp;</div>
+            ? <LoadingLine w={44} />
             : music.artist?.name}
         </div>
       </div>
       <div className="ml-auto opacity-50">
         {loading
-          ? <div className="w-10 loading mb-1">&nbsp;</div>
+          ? <LoadingLine w={10} />
           : formatMusicTime(music.duration)}
       </div>
     </button>

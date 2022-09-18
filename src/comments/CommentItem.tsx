@@ -1,6 +1,7 @@
 import { FaChevronRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { format } from 'timeago.js';
+import { LoadingLine } from '../common/LoadingLine';
 import { Comment } from './Comment';
 import { CommentLikeButton } from './CommentLikeButton';
 import { CommentRepliesButton } from './CommentRepliesButton';
@@ -26,7 +27,7 @@ export function CommentItem({ comment }:CommentItemProps) {
       <div className="flex-1">
         <div className="text-sm opacity-50">
           {loading
-            ? <div className="loading w-20 mb-1">&nbsp;</div>
+            ? <LoadingLine w={20} />
             : (
               <>
                 <Link
@@ -45,8 +46,8 @@ export function CommentItem({ comment }:CommentItemProps) {
           {loading
             ? (
               <>
-                <div className="loading mb-1">&nbsp;</div>
-                <div className="loading w-1/2 mb-1">&nbsp;</div>
+                <LoadingLine />
+                <LoadingLine className="w-1/2" />
               </>
             )
             : comment.text}

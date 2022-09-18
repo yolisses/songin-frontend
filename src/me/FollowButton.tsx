@@ -1,6 +1,8 @@
 import { FaUser } from 'react-icons/fa';
+
 import { User } from '../user/User';
 import { useUser } from '../user/UserContext';
+import { LoadingLine } from '../common/LoadingLine';
 
 interface FollowButtonProps{
     user?:User
@@ -15,7 +17,7 @@ export function FollowButton({ user }:FollowButtonProps) {
   }
 
   if (!user) {
-    return <div className="loading w-20">&nbsp;</div>;
+    return <LoadingLine w={20} />;
   }
 
   return (

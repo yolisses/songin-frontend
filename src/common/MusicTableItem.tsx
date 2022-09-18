@@ -3,6 +3,7 @@ import { Music } from '../music/Music';
 import { useMusics } from '../music/MusicsContext';
 import { formatMusicTime } from './formatMusicTime';
 import { image } from './image';
+import { LoadingLine } from './LoadingLine';
 
 interface MusicTableItemProps{
     music?:Music
@@ -35,7 +36,8 @@ export function MusicTableItem({ music }:MusicTableItemProps) {
           )}
       </td>
       <td>
-        {loading ? <div className="loading w-32">&nbsp;</div>
+        {loading
+          ? <LoadingLine w={32} />
           : (
             <button
               onClick={handleClick}
@@ -46,18 +48,20 @@ export function MusicTableItem({ music }:MusicTableItemProps) {
           )}
       </td>
       <td>
-        {loading ? <div className="loading w-32">&nbsp;</div> : (
-          <Link
-            to={`/@${music.artist?.name}`}
-            className="opacity-60 hover:underline"
-          >
-            {music.artist?.name}
-          </Link>
-        )}
+        {loading
+          ? <LoadingLine w={32} />
+          : (
+            <Link
+              to={`/@${music.artist?.name}`}
+              className="opacity-60 hover:underline"
+            >
+              {music.artist?.name}
+            </Link>
+          )}
       </td>
       <td className="opacity-60 pr-2">
         {loading
-          ? <div className="loading w-10">&nbsp;</div>
+          ? <LoadingLine w={10} />
           : formatMusicTime(music.duration)}
       </td>
     </tr>

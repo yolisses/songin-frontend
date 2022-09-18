@@ -1,3 +1,4 @@
+import { LoadingLine } from '../common/LoadingLine';
 import { range } from '../common/range';
 import { repeat } from '../common/repeat';
 import { Group } from '../group/Group';
@@ -17,11 +18,8 @@ export function Carrousel({ group }:MusicCarrouselProps) {
   return (
     <div>
       <div className="text-xl md:text-2xl pb-2 pl-2">
-        {loading ? (
-          <div className="loading rounded w-24">
-          &nbsp;
-          </div>
-        )
+        {loading
+          ? <LoadingLine w={32} />
           : <h3>{group.name}</h3>}
       </div>
       <div

@@ -35,30 +35,23 @@ export function CarrouselItem({ music }:MusicCarrouselItemProps) {
             />
           </button>
         )}
-      {loading
-        ? (
-          <>
-            <div>&nbsp;</div>
-            <div>&nbsp;</div>
-          </>
-        )
-
-        : (
-          <>
-            <button
-              onClick={handleClick}
-              className="hover:underline"
-            >
-              {music.name}
-            </button>
-            <Link
-              to={`/@${music.artist?.name}`}
-              className="text-center hover:underline opacity-60 w-fit"
-            >
-              {music.artist?.name}
-            </Link>
-          </>
-        )}
+      {music
+      && (
+      <>
+        <button
+          onClick={handleClick}
+          className="hover:underline"
+        >
+          {music.name}
+        </button>
+        <Link
+          to={`/@${music.artist?.name}`}
+          className="text-center hover:underline opacity-60 w-fit"
+        >
+          {music.artist?.name}
+        </Link>
+      </>
+      )}
     </div>
   );
 }

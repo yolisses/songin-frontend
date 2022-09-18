@@ -7,6 +7,7 @@ import { Favorites } from '../like/Favorites';
 import { FollowButton } from './FollowButton';
 import { NumberIndicator } from './NumberIndicator';
 import { MusicTable } from '../common/MusicTable';
+import { LoadingLine } from '../common/LoadingLine';
 
 export function ProfilePage() {
   const { nick } = useParams();
@@ -45,12 +46,12 @@ export function ProfilePage() {
               <div>
                 <div className="text-2xl">
                   { loading
-                    ? <div className="loading w-48 mb-1">&nbsp;</div>
+                    ? <LoadingLine w={48} />
                     : profile?.user?.name}
                 </div>
                 <div className="opacity-80">
                   { loading
-                    ? <div className="loading w-32">&nbsp;</div>
+                    ? <LoadingLine w={32} />
                     : `@${profile?.user?.nick}`}
                 </div>
               </div>
