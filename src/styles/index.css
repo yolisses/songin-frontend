@@ -42,7 +42,7 @@ html {
 }
 
 body {
-    @apply md:pl-40
+    @apply md:pl-36
 }
 
 img {
