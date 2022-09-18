@@ -4,36 +4,50 @@ import { Music } from '../music/Music';
 import { useMusics } from '../music/MusicsContext';
 
 interface Props{
-    music:Music
+    music?:Music
 }
 
 export function SearchMusicItem({ music }:Props) {
   const { setMusic } = useMusics();
 
   function handleClick() {
-    setMusic(music);
+    if (music) {
+      setMusic(music);
+    }
   }
+
+  const loading = music === undefined;
 
   return (
     <button
       onClick={handleClick}
       className="text-left flex flex-row gap-2 active-opacity items-center w-full p-2 pr-4 rounded-lg"
     >
-      <img
-        alt={music.name}
-        src={image(music, 64)}
-        className="rounded-lg aspect-square w-16"
-      />
+      {loading
+        ? <div className="rounded-lg aspect-square w-16 loading" />
+        : (
+          <img
+            alt={music.name}
+            src={image(music, 64)}
+            className="rounded-lg aspect-square w-16"
+          />
+        )}
       <div>
         <div>
-          {music.name}
+          {loading
+            ? <div className="w-32 loading mb-1">&nbsp;</div>
+            : music.name}
         </div>
         <div className="opacity-50">
-          {music.artist?.name}
+          {loading
+            ? <div className="opacity-50 w-44 loading">&nbsp;</div>
+            : music.artist?.name}
         </div>
       </div>
       <div className="ml-auto opacity-50">
-        {formatMusicTime(music.duration)}
+        {loading
+          ? <div className="w-10 loading mb-1">&nbsp;</div>
+          : formatMusicTime(music.duration)}
       </div>
     </button>
   );

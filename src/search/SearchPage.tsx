@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-bind */
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { api } from '../api/api';
+import { repeat } from '../common/repeat';
 import { Music } from '../music/Music';
 import { NavSpacer } from '../nav/NavSpacer';
 import { SearchInput } from './SearchInput';
@@ -12,6 +13,7 @@ export function SearchPage() {
 
   async function getMusics(q:string) {
     try {
+      setMusics(undefined);
       setError(false);
       const res = await api.get('/musics/search', {
         params: { q },
@@ -22,6 +24,37 @@ export function SearchPage() {
     }
   }
 
+  let content:ReactNode;
+
+  if (error) {
+    content = (
+      <div className="warn">
+        Something gone wrong searching musics.
+      </div>
+    );
+  } else if (musics === undefined) {
+    content = (
+      <>
+        {repeat(<SearchMusicItem />, 10)}
+      </>
+    );
+  } else if (musics.length === 0) {
+    content = (
+      <div className="warn">
+        No results to show. Please look for typos.
+      </div>
+    );
+  } else {
+    content = (
+      <>
+        { musics?.map((music) => (
+          <SearchMusicItem music={music} />
+        ))}
+        <NavSpacer />
+      </>
+    );
+  }
+
   return (
     <div className="relative flex flex-col items-center p-2 gap-8 md:pr-40 z-0">
       <div className="h-6 w-full relative flex center">
@@ -29,20 +62,10 @@ export function SearchPage() {
           <SearchInput getMusics={getMusics} />
         </div>
       </div>
-      {error
-        ? (
-          <div className="warn">
-            Something gone wrong searching musics
-          </div>
-        )
-        : (
-          <div className="flex flex-col max-w-3xl w-full">
-            { musics?.map((music) => (
-              <SearchMusicItem music={music} />
-            ))}
-            <NavSpacer />
-          </div>
-        )}
+
+      <div className="flex flex-col max-w-3xl w-full">
+        {content}
+      </div>
     </div>
   );
 }
