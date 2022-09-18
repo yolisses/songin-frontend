@@ -1,14 +1,24 @@
 import { formatMusicTime } from '../common/formatMusicTime';
 import { image } from '../common/image';
 import { Music } from '../music/Music';
+import { useMusics } from '../music/MusicsContext';
 
 interface Props{
     music:Music
 }
 
 export function SearchMusicItem({ music }:Props) {
+  const { setMusic } = useMusics();
+
+  function handleClick() {
+    setMusic(music);
+  }
+
   return (
-    <div className="flex flex-row gap-2 active-opacity items-center w-full p-2 pr-4 rounded-lg">
+    <button
+      onClick={handleClick}
+      className="text-left flex flex-row gap-2 active-opacity items-center w-full p-2 pr-4 rounded-lg"
+    >
       <img
         alt={music.name}
         src={image(music, 64)}
@@ -25,6 +35,6 @@ export function SearchMusicItem({ music }:Props) {
       <div className="ml-auto opacity-50">
         {formatMusicTime(music.duration)}
       </div>
-    </div>
+    </button>
   );
 }
