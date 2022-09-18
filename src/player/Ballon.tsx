@@ -14,9 +14,9 @@ export function Ballon({ children, close }:BallonProps) {
   }
 
   useEffect(() => {
-    window.addEventListener('mouseup', handleMouseUp);
+    window.addEventListener('click', handleMouseUp);
     return () => {
-      window.removeEventListener('mouseup', handleMouseUp);
+      window.removeEventListener('click', handleMouseUp);
     };
   }, []);
 

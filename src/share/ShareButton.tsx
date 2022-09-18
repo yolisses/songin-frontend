@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, MouseEvent, SetStateAction } from 'react';
 import { FaShare } from 'react-icons/fa';
 import { FloatingCounter } from '../player/FloatingCounter';
 
@@ -7,7 +7,8 @@ interface ShareButtonProps{
 }
 
 export function ShareButton({ setShare }:ShareButtonProps) {
-  function handleShareClick() {
+  function handleShareClick(e:MouseEvent) {
+    e.stopPropagation();
     setShare((value) => !value);
   }
 
@@ -15,8 +16,8 @@ export function ShareButton({ setShare }:ShareButtonProps) {
   return (
     <FloatingCounter count={130}>
       <button
-        onClick={handleShareClick}
         className="group p-2"
+        onClick={handleShareClick}
       >
         <FaShare className="transition-transform group-active:scale-50" size={iconsSize} />
       </button>
