@@ -28,12 +28,12 @@ export function PlayerBarCenter({ music, modalActive }:Props) {
 
   return (
     <div className="flex flex-row gap-2 max-w-md w-full items-center">
-      <div className="aspect-square h-14 relative">
+      <div className="aspect-square h-14 relative flex center">
         <FaChevronDown className="absolute w-full h-full p-[1.1rem] -z-10" />
         <img
           alt={music.name}
           src={image(music, 64)}
-          className="rounded transition-all aspect-square duration-[0.4s]"
+          className="rounded transition-all aspect-square w-12 duration-[0.4s]"
           style={{
             scale: modalActive ? 0 : undefined,
             opacity: modalActive ? 0 : undefined,
