@@ -27,7 +27,7 @@ export function LateralNav() {
   if (!md) return null;
 
   return (
-    <div className="flex flex-col text-lg fixed left-0 top-0 w-[10rem] bg-zinc-900">
+    <div className="flex flex-col text-lg fixed left-0 top-0 w-40 bg-zinc-900">
       <Link
         to="/"
         onClick={refreshGroups}

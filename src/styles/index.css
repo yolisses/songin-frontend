@@ -42,7 +42,7 @@ html {
 }
 
 body {
-    @apply md:pl-[10rem]
+    @apply md:pl-40
 }
 
 img {
