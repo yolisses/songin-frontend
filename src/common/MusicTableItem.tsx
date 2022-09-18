@@ -49,7 +49,7 @@ export function MusicTableItem({ music }:MusicTableItemProps) {
       </td>
       <td>
         {loading
-          ? <LoadingLine w={32} />
+          ? <LoadingLine w={24} />
           : (
             <Link
               to={`/@${music.artist?.name}`}
