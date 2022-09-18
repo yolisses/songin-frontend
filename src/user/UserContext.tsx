@@ -1,5 +1,5 @@
 import {
-  createContext, Dispatch, SetStateAction, useContext, useEffect, useState,
+  createContext, useContext, useEffect, useState,
 } from 'react';
 import { User } from './User';
 import { api } from '../api/api';
@@ -9,7 +9,7 @@ interface UserContext{
     user?:User
     logout:()=>void
     loading:boolean
-    setUser:Dispatch<SetStateAction<User|undefined>>
+    signIn:(credential:string)=>Promise<void>
 }
 
 const userContext = createContext({} as UserContext);
@@ -19,14 +19,20 @@ export function UserContextProvider({ children }:ChildrenProps) {
   const [loading, setLoading] = useState(true);
 
   async function getMe() {
+    setLoading(true);
     try {
       const res = await api.get('users/me');
       setUser(res.data);
-      setLoading(false);
     } catch (err) {
       setUser(undefined);
     }
     setLoading(false);
+  }
+
+  async function signIn(credential:string) {
+    const res = await api.post('/sign-in', credential);
+    const user:User = res.data;
+    setUser(user);
   }
 
   async function logout() {
@@ -42,7 +48,7 @@ export function UserContextProvider({ children }:ChildrenProps) {
     <userContext.Provider value={{
       user,
       logout,
-      setUser,
+      signIn,
       loading,
     }}
     >

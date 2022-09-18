@@ -1,8 +1,6 @@
 /* eslint-disable no-alert */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef } from 'react';
-import { User } from './User';
-import { api } from '../api/api';
 import { useUser } from './UserContext';
 
 declare global{
@@ -13,14 +11,8 @@ declare global{
 
 export function GoogleButton() {
   const divRef = useRef(null);
-  const { setUser } = useUser();
+  const { signIn } = useUser();
   const clientId = '456371025061-44c24jcod62qnejc2kp6f8dmj3amlshn.apps.googleusercontent.com';
-
-  async function signIn(credential:string) {
-    const res = await api.post('/sign-in', credential);
-    const user:User = res.data;
-    setUser(user);
-  }
 
   function callback(res:any, error:any) {
     if (error) {
