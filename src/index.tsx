@@ -4,6 +4,9 @@ import './styles/loading.css';
 import './styles/animations.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { FpjsProvider as FingerprintProvider }
+  from '@fingerprintjs/fingerprintjs-pro-react';
+
 import { App } from './App';
 import { reportWebVitals } from './generated/reportWebVitals';
 
@@ -11,9 +14,16 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <FingerprintProvider
+    loadOptions={{
+      apiKey: 'jGZosJoDqwNUMvoEnlMj',
+      endpoint: 'https://fingerprint.sonhin.com',
+    }}
+  >
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </FingerprintProvider>,
 );
 
 // If you want to start measuring performance in your app, pass a function
