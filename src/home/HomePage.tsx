@@ -30,7 +30,16 @@ export function HomePage() {
   }
 
   return (
-    <div className="flex flex-col gap-10 py-4 overflow-hidden">
+    <div className="flex flex-col gap-4 md:gap-10 py-4 overflow-hidden">
+      <div className="md:hidden flex flex-row p-2 gap-1">
+        <img
+          alt="logo"
+          width={20}
+          src="/logo/gradient.svg"
+          className="bg-transparent"
+        />
+        <h1 className="text-xl logo">Sonhin</h1>
+      </div>
       {!groups || loading ? repeat(<Carrousel />, 4)
         : groups.map((group) => (
           <Carrousel
