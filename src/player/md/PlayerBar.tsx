@@ -25,12 +25,12 @@ export function PlayerBar() {
         <PlayerModal />
       </div>
       )}
-      <div className="fixed right-0 bottom-14 translate-y-1/2 w-full z-[11]">
+      <div className="fixed right-0 bottom-16 translate-y-1/2 w-full z-[11]">
         <PlayerRange />
       </div>
       <div
         style={{ backgroundColor: modalActive ? undefined : '#18181b' }}
-        className="fixed w-full z-10 right-0 bottom-0 h-14 duration-[0.4s] transition-colors flex flex-row justify-between items-center px-2 gap-2"
+        className="fixed w-full z-10 right-0 bottom-0 h-16 duration-[0.4s] transition-colors flex flex-row justify-between items-center px-2 gap-2"
       >
         <PlayerBarControls />
         <button
