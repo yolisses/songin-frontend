@@ -21,7 +21,7 @@ export function PlayerRange() {
   return (
     <input
       type="range"
-      max={duration}
+      max={duration || 0}
       onInput={handleChange}
       onMouseUp={handleChangeEnd}
       onTouchEnd={handleChangeEnd}
