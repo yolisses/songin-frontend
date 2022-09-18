@@ -29,7 +29,7 @@ export function SearchMusicItem({ music }:Props) {
           {music.name}
         </div>
         <div className="opacity-50">
-          {music.artist?.name || 'Lorem ipsum dolor sit amet'}
+          {music.artist?.name}
         </div>
       </div>
       <div className="ml-auto opacity-50">
