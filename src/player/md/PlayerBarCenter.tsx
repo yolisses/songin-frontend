@@ -44,12 +44,15 @@ export function PlayerBarCenter({ music, modalActive }:Props) {
         <div className="font-semibold">
           {music.name}
         </div>
+        {music.artist
+        && (
         <Link
           to={`/@${music.artist?.nick}`}
           className="text-sm hover:underline"
         >
           {music.artist?.name}
         </Link>
+        )}
       </div>
       <div
         onClick={stopPropagation}

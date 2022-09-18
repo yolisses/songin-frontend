@@ -30,11 +30,17 @@ export function PlayerBar() {
       </div>
       <div
         style={{ backgroundColor: modalActive ? undefined : '#18181b' }}
-        className="fixed w-full z-10 right-0 bottom-0 h-16 duration-[0.4s] transition-colors flex flex-row justify-between items-center px-2"
+        className="fixed w-full z-10 right-0 bottom-0 h-16 duration-[0.4s] transition-colors flex flex-row justify-between items-center px-2 gap-2"
       >
         <PlayerBarControls />
-        <button onClick={handleClick} className="w-full pr-48 flex center">
-          <PlayerBarCenter modalActive={modalActive} music={music} />
+        <button
+          onClick={handleClick}
+          className="w-full pr-48 flex center"
+        >
+          <PlayerBarCenter
+            music={music}
+            modalActive={modalActive}
+          />
         </button>
         <RepeatButton />
       </div>
