@@ -48,7 +48,10 @@ export function SearchPage() {
     content = (
       <>
         { musics?.map((music) => (
-          <SearchMusicItem music={music} />
+          <SearchMusicItem
+            music={music}
+            key={music.id}
+          />
         ))}
         <NavSpacer />
       </>
