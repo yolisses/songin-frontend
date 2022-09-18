@@ -6,18 +6,15 @@ import { NavSpacer } from '../nav/NavSpacer';
 
 export function History() {
   const [musics, setMusics] = useState<Music[]>();
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   async function getMusics() {
-    setLoading(true);
     try {
       const res = await api.get('/musics/history');
       setMusics(res.data);
     } catch {
       setError(true);
     }
-    setLoading(false);
   }
   useEffect(() => {
     getMusics();
