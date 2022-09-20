@@ -26,7 +26,7 @@ export function History() {
         Something gone wrong loading the history
         <button
           onClick={getMusics}
-          className="bg-blue-500 rounded-lg p-2"
+          className="main-button"
         >
           Try again
         </button>

@@ -37,7 +37,7 @@ export function Favorites({ user }:Props) {
         Something gone wrong loading the favorites
         <button
           onClick={getMusics}
-          className="bg-blue-500 rounded-lg p-2"
+          className="main-button"
         >
           Try again
         </button>

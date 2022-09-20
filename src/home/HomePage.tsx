@@ -21,7 +21,7 @@ export function HomePage() {
         Something gone wrong loading the songs
         <button
           onClick={getGroups}
-          className="bg-blue-500 rounded-lg p-2"
+          className="main-button"
         >
           Try again
         </button>
