@@ -1,22 +1,22 @@
 import { FaUser } from 'react-icons/fa';
 
-import { User } from '../user/User';
+import { Profile } from './Profile';
 import { useUser } from '../user/UserContext';
 import { LoadingLine } from '../common/LoadingLine';
 
 interface FollowButtonProps{
-    user?:User
+    profile?:Profile
 }
 
-export function FollowButton({ user }:FollowButtonProps) {
+export function FollowButton({ profile }:FollowButtonProps) {
   const { user: currentUser } = useUser();
-  const isSameUser = user?.id === currentUser?.id;
+  const isSameUser = profile?.user?.id === currentUser?.id;
 
   if (isSameUser) {
     return null;
   }
 
-  if (!user) {
+  if (!profile?.user) {
     return <LoadingLine w={20} />;
   }
 

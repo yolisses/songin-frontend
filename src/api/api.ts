@@ -3,7 +3,7 @@ import { isDev } from '../common/isDev';
 
 type ApiChoice = 'dev' | 'prod' | 'mock'
 
-const choice:ApiChoice = 'prod';
+const choice:ApiChoice = 'dev';
 
 const baseURLChoices = {
   prod: process.env.REACT_APP_API_URL,

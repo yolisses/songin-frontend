@@ -5,5 +5,6 @@ export interface User{
     nick?:string
     image?:string
     email?:string
+    signed:boolean
     coverImage?:string
 }

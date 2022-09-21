@@ -7,6 +7,7 @@ import { userImage } from './userImage';
 import { useUser } from '../user/UserContext';
 import { Favorites } from '../like/Favorites';
 import { FollowButton } from './FollowButton';
+import { NickIndicator } from './NIckIndicator';
 import { MusicTable } from '../common/MusicTable';
 import { LoadingLine } from '../common/LoadingLine';
 import { NumberIndicator } from './NumberIndicator';
@@ -78,9 +79,7 @@ export function ProfilePage({ byUserId }:Props) {
                     : profile?.user?.name}
                 </div>
                 <div className="opacity-80">
-                  { loading
-                    ? <LoadingLine w={32} />
-                    : `@${profile?.user?.nick}`}
+                  <NickIndicator user={profile?.user} />
                 </div>
               </div>
             </div>
@@ -97,7 +96,7 @@ export function ProfilePage({ byUserId }:Props) {
               label="Followers"
               amount={profile?.followersCounter}
             />
-            <FollowButton user={profile?.user} />
+            <FollowButton profile={profile} />
             <div className="flex-1" />
           </div>
         </div>
