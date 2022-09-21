@@ -6,7 +6,6 @@ import { HomeContextProvider } from './home/HomeContext';
 import { ModalContextProvider } from './modal/ModalContext';
 import { MusicsContextProvider } from './music/MusicsContext';
 import { PlayerContextProvider } from './player/PlayerContext';
-import { SearchContextProvider } from './search/SearchContext';
 
 export function App() {
   return (
@@ -17,17 +16,15 @@ export function App() {
       </Helmet>
       )}
       <UserContextProvider>
-        <SearchContextProvider>
-          <MusicsContextProvider>
-            <PlayerContextProvider>
-              <ModalContextProvider>
-                <HomeContextProvider>
-                  <Routes />
-                </HomeContextProvider>
-              </ModalContextProvider>
-            </PlayerContextProvider>
-          </MusicsContextProvider>
-        </SearchContextProvider>
+        <MusicsContextProvider>
+          <PlayerContextProvider>
+            <ModalContextProvider>
+              <HomeContextProvider>
+                <Routes />
+              </HomeContextProvider>
+            </ModalContextProvider>
+          </PlayerContextProvider>
+        </MusicsContextProvider>
       </UserContextProvider>
     </>
   );
