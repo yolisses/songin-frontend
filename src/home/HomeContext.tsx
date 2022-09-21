@@ -14,20 +14,15 @@ interface HomeContext{
 const homeContext = createContext({} as HomeContext);
 
 export function HomeContextProvider({ children }:ChildrenProps) {
-  const [groups, setGroups] = useState<Group[]>();
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [groups, setGroups] = useState<Group[]>();
 
   async function getGroups() {
     setError(false);
     setLoading(true);
     try {
-      const res = await api.get('/groups/recommend', {
-        params: {
-          _expand: 'artist',
-        },
-      });
-
+      const res = await api.get('/groups/recommend');
       setGroups(res.data);
     } catch (err) {
       setError(true);
