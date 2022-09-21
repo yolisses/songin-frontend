@@ -28,11 +28,11 @@ export function Routes() {
         <Route path="/player" element={<PlayerPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/config" element={<ConfigPage />} />
+        <Route path="/@:nick" element={<ProfilePage />} />
         <Route path="/splash" element={<SplashScreen />} />
         <Route path="/history" element={<HistoryPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/@:nick" element={<ProfilePage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
+        <Route path="/profile" element={<ProfilePage byUserId />} />
       </Router>
       <Nav />
       <PlayerBar />

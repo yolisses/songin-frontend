@@ -3,26 +3,53 @@ import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
 import { api } from '../api/api';
 import { Profile } from './Profile';
+import { useUser } from '../user/UserContext';
 import { Favorites } from '../like/Favorites';
 import { FollowButton } from './FollowButton';
-import { NumberIndicator } from './NumberIndicator';
 import { MusicTable } from '../common/MusicTable';
 import { LoadingLine } from '../common/LoadingLine';
+import { NumberIndicator } from './NumberIndicator';
 
-export function ProfilePage() {
+interface Props{
+  byUserId?:boolean
+}
+
+export function ProfilePage({ byUserId }:Props) {
   const { nick } = useParams();
+  const { user: currentUser } = useUser();
+  const [error, setError] = useState(false);
   const [profile, setProfile] = useState<Profile>();
+
   const loading = profile === undefined;
 
   async function getUser() {
     setProfile(undefined);
-    const res = await api.get(`/profile/nick/${nick}`);
-    setProfile(res.data);
+    setError(false);
+    const url = byUserId
+      ? `/profile/id/${currentUser.id}`
+      : `/profile/nick/${nick}`;
+    try {
+      const res = await api.get(url);
+      setProfile(res.data);
+    } catch {
+      setError(true);
+    }
   }
 
   useEffect(() => {
     getUser();
   }, [nick]);
+
+  if (error) {
+    return (
+      <div className="warn">
+        Something gone wrong loading the profile
+        <button className="main-button">
+          Try again
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full flex flex-col profile-page">
