@@ -70,7 +70,7 @@ export function SearchPage() {
   }
 
   return (
-    <div className="flex flex-col items-center p-2 gap-8 md:pr-36 z-0">
+    <div className="flex flex-col items-center p-2 gap-8 md:pr-36 z-0 relative">
       <div className="h-6 w-full relative flex center">
         <div className="fixed top-0 right-0 left-0 md:right-36 md:left-36 bg-zinc-900 flex center z-10 p-2">
           <SearchInput getMusics={getMusics} />
