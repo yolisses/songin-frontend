@@ -10,6 +10,7 @@ import { useUser } from '../user/UserContext';
 import { LateralNavItem } from './LateralNavItem';
 import { SignInModal } from '../auth/SignInModal';
 import { useModal } from '../modal/ModalContext';
+import { LateralNavLogo } from './LateralNavLogo';
 
 export function LateralNav() {
   const md = useMd();
@@ -33,13 +34,7 @@ export function LateralNav() {
         onClick={refreshGroups}
         className="flex flex-row items-center gap-2 p-2"
       >
-        <img
-          alt="logo"
-          width={20}
-          src="/logo/gradient.svg"
-          className="bg-transparent"
-        />
-        <h1 className="text-xl logo">Sonhin</h1>
+        <LateralNavLogo />
       </Link>
       <LateralNavItem
         to="/"
@@ -66,8 +61,10 @@ export function LateralNav() {
         Icon={FaUser}
         text="Profile"
         onClick={requireSignIn}
-        to={user ? `/@${user.nick}` : '/profile'}
-        iconNode={user && (
+        to={user.nick
+          ? `/@${user.nick}`
+          : '/profile'}
+        iconNode={(user && user.image) && (
           <img
             alt={user.name}
             src={user.image}
