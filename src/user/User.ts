@@ -1,9 +1,9 @@
 export interface User{
     id:number
-    bio:string
-    nick:string
+    bio?:string
     name:string
-    image:string
-    email:string
+    nick?:string
+    image?:string
+    email?:string
     coverImage?:string
 }

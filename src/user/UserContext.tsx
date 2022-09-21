@@ -6,7 +6,7 @@ import { api } from '../api/api';
 import { ChildrenProps } from '../common/ChildrenProps';
 
 interface UserContext{
-    user?:User
+    user:User
     logout:()=>void
     loading:boolean
     signIn:(credential:string)=>Promise<void>
@@ -15,18 +15,29 @@ interface UserContext{
 const userContext = createContext({} as UserContext);
 
 export function UserContextProvider({ children }:ChildrenProps) {
-  const [user, setUser] = useState<User>();
+  const [user, setUser] = useState({} as User);
+  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
+
+  async function signInMark() {
+    try {
+      const res = await api.post('/mark/sign-in', 'teste2');
+      setUser(res.data);
+      setLoading(false);
+    } catch (e:any) {
+      setError(true);
+    }
+  }
 
   async function getMe() {
     setLoading(true);
     try {
-      const res = await api.get('users/me');
+      const res = await api.get('/users/me');
       setUser(res.data);
+      setLoading(false);
     } catch (err) {
-      setUser(undefined);
+      signInMark();
     }
-    setLoading(false);
   }
 
   async function signIn(credential:string) {
@@ -37,7 +48,7 @@ export function UserContextProvider({ children }:ChildrenProps) {
 
   async function logout() {
     await api.post('/log-out');
-    setUser(undefined);
+    getMe();
   }
 
   useEffect(() => {

@@ -1,20 +1,10 @@
-import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react';
+import { useUser } from '../user/UserContext';
 
 export function DevPage() {
-  const { data } = useVisitorData();
-
-  console.log(data);
-
-  if (data) {
-    // perform some logic based on the visitor data
-    return (
-      <div>
-        Welcome
-        {' '}
-        {data.visitorFound ? 'back' : ''}
-        !
-      </div>
-    );
-  }
-  return null;
+  const { user } = useUser();
+  return (
+    <div>
+      { JSON.stringify(user)}
+    </div>
+  );
 }
