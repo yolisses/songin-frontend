@@ -1,10 +1,9 @@
-import { useUser } from '../user/UserContext';
+import { FaRegUser, FaUser } from 'react-icons/fa';
 
 export function DevPage() {
-  const { user } = useUser();
   return (
     <div>
-      { JSON.stringify(user)}
+      <FaUser />
     </div>
   );
 }

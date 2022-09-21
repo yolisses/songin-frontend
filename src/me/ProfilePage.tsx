@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
 import { api } from '../api/api';
 import { Profile } from './Profile';
+import { userImage } from './userImage';
 import { useUser } from '../user/UserContext';
 import { Favorites } from '../like/Favorites';
 import { FollowButton } from './FollowButton';
@@ -66,7 +67,7 @@ export function ProfilePage({ byUserId }:Props) {
                 : (
                   <img
                     alt={profile.user?.name}
-                    src={profile.user?.image}
+                    src={profile.user?.image || userImage}
                     className="aspect-square w-32 md:w-40 rounded-full"
                   />
                 )}
