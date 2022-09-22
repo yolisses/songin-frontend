@@ -1,12 +1,25 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { FaPaperPlane } from 'react-icons/fa';
+import { useUser } from '../user/UserContext';
+import { useComment } from './CommentContext';
 
 export function CommentInput() {
   const [text, setText] = useState('');
+  const { addComment } = useComment();
+  const { user } = useUser();
 
   function handleSubmit(e:FormEvent) {
     e.preventDefault();
-    alert(text);
+    addComment({
+      id: Math.random(),
+      createdAt: Date.now().toString(),
+      liked: false,
+      likesCount: 0,
+      repliesCount: 0,
+      text,
+      user,
+    });
+    setText('');
   }
 
   function handleChange(e:ChangeEvent<HTMLInputElement>) {

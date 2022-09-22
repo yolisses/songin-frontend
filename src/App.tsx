@@ -4,6 +4,7 @@ import { HomeContextProvider } from './home/HomeContext';
 import { ModalContextProvider } from './modal/ModalContext';
 import { MusicsContextProvider } from './music/MusicsContext';
 import { PlayerContextProvider } from './player/PlayerContext';
+import { CommentContextProvider } from './comments/CommentContext';
 
 export function App() {
   return (
@@ -12,7 +13,9 @@ export function App() {
         <PlayerContextProvider>
           <ModalContextProvider>
             <HomeContextProvider>
-              <Routes />
+              <CommentContextProvider>
+                <Routes />
+              </CommentContextProvider>
             </HomeContextProvider>
           </ModalContextProvider>
         </PlayerContextProvider>
