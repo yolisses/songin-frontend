@@ -2,7 +2,7 @@
 import {
   createContext, useContext, useEffect, useState,
 } from 'react';
-import { api } from '../api/api';
+import { api } from '../common/api';
 import { ChildrenProps } from '../common/ChildrenProps';
 import { useUser } from '../user/UserContext';
 import { Music } from './Music';

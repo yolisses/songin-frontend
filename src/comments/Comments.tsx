@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { api } from '../api/api';
+import { api } from '../common/api';
 import { Comment } from './Comment';
 import { Music } from '../music/Music';
 import { repeat } from '../common/repeat';

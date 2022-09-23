@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-bind */
 import { ReactNode, useState } from 'react';
-import { api } from '../api/api';
+import { api } from '../common/api';
 import { repeat } from '../common/repeat';
 import { Music } from '../music/Music';
 import { NavSpacer } from '../nav/NavSpacer';

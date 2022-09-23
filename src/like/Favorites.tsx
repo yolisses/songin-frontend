@@ -1,6 +1,6 @@
 import { FaHeart } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
-import { api } from '../api/api';
+import { api } from '../common/api';
 import { User } from '../user/User';
 import { Music } from '../music/Music';
 import { NavSpacer } from '../nav/NavSpacer';

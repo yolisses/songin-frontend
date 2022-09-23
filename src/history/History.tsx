@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { api } from '../api/api';
+import { api } from '../common/api';
 import { MusicTable } from '../common/MusicTable';
 import { Music } from '../music/Music';
 import { NavSpacer } from '../nav/NavSpacer';

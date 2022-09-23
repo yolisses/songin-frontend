@@ -1,7 +1,7 @@
 import './ProfilePage.css';
 import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
-import { api } from '../api/api';
+import { api } from '../common/api';
 import { Profile } from './Profile';
 import { userImage } from './userImage';
 import { useUser } from '../user/UserContext';

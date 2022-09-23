@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { isDev } from '../common/isDev';
+import { isDev } from './isDev';
 
 type ApiChoice = 'dev' | 'prod' | 'mock'
 

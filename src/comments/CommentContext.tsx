@@ -2,7 +2,7 @@ import { createContext, useContext, useState } from 'react';
 import { Comment } from './Comment';
 import { ChildrenProps } from '../common/ChildrenProps';
 import { useUser } from '../user/UserContext';
-import { api } from '../api/api';
+import { api } from '../common/api';
 import { Music } from '../music/Music';
 
 interface CommentContext {
