@@ -59,7 +59,7 @@ export function PlayerBarCenter({ music, modalActive }:Props) {
         className="flex flex-row items-center h-14 ml-auto px-2 cursor-default"
       >
         <div className="flex flex-row gap-4">
-          <LikeButton music={music} alreadyLiked={music.liked} />
+          <LikeButton music={music} />
           <div className="relative">
             {share && (
             <div className="absolute overflow-hidden bottom-[4rem] -right-[4.5rem]">

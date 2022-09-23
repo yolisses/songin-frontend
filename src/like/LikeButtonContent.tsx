@@ -1,11 +1,16 @@
+import { useEffect, useState } from 'react';
 import { FaHeart } from 'react-icons/fa';
 
 interface Props{
     active:boolean
-    animate:boolean
 }
 
-export function LikeButtonContent({ active, animate }:Props) {
+export function LikeButtonContent({ active }:Props) {
+  const [animate, setAnimate] = useState(false);
+  useEffect(() => {
+    setAnimate((old) => !old);
+  }, [active]);
+
   const iconsSize = 24;
   return (
     <div>
