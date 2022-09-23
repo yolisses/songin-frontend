@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { api } from '../api/api';
 import { Comment } from './Comment';
 import { Music } from '../music/Music';
+import { repeat } from '../common/repeat';
 import { CommentItem } from './CommentItem';
 import { CommentInput } from './CommentInput';
-import { repeat } from '../common/repeat';
 import { useComment } from './CommentContext';
 
 interface CommentsProps{
@@ -23,7 +23,7 @@ export function Comments({ music }:CommentsProps) {
 
   useEffect(() => {
     getComments();
-    return reset;
+    // return reset;
   }, []);
 
   return (
@@ -39,7 +39,7 @@ export function Comments({ music }:CommentsProps) {
               />
           ))}
       </div>
-      <CommentInput />
+      <CommentInput music={music} />
     </>
   );
 }

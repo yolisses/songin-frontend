@@ -1,10 +1,9 @@
-import { FaChevronRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { format } from 'timeago.js';
 import { LoadingLine } from '../common/LoadingLine';
 import { Comment } from './Comment';
 import { CommentLikeButton } from './CommentLikeButton';
 import { CommentRepliesButton } from './CommentRepliesButton';
+import { CommentTimeIndicator } from './CommentTimeIndicator';
 
 interface CommentItemProps{
     comment?:Comment
@@ -19,8 +18,8 @@ export function CommentItem({ comment }:CommentItemProps) {
         ? <div className="aspect-square h-9 rounded-full loading" />
         : (
           <img
-            alt={comment.user?.nick}
-            src={comment.user?.image}
+            alt={comment.owner?.nick}
+            src={comment.owner?.image}
             className="aspect-square h-9 rounded-full"
           />
         )}
@@ -31,14 +30,14 @@ export function CommentItem({ comment }:CommentItemProps) {
             : (
               <>
                 <Link
-                  to={`/@${comment.user?.nick}`}
+                  to={`/@${comment.owner?.nick}`}
                   className="hover:underline"
                 >
-                  {comment.user?.nick}
+                  {comment.owner?.nick}
                 </Link>
-                <span className="text-xs pl-4">
-                  {format(comment.createdAt)}
-                </span>
+                <CommentTimeIndicator
+                  comment={comment}
+                />
               </>
             )}
         </div>

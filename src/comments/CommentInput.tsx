@@ -1,24 +1,19 @@
-import { ChangeEvent, FormEvent, useState } from 'react';
 import { FaPaperPlane } from 'react-icons/fa';
-import { useUser } from '../user/UserContext';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import { useComment } from './CommentContext';
+import { Music } from '../music/Music';
 
-export function CommentInput() {
+interface Props{
+  music:Music
+}
+
+export function CommentInput({ music }:Props) {
   const [text, setText] = useState('');
   const { addComment } = useComment();
-  const { user } = useUser();
 
   function handleSubmit(e:FormEvent) {
     e.preventDefault();
-    addComment({
-      id: Math.random(),
-      createdAt: Date.now().toString(),
-      liked: false,
-      likesCount: 0,
-      repliesCount: 0,
-      text,
-      user,
-    });
+    addComment(text, music);
     setText('');
   }
 
