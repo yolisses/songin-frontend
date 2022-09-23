@@ -3,6 +3,15 @@ import { User } from '../user/User';
 
 export function image(obj:User|Music, size = 512) {
   const avaliableImages = 1080;
-  const id = obj.id % avaliableImages;
+  const brokenImages:{[key:number]:true} = {
+    792: true,
+    812: true,
+  };
+  let { id } = obj;
+  if (brokenImages[id]) {
+    id += 555;
+  }
+  id %= avaliableImages;
+
   return `https://picsum.photos/id/${id}/${size}/${size}`;
 }
