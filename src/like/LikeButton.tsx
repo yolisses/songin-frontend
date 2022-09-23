@@ -13,20 +13,17 @@ export function LikeButton({ music }:LikeButtonProps) {
   const [active, setActive] = useState(alreadyLiked);
 
   async function handleClick() {
-    console.log('here');
     setActive((old) => !old);
     const url = `/musics/${music?.id}/like`;
-    console.log('vai teia');
     const method = active
       ? api.delete
       : api.post;
     const res = await method(url);
-    console.log(res.data);
   }
 
   useEffect(() => {
     setActive(alreadyLiked);
-  }, [alreadyLiked]);
+  }, [alreadyLiked, music]);
 
   return (
     <FloatingCounter
@@ -37,7 +34,6 @@ export function LikeButton({ music }:LikeButtonProps) {
         className="group relative p-2"
       >
         <LikeButtonContent active={active} />
-        {`${active}`}
       </button>
     </FloatingCounter>
   );
