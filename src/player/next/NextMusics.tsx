@@ -1,4 +1,4 @@
-import { NextMusicItem } from './NextMusictem';
+import { NextMusicItem } from './NextMusicItem';
 import { useMusics } from '../../music/MusicsContext';
 
 export function NextMusics() {
