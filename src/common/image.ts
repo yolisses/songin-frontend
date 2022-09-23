@@ -6,6 +6,7 @@ export function image(obj:User|Music, size = 512) {
   const brokenImages:{[key:number]:true} = {
     792: true,
     812: true,
+    801: true,
   };
   let { id } = obj;
   if (brokenImages[id]) {
