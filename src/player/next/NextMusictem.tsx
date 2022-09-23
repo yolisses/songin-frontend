@@ -16,7 +16,7 @@ export function NextMusicItem({ music }:MusicListItemProps) {
   return (
     <button
       onClick={handleClick}
-      className="flex flex-row items-center p-1 gap-2 flex-1 text-start rounded-lg hover:bg-black hover:bg-opacity-5"
+      className="flex flex-row items-center p-1 gap-2 flex-1 text-start rounded-lg hover:bg-white hover:bg-opacity-10"
     >
       <img
         alt={music.name}
