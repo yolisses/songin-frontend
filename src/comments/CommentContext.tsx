@@ -30,8 +30,13 @@ export function CommentContextProvider({ children }:ChildrenProps) {
     };
     setSendComments((old) => [...old, comment]);
     const url = `/musics/${music.id}/comments`;
-    const res = await api.post(url, text);
-    console.log(res.data);
+    try {
+      const res = await api.post(url, text);
+      comment.sending = false;
+    } catch {
+      comment.error = true;
+    }
+    setSendComments((old) => [...old]);
   }
 
   function reset() {

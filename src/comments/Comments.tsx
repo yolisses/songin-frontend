@@ -17,13 +17,14 @@ export function Comments({ music }:CommentsProps) {
   const { sendComments, reset } = useComment();
 
   async function getComments() {
-    const res = await api.get(`/musics/${music.id}/comments`);
+    const url = `/musics/${music.id}/comments`;
+    const res = await api.get(url);
     setComments(res.data);
   }
 
   useEffect(() => {
     getComments();
-    // return reset;
+    return reset;
   }, []);
 
   return (
