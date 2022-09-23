@@ -34,6 +34,7 @@ export function PlayerModal() {
         <img
           alt={music.name}
           src={image(music, 512)}
+          style={{ boxShadow: '0px 15px 30px #0007' }}
           className="aspect-square flex-1 max-w-[450px] w-full rounded-lg shadow-2xl"
         />
       </div>
